@@ -1,0 +1,187 @@
+// ----------------------------------------
+// Text Love: LESS > Widgets > Widgets
+// ----------------------------------------
+//
+// #Global Widget Styles
+// #Columns
+// #Page Title Widget
+// #Line Widget
+//
+// ----------------------------------------
+
+
+// -----------------------------
+// #Standard Widgets
+// -----------------------------
+
+
+.main-content .widget {
+
+    
+}
+
+.main-content .widget {
+    margin: 0 @value__widget--spacing--desktop @value__widget--spacing--desktop;
+
+    @media @bp-global-medium {
+        margin: 0 @value__widget--spacing--laptop @value__widget--spacing--laptop;
+    }
+    @media @tablet {
+        margin: 0 @value__widget--spacing--tablet @value__widget--spacing--tablet;
+    }
+    @media @mobile {
+        margin: 0 @value__widget--spacing--mobile @value__widget--spacing--mobile;
+    }
+
+    &:first-child {
+        //margin-top: 0;
+    }
+    &:last-child {
+        //margin-bottom: 0;
+    }
+}
+
+/*
+.widget[data-name="content"], 
+.widget[data-name="pagetitle"],
+.widget[data-widget-type="pagetitle"],
+.widget[data-name="responsivecolumns"],
+.widget[data-name="signupform"],
+.widget[data-name="contactform"],
+.widget[data-name="advancedcontactform"],
+.widget[data-name="button"],
+.widget[data-name="tweet"],
+.widget[data-name="clicktocall"],
+.widget[data-name="dropbox"],
+.widget[data-name="facebooklike"],
+.widget[data-name="paypalbuynow"],
+.widget[data-name="socialicons"],
+.widget[data-name="disqus"],
+.widget[data-name="linkedinprofile"],
+.widget[data-name="linkedincompanyprofile"],
+.widget[data-name="profile"],
+.widget[data-name="companyaddress"],
+.widget[data-name="twitter"],
+.widget[data-name="facebookcomments"],
+.widget[data-name="donation"],
+.widget[data-name="yelpreview"],
+.widget[data-name="errormessages"],
+.widget[data-name="blogsearch"],
+.widget[data-name="ecombasket"],
+.widget[data-name="ecomcategorieslist"],
+.widget[data-name="ecombasketsummary"],
+.widget[data-name="menusections"],
+.widget[data-name="menu"] {
+    width: 80%;
+	max-width: @layout-width-desktop;
+	margin: 0 auto;
+	margin-bottom: 2em;
+    @media @mobile {
+        width: 90%;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+*/
+
+// Responsive Column Widgets
+.widget[data-name="responsivecolumns"] {
+
+    // Widget
+    .widget {
+        width: 100%;
+        @media @mobile {
+            margin: 0 0 30px;
+        }
+    }
+
+    .widget[data-name="content"] {
+
+        @media @mobile {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+// Column
+.column {
+    @media @mobile {
+        margin-bottom: 30px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// -----------------------------
+// #Full Width Widgets
+// -----------------------------
+
+
+.widget[data-name="responsiveslideshow"],
+.widget[data-widget-type="responsiveslideshow"],
+.widget[data-name="youtube"],
+.widget[data-name="map"],
+.widget[data-name="youtube"],
+.widget[data-name="gallery"],
+.widget[data-name="blogpost"],
+.widget[data-widget-type="blogpost"],
+.widget[data-name="blogpostlist"],
+.widget[data-name="ecomproductslist"],
+.widget[data-name="ecomfeaturedproducts"],
+.widget[data-name="ecomproduct"],
+.widget[data-name="line"],
+.widget[data-name="image"] {
+    margin-top: 0!important; // Ensures correct spacing for default pages
+    margin-left: 0;
+    margin-right: 0;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+
+// -----------------------------
+// #Line Widget
+// -----------------------------
+
+.widget[data-name="line"] {
+	
+}
+
+.line {
+    line-height: 0;
+}
+
+hr.line__rule {
+	height: 3px;
+	background-color: fade(@color__p--text, 60%);
+}
+
+// -----------------------------
+// #Space Widget
+// -----------------------------
+
+.widget[data-name="space"] {
+}
+
+.space {
+}
+
+.space__spacer {
+}
+
+// -----------------------------
+// #Page Title Widget
+// -----------------------------
+
+.page-title {
+}
+
+.pagetitle-text {
+    h1;
+}

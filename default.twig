@@ -1,0 +1,20 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<!-- Page Content Start -->
+<section class="page page--default">
+    {% include "includes/header.twig" %}
+    
+    <!-- Zone Content Start -->
+    <div class="template__content">
+        <div class="container">
+            {{zone('main')|raw}}
+        </div>
+    </div>
+    <!-- Zone Content End -->
+    
+</section>
+<!-- Page Content End -->
+
+{% endblock %}

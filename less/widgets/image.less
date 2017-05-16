@@ -1,0 +1,61 @@
+// ----------------------------------------
+// Text Love: LESS > Widgets > Image
+// ----------------------------------------
+//
+// #Conditional Mixins
+// #Image
+// #Caption
+//
+// ----------------------------------------
+
+// ------------------------------
+// #Conditional Mixins
+// ------------------------------
+
+// Conditional if the image background 
+// is not the same as the page background.
+
+.image-widget-background--spacing() when not (@color__image--background = @color__body--background) {
+	padding: 0;
+}
+
+// ------------------------------
+// #Image
+// ------------------------------
+
+.widget[data-name="image"] {
+	.image-widget-background--spacing();
+	background: @color__image--background;
+}
+
+// ------------------------------
+// #Caption
+// ------------------------------
+
+// Conditional if the container background 
+// is not the same as the page background.
+
+.image-caption--spacing() when not (@color__image--background = @color__body--background) {
+	margin-bottom: 0;
+}
+
+.imagewidget__caption {
+	.image-caption--spacing();
+}
+
+.imagewidget__image {
+	.border-radius();
+}
+
+// Image Title
+
+.image-title {
+	.heading--4;
+	color: @color__image-title--text;
+}
+
+// Image Description
+
+.image-description {
+	color: @color__image-description--text;
+}

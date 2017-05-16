@@ -1,0 +1,54 @@
+// ----------------------------------------
+// Text Love: LESS > Main > Variables
+// ----------------------------------------
+// 
+// #Breakpoints
+// #Layout
+// #Colors
+// 
+// ----------------------------------------
+
+// ------------------------------
+// #Breakpoints
+// ------------------------------
+
+// Breakpoint for the maximal width of the layout.
+// Depends on the template.
+@layout-width-breakpoint: ~"only screen and (max-width: 1400px)";
+
+// Break point for smaller devices.
+@tablet-horizontal: ~"only screen and (max-width: 1024px)";
+@tablet: ~"only screen and (max-width: 768px)";
+@mobile: ~"only screen and (max-width: 650px)";
+
+// When the colums in the layout break for smaller devices.
+@columns-tablet: ~"only screen and (max-width: 925px)";
+@columns-mobile: ~"only screen and (max-width: 650px)";
+
+// ------------------------------
+// #Layout
+// ------------------------------
+
+@header-height: 4em;
+@layout-width-desktop: 900px;
+@layout-width-tablet: 90%;
+@layout-max-width: 1400px;
+
+// Global Widget Spacing
+@value__widget--spacing--desktop: 70px;
+@value__widget--spacing--laptop:  60px;
+@value__widget--spacing--tablet:  40px;
+@value__widget--spacing--mobile:  30px;
+
+// ------------------------------
+// #Colors
+// ------------------------------
+
+@color-text--faded: fade(@color__p--text, 60%);
+@color-text--light: fade(@color__p--text, 30%);
+@color-text--lighter: fade(@color__p--text, 20%);
+@color-text--lightest: fade(@color__p--text, 10%);
+
+@color-highlight: @color__link--text;
+@color-highlight--light: fade(@color__link--text, 50%);
+@color-highlight--lighter: fade(@color__link--text, 20%);

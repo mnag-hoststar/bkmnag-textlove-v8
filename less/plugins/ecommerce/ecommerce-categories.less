@@ -1,0 +1,115 @@
+// ----------------------------------------
+// Text Love: LESS > Plugins > Ecommerce > Categories
+// ----------------------------------------
+// 
+// #Title
+// #List
+// #Item
+// 
+// ----------------------------------------
+
+// ------------------------------
+// #Title
+// ------------------------------
+
+.category-list-body h3 {
+}
+
+// ------------------------------
+// #List
+// ------------------------------
+
+.category-list {
+    margin: 0;
+}
+
+// ------------------------------
+// #Item
+// ------------------------------
+
+.ecomcategorieslist__category-item {
+    float: left;
+    list-style: none;
+
+    @media @tablet-horizontal {
+        width: 32.5%;
+        margin: 0 1.25% 1.25% 0;
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+        &:nth-child(4n) {
+            clear: left;
+        }
+    }
+
+    @media @tablet {
+        width: 49%;
+        margin: 0 2% 2% 0;
+        &:nth-child(2n) {
+            margin-right: 0;
+        }
+        &:nth-child(3n) {
+            clear: left;
+        }
+    }
+	
+   @media @mobile {
+        width: 100%;
+        height: auto;
+        margin: 0 0 2% 0;
+    }
+	
+    // Link
+
+    a {
+        .underline;
+        display: block;
+    }
+	
+    // Item Count
+
+    .item-count {
+        float: right;
+        opacity: 0.5;
+    }
+	
+	.responsivecolumns & {
+		a {
+			display: inline-block;
+		}
+
+		.item-count {
+			float: none;
+		}
+	}
+
+	.columns-four-first &,
+	.columns-four-second &,
+	.columns-four-third &,
+	.columns-four-fourth &,
+	.columns-three-left &,
+	.columns-three-right &,
+	.columns-three-middle & {
+		width: 49%;
+		margin: 0 2% 2% 0;
+		&:nth-child(2n) {
+			margin-right: 0;
+		}
+		&:nth-child(3n) {
+			clear: left;
+		}
+		&:nth-child(4n) {
+			clear: none;
+		}
+	}
+
+	.columns-four-first &,
+	.columns-four-second &,
+	.columns-four-third &,
+	.columns-four-fourth & {
+		width: auto;
+		float: none;
+		margin-right: 0;
+	}
+}
+

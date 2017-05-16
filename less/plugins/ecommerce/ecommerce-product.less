@@ -1,0 +1,310 @@
+// ----------------------------------------
+// Text Love: LESS > Plugins > Ecommerce > Product
+// ----------------------------------------
+//
+// #Product
+// #Images
+// #Product Image
+// #Product Gallery
+// #Product Content
+// #Product Actions
+// #Product Attributes
+// 
+// ----------------------------------------
+
+// ------------------------------
+// #Product
+// ------------------------------
+
+.ecomproduct {
+
+}
+
+.ecomproduct__button {
+    
+}
+
+// Product Article
+
+.product-article {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    @media @tablet {
+        display: block;
+    }
+}
+
+// ------------------------------
+// #Images
+// ------------------------------
+
+.product-images {
+    -webkit-flex: 0 1 50%;
+    -ms-flex: 0 1 50%;
+    flex: 0 1 50%;
+    padding: 1px 0;
+}
+
+// Product Image
+
+.product-image {
+	.image-link {
+		
+	}
+}
+
+// ------------------------------
+// #Product Image
+// ------------------------------
+
+.product-image {
+	
+    @media @tablet-horizontal {
+    }
+    @media @tablet {
+    }
+
+    body.product-one-image & {
+		margin-left: 70px;
+    }
+
+    &.no-image {
+        display: none;
+    }
+	
+	// Image Link
+
+	.image-link {
+		display: block;
+		width: 100%;
+		background-size: contain;
+		background-position: center;
+		background-color: #fff;
+		height: 400px;
+
+		@media @tablet-horizontal {
+			padding: 20px;
+			height: 350px;
+		}
+		@media @tablet {
+			padding: 10px;
+			height: 300px;
+		}
+		@media @mobile {
+			padding: 10px;
+			height: 200px;
+		}
+	}
+	
+	// Image
+	
+	.image {
+		display: none;
+	}
+}
+
+// ------------------------------
+// #Product Gallery
+// ------------------------------
+
+.product-gallery {
+    border-top: 1px solid fade(@color__p--text, 20%);
+    padding-top: 1em;
+
+    @media @tablet-horizontal {
+        overflow: hidden;
+    }
+
+    @media @tablet, @mobile {
+    }
+
+    // Gallery Item
+
+    .gallery-item {
+        position: relative;
+		float: none;
+
+        @media @tablet-horizontal, @tablet {
+        }
+        @media @tablet-horizontal {
+        }
+        @media @tablet {
+        }
+    }
+
+    // Image Button
+
+    .image-button {
+        @media @tablet-horizontal {
+        }
+        @media @tablet {
+        }
+
+        // Image
+
+        .image {
+            line-height: 76px;
+            display: inline-block;
+            vertical-align: middle;
+            @media @tablet-horizontal {
+                line-height: 56px;
+            }
+            @media @tablet {
+                line-height: 36px;
+            }
+        }
+    }
+}
+
+// ------------------------------
+// #Product Content
+// ------------------------------
+
+.product-content {
+    -webkit-flex: 0 1 50%;
+    -ms-flex: 0 1 50%;
+    flex: 0 1 50%;
+    background: @color__container--background;
+    margin: 0 0 0 auto;
+    max-width: 45%;
+
+    @media @tablet-horizontal {
+    }
+    @media @tablet {
+        max-width: none;
+    }
+}
+
+// Product Title
+
+.product-title {
+    padding-bottom: 0;
+    color: @color__ecomproduct-title--text;
+}
+
+// Product Price
+
+.ecomproduct__product-price {
+    color: @color__ecomproduct-price--text;
+}
+
+// Product Body
+
+.product-body {
+    margin: 16px 0 24px;
+}
+
+// ------------------------------
+// #Product Actions
+// ------------------------------
+
+.product-actions {
+    margin-bottom: 2em;
+	
+    // Select Wrap
+
+    .select-wrap {
+        max-width: 100%;
+
+        &:after {
+            padding-right: 14px;
+        }
+    }
+    .select {
+    }
+	
+    // Legend
+
+    .legend {
+        display: none;
+    }
+	
+    // Fieldset
+
+    .fieldset {
+        margin-bottom: 2em;
+    }
+
+    // Form Group
+
+    .form-group {
+        display: inline-block;
+        min-width: 100px;
+        margin: 0 0.6em 0 0;
+        float: left;
+		
+        // Label
+
+        .label {
+            padding: 5px 0;
+            font-family: @font__h4--font-family;
+            font-size: 12px;
+            letter-spacing: 2px;
+            line-height: 1;
+            color: lighten(@color__p--text, 20%);
+            display: block;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+// ------------------------------
+// #Product Attributes
+// ------------------------------
+
+.product-attributes {
+    .clearfix();
+
+    // Attribute Title
+	
+    .product-attribute-title {
+        line-height: 2;
+        color: fade(@color__p--text, 80%);
+        padding: 0;
+        display: block;
+        margin: 0 0 0.25em 0;
+        font-size: 13px;
+    }
+	
+    // Product Category, Product Tags
+
+    .product-category,
+	.product-tags {
+        display: block;
+        vertical-align: top;
+        line-height: 1;
+        margin: 0 0 1em 0;
+
+        p {
+            line-height: 1;
+        }
+    }
+	
+    // Category Link, Tag Link
+
+    .category-link,
+	.tag-link {
+        .underline;
+        font-size: 14px;
+    }
+
+    // Tag List
+
+    .tag-list {
+        display: block;
+        line-height: 1;
+    }
+	
+    // Tag Item
+
+    .tag-item {
+        line-height: 1;
+        margin-right: 1em;
+        margin-bottom: 0.5em;
+    }
+}

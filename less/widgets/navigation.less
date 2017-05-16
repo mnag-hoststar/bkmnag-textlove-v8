@@ -1,0 +1,431 @@
+// ----------------------------------------
+// Text Love: LESS > Widgets > Navigation
+// ----------------------------------------
+//
+// #Logo & Company Name
+// #Navigation
+// #Navigation Toggle Button
+// #Navigation Body
+// #Navigation List
+// #Navigation Items
+//
+// ----------------------------------------
+
+// ------------------------------
+// #Logo & Company Name
+// ------------------------------
+
+.template__company {
+	-webkit-flex: 1;
+	-ms-flex: 1;   
+    flex: 1;
+    z-index: 3;
+    margin: 1em 0;
+	
+	@media @tablet {
+		-webkit-flex: 5;
+		-ms-flex: 5;  
+	    flex: 5;
+	}
+	
+	.widget {
+		display: table-cell;
+		vertical-align: middle;
+	}
+}
+
+.logo {
+	padding-right: 10px;
+    font-size: 1em;
+	
+	&__logo-image {
+		max-height: 50px;
+	}
+}
+
+.companyname {
+    line-height: 0;
+
+	&__company-link {
+		margin: 0;
+		font-family: @font__companyname--font-family;
+		font-size: @font__companyname--font-size;
+		font-weight: @font__companyname--font-weight;
+		line-height: @font__companyname--line-height;
+		letter-spacing: @font__companyname--letter-spacing;
+		color: @color__companyname--text;
+
+		.make-font-a-little-smaller(@font__companyname--font-size);
+		.make-font-smaller(@font__companyname--font-size);
+		.make-font-a-lot-smaller(@font__companyname--font-size);
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+// ------------------------------
+// #Navigation
+// ------------------------------
+
+
+html.nav-open {
+	overflow: hidden;
+}
+
+.template__navigation {
+	-webkit-flex: 1;
+	-ms-flex: 1; 
+    flex: 1;
+    @media @tablet {
+		-webkit-flex: 1;
+		-ms-flex: 1;   
+		flex: 1;
+    }
+}
+
+.widget[data-widget-type="extendednavigation"] {
+	//padding: 0;
+	//position: static;
+	&.open {
+		
+	}
+	@media @tablet {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		z-index: 2;
+	}
+}
+
+// ------------------------------
+// #Navigation Toggle Button
+// ------------------------------
+
+// Navigation Toggle Button
+// It only appears on tablet and mobile sizes.
+
+.navigation-toggle {
+	display: none;
+	
+	@media @tablet {
+		
+		// Displays as Icon's Middle Bar
+		z-index: 100;
+		cursor: pointer;
+		background: @color__navigation--text;
+		background-clip: content-box;
+		width: 28px;
+		height: 3px;
+		padding: 0;
+		display: block;
+		position: absolute;
+		top: 30px;
+		right: 1em;
+		margin: 28px 20px;
+		font-size: 26px;
+		text-indent: 10000px;
+		.transition(background, 0s, ease-in, 0.05s);
+
+		.make-font-a-little-smaller(@font__companyname--font-size);
+		.make-font-smaller(@font__companyname--font-size);
+		.make-font-a-lot-smaller(@font__companyname--font-size);
+
+		// Top and Bottom Navigation Item Bar
+
+		&:after,
+		&:before {
+			content: "";
+			height: 3px;
+			width: 28px;
+			position: absolute;
+			display: block;
+			background-color: @color__navigation--text;
+			margin-right: 0;
+			margin-left: 0;
+			.transition-duration-2items(0.05s, 0.05s);
+			.transition-delay-2items(0.05s, 0s);
+
+			@media @mobile {
+				height: 2px;
+			}
+		}
+
+		// Top Bar
+		
+		&:before {
+			top: 0.4em;
+		  	.transition-property-2items(top, transform);
+		}
+
+		// Bottom Bar
+		
+		&:after {
+			bottom: 0.4em;
+			.transition-property-2items(bottom, transform);
+		}
+
+		&:hover {
+			&, &:before, &:after {
+				background-color: @color__navigation--text;
+			}
+		}
+	}
+
+	// Toggle Button Open
+
+	.open & {
+		@media @tablet {
+			
+			// Middle bar
+			
+			background: transparent;
+			
+			// Top and bottom bar
+			
+			&:before,
+			&:after {
+			  .transition-delay-2items(0s, 0.05s);
+			}
+			
+			// Top Bar
+
+			&:before {
+				top: 0;
+				background: @color__navigation--text;
+				.transform-rotate(45deg);
+
+			}
+			
+			// Bottom Bar
+
+			&:after {
+				bottom: 0;
+				background: @color__navigation--text;
+				.transform-rotate(-45deg);
+			}
+		}
+	}
+}
+
+// ------------------------------
+// #Navigation Body
+// ------------------------------
+
+// Dark overlay on tablet and mobile.
+
+.navigation-body {
+	.transition(opacity, 0s);
+	
+	// This is only shown in Tablet and Mobile
+	
+	@media @tablet {
+		outline: 0;
+		height: 0;
+		width: 0;
+		opacity: 0;
+		display: none;
+		
+		// When Navigation is open
+
+		.open & {
+			display: block;
+			opacity: 1;
+			width: auto;
+			width: 100vw;
+			overflow: auto;
+			height: auto;
+			height: 100vh;
+			background-color: fade(@color__header--background, 90%);
+			.transition(opacity, 0.25s);
+		}
+	}
+}
+
+
+// ------------------------------
+// #Navigation List
+// ------------------------------
+
+.navigation-list {
+	padding: 1.5em 0;
+	
+    @media @tablet {
+		display: block;
+		height: auto;
+		max-width: 500px;
+		margin: 150px auto 0;
+		text-align: center;
+	}
+}
+
+// ------------------------------
+// #Navigation Items
+// ------------------------------
+
+// Navigation Normal Item
+
+.navigation-item {
+	margin-bottom: 0;
+	padding: 0;
+	
+    @media @tablet {
+		display: block;
+		text-align: center;
+	}
+	
+	.item-name {
+		position: relative;
+		padding: .5em 0;
+		margin: 0 1.5em;
+		font-family: @font__navigation--font-family;
+		font-size: @font__navigation--font-size;
+		font-weight: @font__navigation--font-weight;
+		line-height: @font__navigation--line-height;
+		letter-spacing: @font__navigation--letter-spacing;
+		color: @color__navigation--text;
+		.transition (all, 0.5s, ease);
+		@media @tablet {
+			padding: 0.5em 0;
+			font-size: @font__navigation--font-size * 1.2;
+			line-height: @font__navigation--line-height * 1.2;
+		}
+	
+		//.make-font-a-little-smaller(@font__navigation--font-size);
+		//.make-font-smaller(@font__navigation--font-size);
+		//.make-font-a-lot-smaller(@font__navigation--font-size);
+		
+		&:hover {
+			color: @color__navigation--text--hover;
+			.transition (all, 0.5s, ease);
+			
+			@media @tablet {
+				color: @color__navigation--text--hover;
+			}
+		}
+	}
+
+	&.selected > .item-name {
+		color: @color__navigation--text--selected;
+
+		@media @tablet {
+			color: @color__navigation--text--selected;
+		}
+	}
+
+	&.selected:hover > .item-name,
+	&.selected:active > .item-name {
+		.box-shadow(none);
+	}
+}
+
+// Navigation Folder Item
+
+.navigation-item.folder {
+	
+	// Folder Icon
+	
+	> .item-name {
+		&:after {
+			right: 0.5em;
+			margin-left: 0.3em;
+			width: 1em;
+    		height: 1em;
+			line-height: 1em;
+			font-size: 1.2em;
+			content: "\f107";
+			font-family: 'FontAwesome', sans-serif;
+			text-align: right;
+		}
+	}
+	
+	&.folder-open > .item-name {
+		color: darken(@color__navigation--text, 20%);
+	}
+}
+
+// Navigation Folder Submenu
+
+.navigation-list--children {
+	
+	.navigation-item.folder &,
+	.navigation-item.folder:hover &,
+	.navigation-item.folder:active & {
+    	overflow: hidden;
+		opacity: 0;
+    	margin: 1em 0;
+		height: 0;
+		position: absolute;
+		padding: 0.5em 0;
+		background-color: @color__navigation-list--background;
+		overflow: visible;
+		text-align: center;
+		.transition(opacity, 0s);
+		.box-shadow(0px 5px 20px 0px fade(#000000, 15%));
+
+		@media @tablet {
+			position: static;
+			margin: 0;
+			padding: 0;
+			background-color: transparent;
+			.box-shadow(none);
+		}
+	}
+	
+	.navigation-item.folder.folder-open & {
+    	overflow: visible;
+		display: block;
+		opacity: 1;
+		height: auto;
+		.transition(opacity);
+
+		@media @tablet {
+			position: static;
+			margin: 0 0 0.5em;
+			padding: 0;
+		}
+	}
+}
+
+// Navigation Folder Submenu Single Item
+
+.navigation-item--child {
+
+	@media @tablet {
+		display: block;
+	}
+
+	.item-name {
+		color: @color__navigation--text;
+		line-height: 3em;
+		border-bottom: 0;
+
+		@media @tablet {
+		}
+		
+		&:hover {
+			color: @color__navigation--text--hover;
+			border-bottom: 0;
+		}
+	}
+
+	// Selected Folder Item
+
+	&.selected .item-name {
+		color: @color__navigation--text--selected;
+	}
+}
+
+.navigation-item.folder {
+	
+	// Open Submenu
+	
+	&.folder-open:hover .navigation-list--children,
+	&.folder-open:active .navigation-list--children,
+	&.folder-open .navigation-list--children {
+		opacity: 1;
+	}
+}

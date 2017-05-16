@@ -1,0 +1,325 @@
+// ----------------------------------------
+// Text Love: LESS > Main > Typography
+// ----------------------------------------
+//
+// #Content Widget
+// #General Typography
+// #Bold, Italic, Underlined
+// #Label
+// #Span
+// #Link
+// #Small
+// #Pre
+// #Code
+// #Unordered and Ordered List
+// #Block Quote
+// #Highlighted Text
+//
+// ----------------------------------------
+
+// ------------------------------
+// #Content Widget
+// ------------------------------
+
+.content {}
+
+// ------------------------------
+// #General Typography
+// ------------------------------
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0.5em 0;
+	
+	+ h2, + h3, + h4, + h5, + h6 {
+		padding-top: 0;
+	}
+}
+
+// Break long words.
+h1, h2, h3, h4, h5, h6, p {
+	word-wrap: break-word;
+}
+
+p, a {
+	padding: 0.5em 0;
+    hyphens: auto;
+}
+
+h1, .heading--1 {
+	font-family: @font__h1--font-family;
+	font-weight: @font__h1--font-weight;
+	font-size: @font__h1--font-size;
+	line-height: @font__h1--line-height;
+	letter-spacing: @font__h1--letter-spacing;
+	color: @color__h1--text;
+	
+	.make-font-a-little-smaller(@font__h1--font-size);
+	.make-font-smaller(@font__h1--font-size);
+	.make-font-a-lot-smaller(@font__h1--font-size);
+}
+
+h2, .heading--2 {
+	font-family: @font__h2--font-family;
+	font-weight: @font__h2--font-weight;
+	font-size: @font__h2--font-size;
+	line-height: @font__h2--line-height;
+	letter-spacing: @font__h2--letter-spacing;
+	color: @color__h2--text;
+	
+	.make-font-a-little-smaller(@font__h2--font-size);
+	.make-font-smaller(@font__h2--font-size);
+	.make-font-a-lot-smaller(@font__h2--font-size);
+}
+
+h3, .heading--3 {
+	font-family: @font__h3--font-family;
+	font-size: @font__h3--font-size;
+	font-weight: @font__h3--font-weight;
+	line-height: @font__h3--line-height;
+	letter-spacing: @font__h3--letter-spacing;
+	color: @color__h3--text;
+	
+	.make-font-a-little-smaller(@font__h3--font-size);
+	.make-font-smaller(@font__h3--font-size);
+	.make-font-a-lot-smaller(@font__h3--font-size);
+}
+
+h4, .heading--4 {
+	font-family: @font__h4--font-family;
+	font-weight: @font__h4--font-weight;
+	font-size: @font__h4--font-size;
+	line-height: @font__h4--line-height;
+	letter-spacing: @font__h4--letter-spacing;
+	color: @color__h4--text;
+	
+	.make-font-a-little-smaller(@font__h4--font-size);
+	.make-font-smaller(@font__h4--font-size);
+	.make-font-a-lot-smaller(@font__h4--font-size);
+}
+
+h5, .heading--5 {
+	font-family: @font__h4--font-family;
+	font-weight: @font__h4--font-weight;
+	font-size: @font__h4--font-size*0.9;
+	line-height: @font__h4--line-height*0.9;
+	letter-spacing: @font__h4--letter-spacing;
+	color: @color__h4--text;
+	
+	.make-font-a-little-smaller(@font__h4--font-size, 0.9);
+	.make-font-smaller(@font__h4--font-size);
+	.make-font-a-lot-smaller(@font__h4--font-size);
+}
+
+h6, .heading--6 {
+	padding-bottom: 0.2em;
+	font-family: @font__h4--font-family;
+	font-weight: @font__h4--font-weight;
+	font-size: @font__h4--font-size*0.8;
+	line-height: @font__h4--line-height*0.8;
+	letter-spacing: @font__h4--letter-spacing*0.8;
+	color: @color__h4--text;
+	
+	.make-font-a-little-smaller(@font__h4--font-size, 0.7);
+	.make-font-smaller(@font__h4--font-size, 0.7);
+	.make-font-a-lot-smaller(@font__h4--font-size, 0.7, 0.6);
+}
+
+p, .paragraph, ul, ol, li {
+	// This is already defined in the html tag.
+	
+	.make-font-a-little-smaller(@font__p--font-size);
+	.make-font-smaller(@font__p--font-size);
+	.make-font-a-lot-smaller(@font__p--font-size);
+}
+
+// ------------------------------
+// #Bold, Italic, Underlined
+// ------------------------------
+
+b, strong {
+	font-weight: 900;
+}
+
+u {
+	text-decoration: none;
+	border-bottom: 1px solid lighten(@color__p--text, 20%);
+}
+
+// ------------------------------
+// #Label
+// ------------------------------
+
+label, .label-text {
+	font-family: @font__h4--font-family;
+	font-size: 0.9em;
+	color: @color-text--faded;
+	word-wrap: normal;
+    hyphens: none;
+}
+
+// ------------------------------
+// #Span
+// ------------------------------
+
+span {
+	background-color: transparent;
+}
+
+// ------------------------------
+// #Link
+// ------------------------------
+
+a {
+	display: inline;
+	color: @color-highlight;
+	line-height: 1.3em;
+	overflow: visible;
+	border-bottom: 1px solid transparent;
+	background-color: transparent;
+	margin: 0 -2px;
+	padding: 0 2px;
+	height: auto;
+	.transition();
+
+    &, &:hover {
+        text-decoration: none;
+    }
+	
+	&:hover {
+		color: darken(@color-highlight, 10%);
+		border-bottom: 1px solid @color-highlight--light;
+	}
+}
+
+a[class] {
+	margin: 0;
+	padding: 0;
+	
+    &, &:hover {
+		border-bottom: none;
+		background-color: transparent;
+    }
+}
+
+// ------------------------------
+// #Small
+// ------------------------------
+
+small {
+	color: @color__p--text;
+}
+
+// ------------------------------
+// #Preformatted Text and Code
+// ------------------------------
+
+pre, code {
+	display: block;
+	margin: 1em 0;
+	padding: 1em 1.5em;
+	border: none;
+	.border-radius(0);
+	background-color: @color-text--lightest;
+	overflow: auto;
+	
+	.paragraph;
+	font-family: monospace;
+}
+
+code {
+	border-left: 5px solid @color-highlight;
+}
+
+// ------------------------------
+// #Unordered and Ordered List
+// ------------------------------
+
+ul {
+	margin: 1em 0 1em 1.2em;
+	padding: 0;
+	list-style: inherit;
+
+	li {
+		padding: 0 0 0 0.5em;
+		margin: 0 0 .5em 0;
+
+		@media @tablet {
+			padding-left: 0;
+		}
+	}
+}
+
+ol {
+	margin: 1em 0;
+	padding-left: 0;
+	counter-reset: ordered-counter;
+
+	li {
+		position: relative;
+		padding-left: 3.5em;
+		margin-bottom: .5em;
+		list-style-type: none;
+
+		// Custom Numbers
+
+		&:before {
+			min-width: 2em;
+			padding: 0 0.4em 0 0;
+			display: inline-block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			.box-sizing(border-box);
+			border-right: 1px solid @color-text--lighter;
+			font-family: @font__h1--font-family;
+			content: counter(ordered-counter);
+			counter-increment: ordered-counter;
+			text-align: left;
+		}
+	}
+}
+
+// ------------------------------
+// #Block Quote
+// ------------------------------
+
+blockquote {
+	border: 1px solid @color-highlight--light;
+	color: @color__link--text;
+	position: relative;
+	padding: 30px;
+	margin: 2em 0;
+	font-style: italic;
+	font-family: @font__p--font-family;
+	font-size: @font__h4--font-size;
+	
+	.responsivecolumns & {
+		width: auto;
+		max-width: none;
+	}
+	
+	.columns-four-first &,
+	.columns-four-second &,
+	.columns-four-third &,
+	.columns-four-fourth & {
+		padding-right: 0;
+		
+		&:after {
+			display: none;
+		}
+	}
+}
+
+// ------------------------------
+// #Highlighted Text
+// ------------------------------
+
+::-moz-selection {
+    background: @color-highlight--lighter;
+}
+
+::selection {
+    background: @color-highlight--lighter;
+}

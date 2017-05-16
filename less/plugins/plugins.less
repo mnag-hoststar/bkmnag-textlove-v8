@@ -1,0 +1,128 @@
+// ----------------------------------------
+// Text Love: LESS > Plugins
+// ----------------------------------------
+//
+// #Tags and Categories
+// #Paginatinon
+// 
+// ----------------------------------------
+
+// ------------------------------
+// #Tags and Categories
+// ------------------------------
+	
+.post-category,
+.post-tags {
+	padding: 0;
+}
+
+.category-title,
+.tags-title {
+	//label;
+	padding: 0;
+}
+
+.tag-list {
+	
+	li {
+		padding: 0;
+		margin: 0;
+	}
+}
+
+.tag-list,
+.tag-item,
+.dietary-list {
+}
+
+a.category-link,
+a.tag-link,
+.dietary-item {
+	display: inline-block;
+	background: @color__button--background;
+	margin: 0;
+	padding: 0 10px;
+	line-height: 1.5em;
+	font-size: @font__p--font-size;
+	font-family: @font__p--font-family;
+	color: @color__button--text;
+	.border-radius(10px);
+	
+	.make-font-a-little-smaller(@font__h4--font-size, 0.7);
+	.make-font-smaller(@font__h4--font-size, 0.7);
+	.make-font-a-lot-smaller(@font__h4--font-size, 0.7, 0.6);
+}
+
+a.category-link,
+a.tag-link {
+	cursor: pointer;
+
+	&:hover {
+		background: @color__button--background--hover;
+	}
+
+}
+
+// ------------------------------
+// #Paginatinon
+// ------------------------------
+
+// Styles for both the Blog Post List
+// and the Ecommerce Product List.
+
+.ecomproductslist,
+.blogpostlist {
+	.pagination-list {
+		.display-flex(flex);
+		margin: 2em auto;
+	}
+
+	.pagination-item {
+		margin: 0;
+		padding: 0;
+	}
+
+	a.button--pagination {
+		.link-button;
+		
+		&:before {
+			margin-left: -0.3em;
+		}
+		
+		&:after {
+			margin-right: -0.3em;
+		}
+	}
+}
+
+// Styles only for the Blog Post List.
+
+.blogpostlist {
+	.pagination-list {
+		.justify-content(space-between);
+	}
+
+	.control-text {
+		@media @mobile {
+			display: none;
+		}
+	}
+
+	a.button--pagination {
+		.link-button;
+		
+		&:before {
+			font-size: 1em;
+			@media @mobile {
+				margin: 0.1em -0.2em 0 -0.2em;
+			}
+		}
+		
+		&:after {
+			font-size: 1em;
+			@media @mobile {
+				margin: 0.1em -0.3em 0 -0.1em;
+			}
+		}
+	}
+}

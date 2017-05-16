@@ -1,0 +1,74 @@
+// ----------------------------------------
+// Text Love: LESS > Widgets > Yelp Review
+// ----------------------------------------
+
+.yelpreview {
+	
+	&__review-item {
+		position: relative;
+	}
+	
+	&__review-header {
+		padding-top: 2.2em;
+	}
+	
+	&__review-title {
+		.heading--4;
+		padding: 0 1em 0 0;
+		.twitter__account-link--spacing();
+	}
+
+	&__author-label {
+    	letter-spacing: 1px;
+		font-size: 0.7em;
+		color: fade(@color__p--text, 50%);
+	}
+	
+	&__review-author {
+    	letter-spacing: 1px;
+		font-size: 0.8em;
+	}
+
+	&__review-list {
+		padding: 0;
+		margin: 0;
+	}
+
+	&__review-item {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	&__review-excerpt {
+		margin-bottom: 1em;
+		
+		.review-text {
+			padding-bottom: 0;
+			line-height: 1.5em;
+		}
+		.review-link {
+			a;
+			font-size: @font__p--font-size;
+
+			.make-font-a-little-smaller(@font__p--font-size);
+			.make-font-smaller(@font__p--font-size);
+			.make-font-a-lot-smaller(@font__p--font-size);
+		}
+	}
+
+	&__review-footer {
+		position: absolute;
+		top: 0;
+	}
+	
+	&__timestamp {
+		.timestamp-styles;
+		background-color: @color-text--lightest;
+		font-size: @font__p--font-size;
+
+		.make-font-a-little-smaller(@font__p--font-size);
+		.make-font-smaller(@font__p--font-size);
+		.make-font-a-lot-smaller(@font__p--font-size);
+	}
+}

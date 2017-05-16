@@ -1,0 +1,188 @@
+// ----------------------------------------
+// Text Love: LESS > Plugins > Blog > Blog Post
+// ----------------------------------------
+//
+// #Article
+// #Image
+// #Post Content
+// #Post Footer
+// #Post Timestamp
+// #Post Attributes
+// #Sharing Links
+//
+// ----------------------------------------
+
+// ------------------------------
+// #Article
+// ------------------------------
+
+.widget[data-name="blogpost"] {
+	padding: 0;
+
+	.blogpost {
+		width: auto;
+		max-width: none;
+	}
+}
+
+.blogpost__post-article {
+	position: relative;
+	margin-bottom: 2em;
+}
+
+// ------------------------------
+// #Image
+// ------------------------------
+
+.blogpost {
+	.image-link {
+		display: block;
+		padding-bottom: 30%;
+		background-position: center;
+		background-size: cover;
+		.border-radius(5px);
+
+		@media @tablet {
+			height: 60vw;
+			padding-bottom: 60%;
+		}
+		
+		// Using the background image instead.
+		
+		.image {
+			display: none;
+		}
+	}
+}
+
+// ------------------------------
+// #Post Content
+// ------------------------------
+
+.blogpost {
+	&__post-content,
+	&__post-footer {
+    }
+	&__post-content {
+		margin: 0;
+	}
+    &__post-header {
+        padding: 2em 0 1em;
+    }
+	&__post-body {
+		float: left;
+		width: 70%;
+		padding-right: 4em;
+	}
+    &__post-title {
+        margin: 0;
+        padding: 0;
+        .heading--1;
+    }
+}
+
+// ------------------------------
+// #Post Footer
+// ------------------------------
+
+.blogpost__post-footer {
+	float: right;
+	width: 30%;
+}
+
+// ------------------------------
+// #Post Timestamp
+// ------------------------------
+
+.blogpost__post-footer .timestamp {
+	padding-bottom: 1em;
+	border-bottom: 1px solid @color-text--lighter;
+	margin-bottom: 0;
+}
+
+// ------------------------------
+// #Post Attributes
+// ------------------------------
+
+.blogpost__post-attributes {
+	//display: table;
+	margin: 0;
+	position: relative;
+	
+	@media @mobile {
+		display: block;
+	}
+}
+
+// ------------------------------
+// #Post Category and Tags
+// ------------------------------
+
+.post-category, .post-tags {
+	padding: 1em 0;
+    border-bottom: 1px solid @color-text--lighter;
+	
+	@media @mobile {
+    	display: block;
+	}
+}
+
+.category-title, .tags-title {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.post-category {
+	
+	@media @mobile {
+    	padding: 0;
+	}
+}
+
+.tag-list {
+	vertical-align: bottom;
+}
+
+.post-tags {
+    width: 100%;
+	
+	@media @mobile {
+		margin-top: 1em;
+    	width: auto;
+	}
+}
+
+a.blogpost__category-link,
+a.blogpost__tag-link {
+    hyphens: none;
+}
+
+// ------------------------------
+// #Sharing Links
+// ------------------------------
+
+.blogpost__sharing-links {
+	margin-top: 1em;
+	.clearfix();
+}
+
+.blogpost__network-item {
+	display: inline-block;
+    margin-right: 1em;
+	padding: 0;
+	
+	@media @tablet {
+		display: block;
+    	margin-bottom: 1em;
+	}
+}
+
+.blogpost__button {
+	&:before {
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 22px;
+	}
+	&:hover:before {
+	}
+}

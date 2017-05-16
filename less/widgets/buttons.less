@@ -1,0 +1,191 @@
+// ----------------------------------------
+// Text Love: LESS > Widgets > Buttons
+// ----------------------------------------
+//
+// #Button
+// #Tweet Button
+// #Click to Call
+// #Dropbox
+// #Facebook Like
+// #Paypal
+// #Social Icons
+//
+// ----------------------------------------
+
+// -----------------------------
+// #Button
+// -----------------------------
+
+.button,
+.link-button,
+.tweet .button,
+.clicktocall .phone-number-link,
+a.ecomproduct__button,
+a.blogpostlist__read-more {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    padding: 10px 30px 7px;
+    text-transform: uppercase;
+    .appearance(none);
+	.transition (all, 0.5s, ease);
+    background-color: @color__button--background;
+	font-family: @font__button--font-family;
+	font-size: @font__button--font-size;
+	font-weight: @font__button--font-weight;
+	line-height: @font__button--line-height;
+	letter-spacing: @font__button--letter-spacing;
+    color: @color__button--text;
+
+	
+	.make-font-a-little-smaller(@font__button--font-size);
+	.make-font-smaller(@font__button--font-size);
+	.make-font-a-lot-smaller(@font__button--font-size);
+	
+    &:hover {
+        background-color: @color__button--background--hover;
+    	color: @color__button--text--hover;
+    	.transition (all, 0.5s, ease);
+    }
+	
+	//	Focus style for easier keyboard navigation
+	
+	&:focus {
+	//	border: 4px solid @color-highlight;
+	}
+	
+	//	Active style for when you press a button down
+	
+	&:active {
+	}
+}
+
+.button,
+.link-button,
+.tweet .button,
+.clicktocall .phone-number-link,
+.dropbox .button,
+.paypalbuynow .button {
+	&:before,
+	&:after {
+		font-size: 1.3em;
+		line-height: 1em;
+		font-weight: 400;
+		vertical-align: middle;
+	}
+	
+	&:before {
+		margin-right: 0.5em;
+	}
+	
+	&:after {
+		margin-left: 0.5em;
+	}
+}
+
+.link-button,
+.tweet .button,
+.clicktocall .phone-number-link {
+    display: table-cell;
+    vertical-align: middle;
+	
+	 &:hover {
+	}
+	&:active {
+	}
+}
+
+// -----------------------------
+// #Tweet Button
+// -----------------------------
+
+// -----------------------------
+// #Click to Call
+// -----------------------------
+
+.clicktocall .label {
+    margin-left: -0.5em;
+}
+
+// -----------------------------
+// #Dropbox
+// -----------------------------
+
+.dropbox {
+	display: table;
+}
+
+.dropbox__button,
+.dropbox__label {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.dropbox__label {
+	width: 100%;
+	padding-left: 1em;
+}
+
+// -----------------------------
+// #Facebook Like
+// -----------------------------
+
+
+// -----------------------------
+// #Paypal
+// -----------------------------
+
+
+// -----------------------------
+// #Social Icons
+// -----------------------------
+
+// The List of Social Icons
+
+.social-list {
+    margin: 0 -0.5em;
+}
+
+.social-item {
+	margin: 0.5em;
+	padding: 0;
+	width: 36px;
+	height: 36px;
+	&:hover {
+	}
+
+}
+
+.social-link {
+	display: block;
+	text-align: center;
+	line-height: 36px !important;
+	height: 36px;
+	width: 36px;
+	background: @color__button--background !important;
+	color: @color__button--text !important;
+	.transition (all, 0.5s, ease);
+	.border-radius(50%);
+
+	&:hover {
+		text-decoration: none;
+		background: @color__button--background--hover !important;
+		color: @color__button--text--hover !important;
+		.transition (all, 0.5s, ease);
+	}
+
+	// Icon
+
+	&:before {
+		margin: 0 auto;
+		padding: 0;
+		font-size: 1.3em;
+		display: block;
+	}
+}
+
+// The name of the button is not displayed.
+
+.socialicons__social-name {
+	display: none;
+}

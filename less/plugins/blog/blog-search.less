@@ -1,0 +1,49 @@
+// ----------------------------------------
+// Text Love: LESS > Plugins > Blog > Blog Search
+// ----------------------------------------
+//
+// #Conditional Mixins
+// #Legend
+// #Form Body
+//
+// ----------------------------------------
+
+// -----------------------------
+// #Conditional Mixins
+// -----------------------------
+
+// Conditional if the container background 
+// is not the same as the page background.
+
+.blogsearch-widget-background--spacing() when not (@color__blogsearch--background = @color__body--background) {
+	padding: 2em 0;
+}
+
+.widget[data-name="blogsearch"] {
+	.blogsearch-widget-background--spacing();
+	background-color: @color__blogsearch--background;
+}
+
+.widget[data-name="blogsearch"] .blogsearch {
+	width: auto;
+	max-width: none;
+}
+
+// -----------------------------
+// #Legend
+// -----------------------------
+
+.blogsearch__legend {
+	display: none;
+}
+	
+// -----------------------------
+// #Form Body
+// -----------------------------
+
+.blogsearch {
+	.signupform;
+}
+
+.blogsearch__form {
+}

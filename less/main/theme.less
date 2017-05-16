@@ -1,0 +1,192 @@
+// ----------------------------------------
+// Text Love: LESS > Main > Theme
+// ----------------------------------------
+// This contains all styles that are not
+// widgets.
+//
+// #Header
+// #Site Styles
+// #Header
+// #Page Styles
+// #Content
+// #Footer
+//
+// ----------------------------------------
+
+// ------------------------------
+// #Header
+// ------------------------------
+
+.template__header {
+	padding: 0 30px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 9999;
+	background-color: transparent;
+	border-bottom: 1px solid @color__header--border;
+	.header-border-removal();
+}
+
+.header__flexbox {
+	display: flex;
+	display: -webkit-flex;
+	-webkit-align-items: center;
+    align-items: center;
+    -webkit-align-self: center;
+    align-self: center;
+}
+
+.page--default {
+	.template__header {
+		position: relative;
+		background-color: @color__header--background;
+	}
+}
+
+
+// ------------------------------
+// #Site Styles
+// ------------------------------
+
+* {
+	.box-sizing(border-box);
+	margin: 0;
+    padding: 0;
+	
+	&:focus {
+		outline: none;
+	}
+}
+
+html, body {
+	font-smooth: always;
+	font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+    background-color: @color__body--background;
+
+    // First Layer Background / fixed image in Text Love / Test it!!!
+
+    background-attachment: fixed;
+	background-image: image('/images/main-bg.jpg');
+	background-size: cover;
+	background-position: center center;
+	
+	.make-font-a-little-smaller(@font__p--font-size);
+	.make-font-smaller(@font__p--font-size);
+	.make-font-a-lot-smaller(@font__p--font-size);
+	
+	// iOS fix of VH unit
+    width: -webkit-calc(100% - 0px);
+    overflow-x: hidden;
+}
+
+
+// Site Container
+.site-container {
+
+    @media @bp-global-above-fullwidth {
+    }
+}
+
+
+// HTML5 Semantic Elements
+article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
+	display: block;
+}
+
+// ------------------------------
+// #Page Styles
+// ------------------------------
+
+.page {}
+
+// ------------------------------
+// #Content
+// ------------------------------
+
+// Main
+
+.template__content {
+	padding: @header-height 0;
+	background-color: @color__container--background; 
+
+	@media @tablet-horizontal {
+		padding: @header-height*0.7 0;
+	}
+	@media @tablet {
+		padding: @header-height*0.6 0;
+	}
+	@media @mobile {
+		padding: @header-height*0.5 0;
+	}
+}
+
+// Container
+
+.container {
+	width: 90%;
+	max-width: 1200px;
+    margin: 0 auto;
+
+    @media @tablet {
+    }
+
+	@media @mobile {
+		width: 84%;
+	}
+}
+
+// ------------------------------
+// #Footer
+// ------------------------------
+
+.template__footer {
+    width: 100%;
+    background-color: @color__footer--background;
+    border-top: 10px solid @color__footer--border;
+    padding: 2em 0;
+	.footer-border-removal()
+	.container {
+	}
+	// Widget
+	.profile, .content {
+		opacity: .6;
+	}
+}
+
+.footerright {
+	text-align: right;
+}
+
+.footerleft {
+	text-align: left;
+}
+
+.footerright, .footerleft {
+	display: inline-block;
+	vertical-align: middle;
+	width: 49.5%;
+	@media @mobile {
+		width: 100%;
+		text-align: center;
+		padding: 10px 0;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

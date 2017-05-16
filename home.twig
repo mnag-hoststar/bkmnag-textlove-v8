@@ -1,0 +1,22 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<!-- Page Content Start -->
+<section class="page page--home">
+    {% include "includes/header.twig" %}
+    
+    {% include "includes/hero.twig" %}
+    
+    <!-- Zone Content Start -->
+    <div id="main-scroll" class="template__content">
+        <div class="container">
+            {{zone('main')|raw}}
+        </div>
+    </div>
+    <!-- Zone Content End -->
+
+</section>
+<!-- Page Content End -->
+
+{% endblock %}

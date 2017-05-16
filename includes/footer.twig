@@ -1,0 +1,14 @@
+<!-- Footer -->
+<footer class="template__footer">
+
+	<div class="container">
+		<div class="footerleft">
+			{{widget('profile', 'footerprofileleft', { 'profileType' : 'socialicons' })|raw}}
+		</div>
+		<div class="footerright">
+			{{widget('content', 'footercontentright1', {"content":"<h4>CONTACT</h4>"})|raw}}    
+			{{widget('profile', 'footerprofileright', { 'profileType':'copyright', 'copyright':'profile'})|raw}}
+		</div>
+	</div>
+
+</footer>
