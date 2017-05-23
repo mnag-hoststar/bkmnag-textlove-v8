@@ -161,7 +161,7 @@
             "font__p--font-weight" : "@font-swatch5-font-weight",
             "font__p--line-height" : "@font-swatch5-line-height",
             "font__p--letter-spacing" : "@font-swatch5-letter-spacing",
-            "color__p--text": "#5e626e"
+            "color__p--text": "#000"
         },
         "header": {
             "color__header--background" : "#f2f3f5",
@@ -217,6 +217,7 @@
             "color__slideshow-pagination-item--text--selected" : "#52bc90"
         },
         "feature": {
+            "color__feature--background" : "#fff",
             "font__feature-headline--font-family" : "@font-swatch8-font-family",
             "font__feature-headline--font-size" : "@font-swatch8-font-size",
             "font__feature-headline--font-weight" : "@font-swatch8-font-weight",
@@ -249,7 +250,8 @@
         "ecommerce": {
             "color__ecomproductslist-product-title--text" : "@color__p--text",
             "color__ecomproduct-title--text" : "@color__h2--text",
-            "color__ecomproduct-price--text" : "@color__p--text"
+            "color__ecomproduct-price--text" : "@color__p--text",
+            "color__ecomproductslist-product-item--background" : "#fff"
         }
     }
 }

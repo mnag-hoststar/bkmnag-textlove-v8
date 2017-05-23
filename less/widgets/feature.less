@@ -10,6 +10,8 @@
     .widget[data-widget-type="feature"] {
     	overflow: hidden;
 		padding: 0;
+        border-bottom: 1px solid @color__feature--background;
+        z-index: 3;
     }
 }
 
@@ -20,6 +22,9 @@
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 500px;
+    height: 100%;
+    height: 100vh;
+
 
     @media @tablet-horizontal {
         min-height: 400px;
@@ -42,6 +47,7 @@
     .display-flex(flex);
     .align-items(center, center);
 
+    height: 100%;
     min-height: 500px;
     padding: 30px;
     z-index: 1;
@@ -52,7 +58,6 @@
     @media @tablet {
     }
     @media @mobile {
-        height: auto;
     }
 
 }

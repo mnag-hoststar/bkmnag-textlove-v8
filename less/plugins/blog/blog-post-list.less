@@ -54,9 +54,7 @@
 
 .blogpostlist__post-article {
 	position: relative;
-	border-bottom: 1px dotted @color__p--text;
 	padding-bottom: 80px;
-	margin-bottom: 50px;
 	//.clearfix();
 	
 	@media @mobile {
@@ -73,9 +71,7 @@
     &__post-image {
         position: relative;
         overflow: hidden;
-        height: 0;
-		padding-bottom: 40%;
-		.border-radius(5px);
+        height: 200px;
     }
 	
     &__image-link {
@@ -116,7 +112,10 @@
 }
 
 a.blogpostlist__title-link {
-	//color: @color__h3--text;
+	color: @color__h3--text;
+	&:hover {
+		color: @color__link--text;
+	}
 }
 
 // Post Excerpt

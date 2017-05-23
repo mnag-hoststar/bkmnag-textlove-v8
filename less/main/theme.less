@@ -114,6 +114,10 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 .template__content {
 	padding: @header-height 0;
 	background-color: @color__container--background; 
+	min-height: 90vh;
+	position: relative;
+	z-index: 2;
+	margin-bottom: @header-height*2.1;
 
 	@media @tablet-horizontal {
 		padding: @header-height*0.7 0;
@@ -122,6 +126,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 		padding: @header-height*0.6 0;
 	}
 	@media @mobile {
+		margin-bottom: @header-height*4;
 		padding: @header-height*0.5 0;
 	}
 }
@@ -149,7 +154,10 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
     width: 100%;
     background-color: @color__footer--background;
     border-top: 10px solid @color__footer--border;
-    padding: 2em 0;
+    padding: @header-height*0.5 0;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
 	.footer-border-removal()
 	.container {
 	}

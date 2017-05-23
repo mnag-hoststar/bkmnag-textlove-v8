@@ -37,10 +37,9 @@
 .blogpost {
 	.image-link {
 		display: block;
-		padding-bottom: 30%;
+		height: 200px;
 		background-position: center;
 		background-size: cover;
-		.border-radius(5px);
 
 		@media @tablet {
 			height: 60vw;
@@ -64,15 +63,12 @@
 	&__post-footer {
     }
 	&__post-content {
-		margin: 0;
+		margin-bottom: 2em;
 	}
     &__post-header {
         padding: 2em 0 1em;
     }
 	&__post-body {
-		float: left;
-		width: 70%;
-		padding-right: 4em;
 	}
     &__post-title {
         margin: 0;
@@ -86,8 +82,6 @@
 // ------------------------------
 
 .blogpost__post-footer {
-	float: right;
-	width: 30%;
 }
 
 // ------------------------------
@@ -95,8 +89,7 @@
 // ------------------------------
 
 .blogpost__post-footer .timestamp {
-	padding-bottom: 1em;
-	border-bottom: 1px solid @color-text--lighter;
+	padding-bottom: .5em;
 	margin-bottom: 0;
 }
 
@@ -119,8 +112,7 @@
 // ------------------------------
 
 .post-category, .post-tags {
-	padding: 1em 0;
-    border-bottom: 1px solid @color-text--lighter;
+	padding: .5em 0;
 	
 	@media @mobile {
     	display: block;

@@ -39,14 +39,10 @@ a.category-link,
 a.tag-link,
 .dietary-item {
 	display: inline-block;
-	background: @color__button--background;
+	border: 1px solid @color__form--border;
 	margin: 0;
-	padding: 0 10px;
-	line-height: 1.5em;
-	font-size: @font__p--font-size;
-	font-family: @font__p--font-family;
-	color: @color__button--text;
-	.border-radius(10px);
+	padding: 3px 10px;
+	color: @color__link--text;
 	
 	.make-font-a-little-smaller(@font__h4--font-size, 0.7);
 	.make-font-smaller(@font__h4--font-size, 0.7);
@@ -58,7 +54,8 @@ a.tag-link {
 	cursor: pointer;
 
 	&:hover {
-		background: @color__button--background--hover;
+		color: darken(@color-highlight, 10%);
+		border: 1px solid @color-highlight;
 	}
 
 }
