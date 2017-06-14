@@ -36,6 +36,7 @@ a.blogpostlist__read-more {
 	line-height: @font__button--line-height;
 	letter-spacing: @font__button--letter-spacing;
     color: @color__button--text;
+	word-break: break-word;
 
 	
 	.make-font-a-little-smaller(@font__button--font-size);
@@ -86,10 +87,10 @@ a.blogpostlist__read-more {
 .link-button,
 .tweet .button,
 .clicktocall .phone-number-link {
-    display: table-cell;
+    //display: table-cell;
     vertical-align: middle;
 	
-	 &:hover {
+	&:hover {
 	}
 	&:active {
 	}
@@ -112,16 +113,15 @@ a.blogpostlist__read-more {
 // -----------------------------
 
 .dropbox {
-	display: table;
 }
 
 .dropbox__button,
 .dropbox__label {
-	display: table-cell;
 	vertical-align: middle;
 }
 
-.dropbox__label {
+.dropbox__label,
+.file-name__label {
 	width: 100%;
 	padding-left: 1em;
 }
