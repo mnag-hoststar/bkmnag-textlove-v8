@@ -1,4 +1,4 @@
-Nautical
+Text Love
 ====
 
-BaseKit's Nautical Template V8
+BaseKit's Text Love Template V8
