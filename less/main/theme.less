@@ -19,14 +19,19 @@
 
 .template__header {
 	padding: 0 30px;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
 	z-index: 9999;
 	background-color: transparent;
 	border-bottom: 1px solid @color__header--border;
+	.transition();
 	.header-border-removal();
+	
+	&--small {
+	    background-color: @color__container--background; 
+	}
 }
 
 .header__flexbox {

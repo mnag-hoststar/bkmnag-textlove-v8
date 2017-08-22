@@ -40,7 +40,21 @@
     font-size: 1em;
 	
 	&__logo-image {
-		//max-height: 50px;
+	    .transition();
+	    
+		.template__header--small & {
+			max-height: 2em;
+			width: auto !important;
+			height: auto !important;
+		}
+		
+		@media @tablet {
+			&, .template__header--small & {
+				max-height: 2.5em;
+				width: auto !important;
+				height: auto !important;
+			}
+		}
 	}
 }
 
@@ -127,7 +141,7 @@ html.nav-open {
 		position: absolute;
 		top: 30px;
 		right: 1em;
-		margin: 28px 20px;
+		margin: 18px 20px 28px 20px;
 		font-size: 26px;
 		text-indent: 10000px;
 		.transition(background, 0s, ease-in, 0.05s);
@@ -254,6 +268,7 @@ html.nav-open {
 
 .navigation-list {
 	padding: 1.5em 0;
+	.transition();
 	
     @media @tablet {
 		display: block;
@@ -261,6 +276,10 @@ html.nav-open {
 		max-width: 500px;
 		margin: 150px auto 0;
 		text-align: center;
+	}
+	    
+	.template__header--small & {
+    	padding: 0;
 	}
 }
 
