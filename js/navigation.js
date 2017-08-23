@@ -51,23 +51,21 @@ $( document ).ready(function() {
 	function resizeHeaderFooter() {
 		if ($(window).width() < 720) {
 			headerHeight = $('.template__header').outerHeight()+20;
-			footerHeight = $('.template__footer').outerHeight()+30;
 		} else {
 			headerHeight = $('.template__header').outerHeight()+30;
-			footerHeight = $('.template__footer').outerHeight()+60;
 		}
-
+		footerHeight = $('.template__footer').outerHeight()-1;
 		return headerHeight, footerHeight;
 	}
 
 	resizeHeaderFooter();
 	$('.template__content').css('padding-top', headerHeight +'px');
-	$('.default section.page').css('padding-bottom', footerHeight +'px');
+	$('.template__content').css('margin-bottom', footerHeight +'px');
 
 	$(window).resize(function() {
 		resizeHeaderFooter();
 		$('.template__content').css('padding-top', headerHeight +'px');
-		$('.default section.page').css('padding-bottom', footerHeight +'px');
+		$('.template__content').css('margin-bottom', footerHeight +'px');
 	});
 	
 	// ------------------------------

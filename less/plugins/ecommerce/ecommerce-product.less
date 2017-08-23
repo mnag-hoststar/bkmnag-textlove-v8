@@ -62,15 +62,6 @@
 // ------------------------------
 
 .product-image {
-	
-    @media @tablet-horizontal {
-    }
-    @media @tablet {
-    }
-
-    body.product-one-image & {
-		margin-left: 70px;
-    }
 
     &.no-image {
         display: none;
@@ -82,9 +73,13 @@
 		display: block;
 		width: 100%;
 		background-size: contain;
+	    background-color: @color__ecomproductslist-product-item--background;
 		background-position: center;
-		background-color: #fff;
 		height: 400px;
+		
+		&:hover {
+	        background-color: @color__ecomproductslist-product-item--background;
+		}
 
 		@media @tablet-horizontal {
 			padding: 20px;
@@ -93,10 +88,6 @@
 		@media @tablet {
 			padding: 10px;
 			height: 300px;
-		}
-		@media @mobile {
-			padding: 10px;
-			height: 200px;
 		}
 	}
 	
@@ -127,22 +118,11 @@
     .gallery-item {
         position: relative;
 		float: none;
-
-        @media @tablet-horizontal, @tablet {
-        }
-        @media @tablet-horizontal {
-        }
-        @media @tablet {
-        }
     }
 
     // Image Button
 
     .image-button {
-        @media @tablet-horizontal {
-        }
-        @media @tablet {
-        }
 
         // Image
 
@@ -236,6 +216,11 @@
         min-width: 100px;
         margin: 0 0.6em 0 0;
         float: left;
+        
+        @media @mobile {
+            width: 100%;
+            float: none;
+        }
 		
         // Label
 
@@ -249,6 +234,26 @@
             display: block;
             margin-bottom: 5px;
             text-transform: uppercase;
+        
+            @media @mobile {
+                margin-top: 2em;
+            }
+        }
+        
+        // Button
+        
+        button {
+            width: 100%;
+            margin-bottom: 1em;
+        }
+    }
+}
+
+.view-basket-wrap {
+    .button {
+        @media @mobile {
+            width: 100%;
+            text-align: center;
         }
     }
 }
