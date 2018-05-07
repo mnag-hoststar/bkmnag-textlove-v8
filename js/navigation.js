@@ -2,7 +2,6 @@
 // Text Love: JS > Navigation
 // -------------------------------------
 
-
 // ------------------------------
 // Changes to the header when it's not at the top of the page.
 // ------------------------------
@@ -17,12 +16,10 @@ $(window).on('scroll', function () {
 	}
 });
 
-
 // ------------------------------
 // Change the top padding of the content depending on how high
 // the navigation header and footer is.
 // ------------------------------
-
 
 var headerHeight;
 var footerHeight;
@@ -37,6 +34,9 @@ function resizeHeaderFooter() {
 	return headerHeight, footerHeight;
 }
 
+resizeHeaderFooter();
+$('.template__content').css('padding-top', headerHeight + 'px');
+$('.template__content').css('margin-bottom', footerHeight + 'px');
 
 $(window).resize(function () {
 	resizeHeaderFooter();
@@ -44,25 +44,21 @@ $(window).resize(function () {
 	$('.template__content').css('margin-bottom', footerHeight + 'px');
 });
 
-
 // ------------------------------
 // Feature Overlay Corrections
 // The overlay of the feature should be below the header.
 // ------------------------------
-
 
 $(window).resize(function () {
 	var headerHeight = $('.template__header').outerHeight();
 	var featureOverlayTopDistance = $('.widget[data-widget-type="feature"] .widget-overlay').attr('style', 'top: ' + headerHeight + 'px');
 });
 
-
-
 $(document).ready(function () {
+    
 	// ------------------------------
 	// Change navigation if it matches tablet size.
 	// ------------------------------
-
 
 	// Toggles class open to display/hide the whole navigation.
 
@@ -81,7 +77,6 @@ $(document).ready(function () {
 	$('.extendednavigation__navigation-toggle').click(function () {
 		$('html').toggleClass('nav-open');
 	});
-
 
 	// ------------------------------
 	// Hides other submenus when a main menu point with a submenu is clicked.
