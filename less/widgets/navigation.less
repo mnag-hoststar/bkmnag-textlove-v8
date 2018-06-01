@@ -32,6 +32,11 @@
 	.widget {
 		display: table-cell;
 		vertical-align: middle;
+		padding-left: 1em;
+		
+		@media @mobile {
+		    padding-left: 0;
+		}
 	}
 }
 
@@ -140,8 +145,8 @@ html.nav-open {
 		display: block;
 		position: absolute;
 		top: 30px;
-		right: 1em;
-		margin: 18px 20px 28px 20px;
+		right: 5%;
+		margin: 18px 0 28px;
 		font-size: 26px;
 		text-indent: 10000px;
 		.transition(background, 0s, ease-in, 0.05s);
@@ -164,10 +169,6 @@ html.nav-open {
 			margin-left: 0;
 			.transition-duration-2items(0.05s, 0.05s);
 			.transition-delay-2items(0.05s, 0s);
-
-			@media @mobile {
-				height: 2px;
-			}
 		}
 
 		// Top Bar
@@ -189,6 +190,10 @@ html.nav-open {
 				background-color: @color__navigation--text;
 			}
 		}
+	}
+
+	@media @mobile {
+	    right: 8%;
 	}
 
 	// Toggle Button Open

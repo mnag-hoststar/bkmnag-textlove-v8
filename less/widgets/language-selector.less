@@ -25,6 +25,7 @@
 	    position: fixed;
 		box-sizing: content-box;
 		width: 100%;
+	    .transition();
 	}
 
 	&.language-selector--light {
@@ -52,6 +53,11 @@
     	letter-spacing: @font__navigation--letter-spacing;
     	color: @color__navigation--text;
     }
+	
+	&.language-selector--small.language-selector--horizontal,
+	&.language-selector--small.language-selector--dropdown {
+	    background-color: @color__container--background; 
+	}
 }
 	
 // ------------------------------
@@ -62,8 +68,12 @@
     .language-selector.language-selector--horizontal &,
     .language-selector.language-selector--dropdown & {
 	    box-sizing: content-box;
-    	padding: @language-padding 0 @language-padding/2;
+    	padding: @language-padding 0 @language-padding;
 		margin: 0 30px;
+
+    	@media @mobile {
+		    margin: 0 10px;
+    	}
     }
     
     .language-selector.language-selector--horizontal & {
@@ -102,17 +112,12 @@
 		box-sizing: border-box;
 		margin: @language-padding @language-padding*2;
 		min-width: auto;
-	    max-width: 100%;
+	    max-width: calc(~"100% -" @language-padding*4);
         
         @media @tablet {
 		    margin: 0;
-    	    padding: @language-padding;
-	    	max-width: 100%;
+    	    padding: @language-padding 0;
         }
-		
-		@media @mobile {
-			width: 100%;
-		}
 	}
 	
 	.language-selector.language-selector--dropdown.language-selector--flag & {
@@ -156,7 +161,7 @@
 			
 			&--current {
 				&, &:hover {
-	                border: 1px solid @font-swatch6-color-hover;
+	                border: 1px solid @color__navigation--text--hover;
 				    background-color: darken(@color__navigation-list--background, 10%);
 				}
 			}
@@ -175,7 +180,7 @@
 			
 			&--current {
 				&, &:hover {
-	                border: 1px solid @font-swatch6-color-hover;
+	                border: 1px solid @color__navigation--text--hover;
 				    background-color: darken(@color__navigation-list--background, 10%);
 				}
 			}
@@ -251,7 +256,7 @@
 .language-selector__icon {
 	.language-selector & {
 		margin-right: 0;
-		padding: @language-padding 0 @language-padding/2;
+		padding: @language-padding 0 @language-padding;
 		min-height: @font__navigation--line-height;
 		box-sizing: content-box;
 		line-height: @font__navigation--line-height;
@@ -278,18 +283,19 @@
 	
 	.language-selector.language-selector--flag-text & {
 		display: inline-block;
-		padding: @language-padding 0 @language-padding/2 @language-padding;
+		padding: @language-padding 0 @language-padding @language-padding;
 	}
+	
 	.language-selector.language-selector--flag & {
 		padding: @language-padding 0;
 	}
 	.language-selector.language-selector--text & {
 		display: block;
-		padding: @language-padding 0 @language-padding/2 0;
+		padding: @language-padding 0 @language-padding 0;
 	}
 	
 	.language-selector .language-selector__item--current & {
-	    color: @font-swatch6-color-hover;
+	    color: @color__navigation--text--hover;
 	}
 	
 	.language-selector.language-selector--dropdown & {

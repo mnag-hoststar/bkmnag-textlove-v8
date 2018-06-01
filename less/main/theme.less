@@ -18,7 +18,6 @@
 // ------------------------------
 
 .template__header {
-	padding: 0 30px;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -28,6 +27,11 @@
 	border-bottom: 1px solid @color__header--border;
 	.transition();
 	.header-border-removal();
+	padding: 0 30px;
+
+	@media @mobile {
+		padding: 0 8%;
+	}
 	
 	&--small {
 	    background-color: @color__container--background; 
@@ -147,9 +151,6 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 	width: 90%;
 	max-width: 1200px;
     margin: 0 auto;
-
-    @media @tablet {
-    }
 
 	@media @mobile {
 		width: 84%;
