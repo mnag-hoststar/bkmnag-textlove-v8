@@ -169,9 +169,6 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
     position: fixed;
     bottom: 0;
     z-index: 1;
-	.footer-border-removal()
-	.container {
-	}
 	// Widget
 	.profile, .content {
 		opacity: .6;
@@ -193,6 +190,24 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 	@media @mobile {
 		width: 100%;
 		text-align: center;
-		padding: 10px 0;
 	}
+}
+
+.gdpr-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: @color__footer--background;
+	padding: 10px 5%;
+		
+	@media @mobile {
+		padding: 10px 8%;
+	}
+    
+    .gdpr-footer__link {
+		color: @color__p--text;
+		font-size: @font__p--font-size;
+		padding: 5px 10px;
+    }
 }

@@ -23,6 +23,7 @@ $(window).on('scroll', function () {
 
 var headerHeight;
 var footerHeight;
+var gdprHeight;
 
 function resizeHeaderFooter() {
 	if ($(window).width() < 720) {
@@ -31,17 +32,20 @@ function resizeHeaderFooter() {
 		headerHeight = $('.template__header').outerHeight() + 30;
 	}
 	footerHeight = $('.template__footer').outerHeight() - 1;
-	return headerHeight, footerHeight;
+	gdprHeight = $('.gdpr-footer').outerHeight() - 1;
+	return headerHeight, footerHeight, gdprHeight;
 }
 
 resizeHeaderFooter();
 $('.template__content').css('padding-top', headerHeight + 'px');
-$('.template__content').css('margin-bottom', footerHeight + 'px');
+$('.template__content').css('margin-bottom', footerHeight+gdprHeight + 'px');
+$('.template__footer').css('margin-bottom', gdprHeight + 'px');
 
 $(window).resize(function () {
 	resizeHeaderFooter();
 	$('.template__content').css('padding-top', headerHeight + 'px');
-	$('.template__content').css('margin-bottom', footerHeight + 'px');
+	$('.template__content').css('margin-bottom', footerHeight+gdprHeight + 'px');
+    $('.template__footer').css('margin-bottom', gdprHeight + 'px');
 });
 
 // ------------------------------
