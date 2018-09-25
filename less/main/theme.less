@@ -113,11 +113,6 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 	display: block;
 }
 
-// ------------------------------
-// #Page Styles
-// ------------------------------
-
-.page {}
 
 // ------------------------------
 // #Content
@@ -131,7 +126,6 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 	min-height: 90vh;
 	position: relative;
 	z-index: 2;
-	margin-bottom: @header-height*2.1;
 
 	@media @tablet-horizontal {
 		padding: @header-height*0.7 0;
@@ -166,12 +160,15 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
     background-color: @color__footer--background;
     border-top: 10px solid @color__footer--border;
     padding: @header-height*0.5 0;
-    position: fixed;
     bottom: 0;
     z-index: 1;
 	// Widget
 	.profile, .content {
 		opacity: .6;
+	}
+	.texteditor-toolbar-wrapper {
+	    position: static;
+	    
 	}
 }
 
