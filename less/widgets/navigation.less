@@ -167,22 +167,22 @@ html.nav-open {
 			background-color: @color__navigation--text;
 			margin-right: 0;
 			margin-left: 0;
-			.transition-duration-2items(0.05s, 0.05s);
-			.transition-delay-2items(0.05s, 0s);
+			.transition-duration(0.05s, 0.05s);
+			.transition-delay(0.05s, 0s);
 		}
 
 		// Top Bar
 		
 		&:before {
 			top: 0.4em;
-		  	.transition-property-2items(top, transform);
+		  	.transition-property(top, transform);
 		}
 
 		// Bottom Bar
 		
 		&:after {
 			bottom: 0.4em;
-			.transition-property-2items(bottom, transform);
+			.transition-property(bottom, transform);
 		}
 
 		&:hover {
@@ -209,7 +209,7 @@ html.nav-open {
 			
 			&:before,
 			&:after {
-			  .transition-delay-2items(0s, 0.05s);
+			  .transition-delay(0s, 0.05s);
 			}
 			
 			// Top Bar

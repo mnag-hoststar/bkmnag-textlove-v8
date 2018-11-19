@@ -96,7 +96,7 @@
 	transition: @property @duration @ease @delay;
 }
 
-.transition-property(@property) {
+.transition-property(@property...) {
 	-webkit-transition-property: @property;
 	-moz-transition-property: @property;
     -ms-transition-property: @property;
@@ -104,15 +104,7 @@
 	transition-property: @property;
 }
 
-.transition-property-2items(@property1, @property2) {
-	-webkit-transition-property: @property1, @property2;
-	-moz-transition-property: @property1, @property2;
-    -ms-transition-property: @property1, @property2;
-	-o-transition-property: @property1, @property2;
-	transition-property: @property1, @property2;
-}
-
-.transition-duration(@duration) {
+.transition-duration(@duration...) {
 	-webkit-transition-duration: @duration;
 	-moz-transition-duration: @duration;
     -ms-transition-duration: @duration;
@@ -120,28 +112,12 @@
 	transition-duration: @duration;
 }
 
-.transition-duration-2items(@duration1, @duration2) {
-	-webkit-transition-duration: @duration1, @duration2;
-	-moz-transition-duration: @duration1, @duration2;
-    -ms-transition-duration: @duration1, @duration2;
-	-o-transition-duration: @duration1, @duration2;
-	transition-duration: @duration1, @duration2;
-}
-
-.transition-delay(@delay) {
+.transition-delay(@delay...) {
 	-webkit-transition-delay: @delay;
 	-moz-transition-delay: @delay;
     -ms-transition-delay: @delay;
 	-o-transition-delay: @delay;
 	transition-delay: @delay;
-}
-
-.transition-delay-2items(@delay1, @delay2) {
-	-webkit-transition-delay: @delay1, @delay2;
-	-moz-transition-delay: @delay1, @delay2;
-    -ms-transition-delay: @delay1, @delay2;
-	-o-transition-delay: @delay1, @delay2;
-	transition-delay: @delay1, @delay2;
 }
 
 .transform(@rotate, @scale, @skew, @translate) {
