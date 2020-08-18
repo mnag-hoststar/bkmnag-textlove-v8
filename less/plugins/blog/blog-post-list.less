@@ -38,6 +38,12 @@
 	background-color: @color__blogpostlist--background;
 	.blogpostlist-article-background--spacing();
 	.blogpostlist-widget-background--spacing();
+
+    .style--light &,
+    .style--accent &,
+    .style--dark & {
+        background-color: transparent;
+    }
 }
 
 .blogpostlist__post-items {
@@ -109,12 +115,49 @@
 	.heading--3;
 	padding: 0;
 	margin-top: 1em;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 a.blogpostlist__title-link {
 	color: @color__h3--text;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
+
 	&:hover {
 		color: @color__link--text;
+
+        .style--light & {
+            color: @contrast--light;
+        }
+
+        .style--accent & {
+            color: @contrast--accent;
+        }
+
+        .style--dark & {
+            color: @contrast--dark;
+        }
 	}
 }
 
@@ -127,6 +170,18 @@ a.blogpostlist__title-link {
 .blogpostlist__post-excerpt p {
 	line-height: 1.5em;
 	color: lighten(@color__p--text, 8%);
+
+    .style--light & {
+        color: fade(@contrast--light, 80%);
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 80%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 80%);
+    }
 }
 
 // Read more
@@ -155,6 +210,18 @@ a.blogpostlist__read-more {
 	.timestamp {
 		margin: 2em 0 0;
 		font-size: @font__p--font-size*0.8;
+
+        .style--light & {
+            color: @contrast--light;
+        }
+
+        .style--accent & {
+            color: @contrast--accent;
+        }
+
+        .style--dark & {
+            color: @contrast--dark;
+        }
 	}
 }
 

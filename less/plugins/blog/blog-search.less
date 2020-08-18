@@ -22,6 +22,12 @@
 .widget[data-name="blogsearch"] {
 	.blogsearch-widget-background--spacing();
 	background-color: @color__blogsearch--background;
+
+    .style--light &,
+    .style--accent &,
+    .style--dark & {
+        background-color: transparent;
+    }
 }
 
 .widget[data-name="blogsearch"] .blogsearch {

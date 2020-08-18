@@ -32,6 +32,10 @@
 	@media @mobile {
 		padding: 0 8%;
 	}
+
+    .edit & {
+        position: absolute;
+    }
 	
 	&--small {
 	    background-color: @color__container--background; 
@@ -68,7 +72,7 @@
 	}
 }
 
-html, body {
+body {
 	font-smooth: always;
 	font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;
@@ -89,6 +93,13 @@ html, body {
 	
 	// iOS fix of VH unit
     width: -webkit-calc(100% - 0px);
+
+    @media @mobile {
+        overflow-x: hidden;
+    }
+}
+
+body:not(.edit) {
     overflow-x: hidden;
 }
 

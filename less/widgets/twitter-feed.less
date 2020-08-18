@@ -66,6 +66,12 @@
 	.twitter-body-background--spacing();
 	.twitter-widget-background--spacing();
 	background-color: @color__twitter--background;
+
+	.style--light &,
+    .style--accent &,
+    .style--dark & {
+        background-color: transparent;
+    }
 }
 
 // ------------------------------
@@ -83,6 +89,18 @@
 	position: relative;
 	padding: 1.5em;
 	border: 1px solid @color__form--border;
+
+	.style--light & {
+	    border-color: lighten(@color--accent, 30%);
+	}
+
+	.style--accent & {
+	    border-color: fade(@contrast--accent, 65%);
+	}
+
+	.style--dark & {
+	    border-color: fade(@contrast--dark, 65%);
+	}
 }
 
 // ------------------------------
@@ -109,13 +127,36 @@ a.twitter__account-link {
 	.make-font-a-little-smaller(@font__p--font-size);
 	.make-font-smaller(@font__p--font-size);
 	.make-font-a-lot-smaller(@font__p--font-size);
+
+	.style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 // ------------------------------
 // #Content
 // ------------------------------
 
-.tweet-content {
+.tweet-content a {
+	.style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 // ------------------------------
@@ -136,12 +177,23 @@ a.twitter__account-link {
 		text-transform: uppercase;
 		font-size: 0.7em;
 		color: fade(@color__p--text, 50%);
+
+		.style--light & {
+		    color: fade(@contrast--light, 50%);
+		}
+
+		.style--accent & {
+		    color: fade(@contrast--accent, 65%);
+		}
+
+		.style--dark & {
+		    color: fade(@contrast--dark, 65%);
+		}
 	}
 
     a {
 		border: none;
     	background-color: transparent;
-        color: fade(@color__p--text, 50%);
     }
 }
 
@@ -152,4 +204,16 @@ a.twitter__account-link {
     letter-spacing: 1px;
     text-transform: uppercase;
 	font-size: 0.8em;
+
+	.style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }

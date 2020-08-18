@@ -47,6 +47,21 @@ a.tag-link,
 	.make-font-a-little-smaller(@font__h4--font-size, 0.7);
 	.make-font-smaller(@font__h4--font-size, 0.7);
 	.make-font-a-lot-smaller(@font__h4--font-size, 0.7, 0.6);
+
+	.style--light & {
+		border-color: @color--accent;
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+    	border-color: @contrast--accent;
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+    	border-color: @contrast--dark;
+        color: @contrast--dark;
+    }
 }
 
 a.category-link,

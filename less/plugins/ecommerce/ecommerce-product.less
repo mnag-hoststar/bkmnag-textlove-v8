@@ -79,6 +79,18 @@
 		
 		&:hover {
 	        background-color: @color__ecomproductslist-product-item--background;
+
+            .style--light & {
+                background: @color--light;
+            }
+
+            .style--accent & {
+                background: @color--accent;
+            }
+
+            .style--dark & {
+                background: @color--dark;
+            }
 		}
 
 		@media @tablet-horizontal {
@@ -89,6 +101,18 @@
 			padding: 10px;
 			height: 300px;
 		}
+
+        .style--light & {
+            background: @color--light;
+        }
+
+        .style--accent & {
+            background: @color--accent;
+        }
+
+        .style--dark & {
+            background: @color--dark;
+        }
 	}
 	
 	// Image
@@ -111,6 +135,18 @@
     }
 
     @media @tablet, @mobile {
+    }
+
+    .style--light & {
+        border-color: lighten(@color--light, 20%);
+    }
+
+    .style--accent & {
+        border-color: lighten(@color--accent, 20%);
+    }
+
+    .style--dark & {
+        border-color: lighten(@color--dark, 20%);
     }
 
     // Gallery Item
@@ -156,6 +192,18 @@
     }
     @media @tablet {
         max-width: none;
+    }
+
+    .style--light & {
+        background: @color--light;
+    }
+
+    .style--accent & {
+        background: @color--accent;
+    }
+
+    .style--dark & {
+        background: @color--dark;
     }
 }
 
@@ -238,6 +286,18 @@
             @media @mobile {
                 margin-top: 2em;
             }
+
+            .style--light & {
+                color: @contrast--light;
+            }
+
+            .style--accent & {
+                color: @contrast--accent;
+            }
+
+            .style--dark & {
+                color: @contrast--dark;
+            }
         }
         
         // Button
@@ -274,6 +334,18 @@
         display: block;
         margin: 0 0 0.25em 0;
         font-size: 13px;
+
+        .style--light & {
+            color: fade(@contrast--light, 80%);
+        }
+
+        .style--accent & {
+            color: fade(@contrast--accent, 80%);
+        }
+
+        .style--dark & {
+            color: fade(@contrast--dark, 80%);
+        }
     }
 	
     // Product Category, Product Tags
