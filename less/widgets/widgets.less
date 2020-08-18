@@ -87,7 +87,7 @@
 */
 
 // Responsive Column Widgets
-.widget[data-name="responsivecolumns"] {
+#page-zones__main > .widget[data-name="responsivecolumns"] {
 
     // Widget
     .widget {
@@ -106,7 +106,7 @@
 }
 
 // Column
-.column {
+#page-zones__main > .widget[data-name="responsivecolumns"] .column {
     @media @mobile {
         margin-bottom: 30px;
 
@@ -160,6 +160,18 @@
 hr.line__rule {
 	height: 2px;
 	background-color: @color-highlight--light;
+
+    .style--light & {
+        color: fade(@color--accent, 50%);
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 50%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 50%);
+    }
 }
 
 // -----------------------------

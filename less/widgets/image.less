@@ -26,6 +26,12 @@
 .widget[data-name="image"] {
 	.image-widget-background--spacing();
 	background: @color__image--background;
+
+    .style--light &,
+    .style--accent &,
+    .style--dark & {
+        background-color: transparent;
+    }
 }
 
 // ------------------------------
@@ -49,13 +55,37 @@
 
 // Image Title
 
-.image-title {
+[data-name="image"] .image-title {
 	.heading--4;
 	color: @color__image-title--text;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 // Image Description
 
-.image-description {
+[data-name="image"] .image-description {
 	color: @color__image-description--text;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }

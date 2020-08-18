@@ -20,8 +20,10 @@
 .link-button,
 .tweet .button,
 .clicktocall .phone-number-link,
+.clicktocall .clicktocall__label,
 a.ecomproduct__button,
-a.blogpostlist__read-more {
+a.blogpostlist__read-more,
+a.contentgroup__link {
     cursor: pointer;
     position: relative;
     display: inline-block;
@@ -47,6 +49,21 @@ a.blogpostlist__read-more {
         background-color: @color__button--background--hover;
     	color: @color__button--text--hover;
     	.transition (all, 0.5s, ease);
+
+    	.style--light & {
+	        background-color: @color--dark;
+	        color: @contrast--dark;
+	    }
+
+	    .style--accent & {
+	        background-color: darken(@color--dark, 12%);
+	        color: @contrast--dark;
+	    }
+
+	    .style--dark & {
+	        background-color: darken(@color--accent, 12%);
+	        color: @contrast--accent;
+	    }
     }
 	
 	//	Focus style for easier keyboard navigation
@@ -59,6 +76,21 @@ a.blogpostlist__read-more {
 	
 	&:active {
 	}
+
+	.style--light & {
+        background-color: @color--accent;
+        color: @contrast--accent;
+    }
+
+    .style--accent & {
+        background-color: @color--dark;
+        color: @contrast--dark;
+    }
+
+    .style--dark & {
+        background-color: @color--accent;
+        color: @contrast--accent;
+    }
 }
 
 .button,
@@ -172,6 +204,21 @@ a.blogpostlist__read-more {
 		background: @color__button--background--hover !important;
 		color: @color__button--text--hover !important;
 		.transition (all, 0.5s, ease);
+
+		.style--light & {
+	        background-color: @color--dark!important;
+	        color: @contrast--dark!important;
+	    }
+
+	    .style--accent & {
+	        background-color: darken(@color--dark, 12%)!important;
+	        color: @contrast--dark!important;
+	    }
+
+	    .style--dark & {
+	        background-color: darken(@color--accent, 12%)!important;
+	        color: @contrast--accent!important;
+	    }
 	}
 
 	// Icon
@@ -182,6 +229,21 @@ a.blogpostlist__read-more {
 		font-size: 1.3em;
 		display: block;
 	}
+
+	.style--light & {
+        background-color: @color--accent!important;
+        color: @contrast--accent!important;
+    }
+
+    .style--accent & {
+        background-color: @color--dark!important;
+        color: @contrast--dark!important;
+    }
+
+    .style--dark & {
+        background-color: @color--accent!important;
+        color: @contrast--accent!important;
+    }
 }
 
 // The name of the button is not displayed.

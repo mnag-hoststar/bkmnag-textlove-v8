@@ -30,6 +30,18 @@
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 	padding: 0.5em 0;
+
+	.style--light & {
+	    color: @contrast--light;
+	}
+
+	.style--accent & {
+	    color: @contrast--accent;
+	}
+
+	.style--dark & {
+	    color: @contrast--dark;
+	}
 	
 	+ h2, + h3, + h4, + h5, + h6 {
 		padding-top: 0;
@@ -125,12 +137,24 @@ h6, .heading--6 {
 	.make-font-a-lot-smaller(@font__h4--font-size, 0.7, 0.6);
 }
 
-p, .paragraph, ul, ol, li {
+p, .paragraph, ul, ol, li, .contentgroup__body {
 	// This is already defined in the html tag.
 	
 	.make-font-a-little-smaller(@font__p--font-size);
 	.make-font-smaller(@font__p--font-size);
 	.make-font-a-lot-smaller(@font__p--font-size);
+
+	.style--light & {
+	    color: fade(@contrast--light, 80%);
+	}
+
+	.style--accent & {
+	    color: fade(@contrast--accent, 80%);
+	}
+
+	.style--dark & {
+	    color: fade(@contrast--dark, 80%);
+	}
 }
 
 // ------------------------------
@@ -150,12 +174,24 @@ u {
 // #Label
 // ------------------------------
 
-label, .label-text {
+label:not(.clicktocall__label), .label-text {
 	font-family: @font__h4--font-family;
 	font-size: 0.9em;
 	color: @color-text--faded;
 	word-wrap: normal;
     hyphens: none;
+
+    .style--light & {
+	    color: fade(@contrast--light, 60%)!important;
+	}
+
+	.style--accent & {
+	    color: fade(@contrast--accent, 60%)!important;
+	}
+
+	.style--dark & {
+	    color: fade(@contrast--dark, 60%)!important;
+	}
 }
 
 // ------------------------------
@@ -250,7 +286,7 @@ ul {
 	}
 }
 
-ol {
+.bk-zone ol {
 	margin: 1em 0;
 	padding-left: 0;
 	counter-reset: ordered-counter;
@@ -289,11 +325,26 @@ blockquote {
 	border: 1px solid @color-highlight--light;
 	color: @color__link--text;
 	position: relative;
-	padding: 30px;
+	padding: 30px!important;
 	margin: 2em 0;
 	font-style: italic;
 	font-family: @font__p--font-family;
 	font-size: @font__h4--font-size;
+
+	.style--light & {
+		border-color: @color--accent;
+	    color: @contrast--light;
+	}
+
+	.style--accent & {
+		border-color: @contrast--accent;
+	    color: @contrast--accent;
+	}
+
+	.style--dark & {
+		border-color: @color--accent;
+	    color: @contrast--dark;
+	}
 	
 	.responsivecolumns & {
 		width: auto;
