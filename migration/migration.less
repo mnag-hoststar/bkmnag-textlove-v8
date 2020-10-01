@@ -23,7 +23,8 @@
     }
 
     // Hides the header when in row moving mode
-    &.is-move-mode .template__header {
+    &.is-move-mode .template__header,
+    &.row-editing .template__header {
         display: none;
     }
 
@@ -77,10 +78,14 @@
 
     // Replaces main padding by moving this to the last widget in the zone
     #page-zones__main > .widget:not([data-name="row"]):last-child {
-        margin-bottom: 2em;        // Main padding bottom
+        padding-bottom: 4em;        // Main padding bottom
+
+        @media @tablet {
+            padding-bottom: 2.4em;
+        }
 
         @media @mobile {
-            margin-bottom: 1em;
+            padding-bottom: 1em;
         }
     }
 
