@@ -121,32 +121,44 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 .template__content {
 	padding: @header-height 0;
-	background-color: @color__container--background; 
 	min-height: 90vh;
+    background-color: @color__body--background;
 	position: relative;
 	z-index: 2;
+	padding: 5% 0;
 
-	@media @tablet-horizontal {
-		padding: @header-height*0.7 0;
-	}
 	@media @tablet {
-		padding: @header-height*0.6 0;
+		padding: 2.5% 0;
 	}
 	@media @mobile {
-		margin-bottom: @header-height*4;
-		padding: @header-height*0.5 0;
+		padding: 0;
 	}
 }
 
 // Container
 
+#migrated .empty-zone, #migrated #page-zones__main:empty,
+#migrated #page-zones__main > .widget:not([data-name="row"]),
+#migrated .row:not(.row--width-no-padding) .row__container, #migrated [data-widget-type="pagetitle"],
 .container {
 	width: 90%;
 	max-width: 1200px;
     margin: 0 auto;
+	padding: 20px;
+    box-sizing: border-box;
+	background-color: @color__container--background; 
+
+	header &,
+	footer & {
+		background-color: transparent;
+	}
+
+	@media @tablet {
+		width: 95%;
+	}
 
 	@media @mobile {
-		width: 84%;
+		width: 100%;
 	}
 }
 
