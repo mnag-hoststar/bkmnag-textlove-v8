@@ -5,6 +5,7 @@
 	"screenshot":"textlove-screenshot.jpg",
 	"templateType":"standard",
     "pageTypes": ["home"],
+    "versionTenCompatible": 1,
     "images":[
         "images/main-bg.jpg",
         "images/gallery/1.jpg",

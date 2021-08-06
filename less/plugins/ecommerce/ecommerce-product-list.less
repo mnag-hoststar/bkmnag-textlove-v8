@@ -169,6 +169,7 @@
     .button--submit {
 
         @media @tablet-horizontal {
+            height: 100%;
             width: 50px;
             text-indent: -9999px;
             display: block;
@@ -189,6 +190,18 @@
                 right: 0;
                 text-indent: 0;
                 margin-left: 0;
+
+                .style--light & {
+                    color: @contrast--accent;
+                }
+
+                .style--accent & {
+                    color: @contrast--dark;
+                }
+
+                .style--dark & {
+                    color: @contrast--accent;
+                }
             }
         }
         @media @mobile {
@@ -276,6 +289,18 @@
 			display: block;
 			margin-bottom: 5px;
 			text-transform: uppercase;
+
+            .style--light & {
+                color: lighten(@contrast--light, 30%);
+            }
+
+            .style--accent & {
+                color: lighten(@contrast--accent, 30%);
+            }
+
+            .style--dark & {
+                color: lighten(@contrast--dark, 30%);
+            }
 		}
 
 		// Select Wrap
@@ -309,6 +334,21 @@
     }
     @media @tablet {
         padding: 12px 20px;
+    }
+
+    .style--light & {
+        border-color: lighten(@color--light, 20%);
+        color: fade(@contrast--light, 80%);
+    }
+
+    .style--accent & {
+        border-color: lighten(@color--accent, 20%);
+        color: fade(@contrast--accent, 80%);
+    }
+
+    .style--dark & {
+        border-color: lighten(@color--dark, 20%);
+        color: fade(@contrast--dark, 80%);
     }
 }
 
@@ -373,6 +413,18 @@
 	margin-right: 1.5%;
 	background: @color__ecomproductslist-product-item--background;
 	margin-bottom: 1em;
+
+    .style--light & {
+        background: @color--light;
+    }
+
+    .style--accent & {
+        background: @color--accent;
+    }
+
+    .style--dark & {
+        background: @color--dark;
+    }
 
 	&:nth-child(3n+3) {
 		margin-right: 0;
@@ -442,6 +494,18 @@
     width: auto;
     height: auto;
     line-height: 1;
+
+    .style--light & {
+        background: @color--light;
+    }
+
+    .style--accent & {
+        background: @color--accent;
+    }
+
+    .style--dark & {
+        background: @color--dark;
+    }
 	
     .image {
         @media @mobile {
@@ -470,6 +534,18 @@
         padding-top: 0;
         border-top: none;
     }
+
+    .style--light & {
+        background: @color--light;
+    }
+
+    .style--accent & {
+        background: @color--accent;
+    }
+
+    .style--dark & {
+        background: @color--dark;
+    }
 }
 
 // Item Title
@@ -484,6 +560,18 @@
 
     .title-link {
         color: @color__ecomproductslist-product-title--text;
+
+        .style--light & {
+            color: @contrast--light;
+        }
+
+        .style--accent & {
+            color: @contrast--accent;
+        }
+
+        .style--dark & {
+            color: @contrast--dark;
+        }
     }
 }
 
@@ -494,6 +582,21 @@
 	padding: 3px 10px;
 	border: 1px solid @color__form--border;
 	color: @color__link--text;
+
+    .style--light & {
+        border-color: lighten(@color--accent, 30%);
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        border-color: fade(@contrast--accent, 65%);
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        border-color: fade(@contrast--dark, 65%);
+        color: @contrast--dark;
+    }
 }
 
 

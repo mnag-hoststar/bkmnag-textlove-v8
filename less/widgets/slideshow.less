@@ -124,11 +124,35 @@
 	.make-font-a-little-smaller(@font__h4--font-size);
 	.make-font-smaller(@font__h4--font-size);
 	.make-font-a-lot-smaller(@font__h4--font-size);
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 .responsiveslideshow__image-description {
 	color: @color__slideshow-description--text;
 	line-height: 1.3em;
+
+    .style--light & {
+        color: fade(@contrast--light, 80%);
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 80%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 80%);
+    }
 }
 
 // ------------------------------
@@ -240,13 +264,9 @@
 
 .responsiveslideshow__slide-pagination {
 	position: absolute;
-	bottom: -40px;
+	bottom: -20px;
 	width: 100%;
 	z-index: 1;
-
-	@media @tablet {
-		bottom: -50px;
-	}
 
 	.pagination-list {
 		text-align: center;
@@ -285,6 +305,21 @@
 			padding: 0;
 			.box-shadow(none);
 		}
+
+		.style--light & {
+            background-color: @color--light;
+            border-color: @color--accent;
+        }
+
+        .style--accent & {
+            background-color: @color--accent;
+            border-color: @contrast--accent;
+        }
+
+        .style--dark & {
+            background-color: @color--dark;
+            border-color: @contrast--dark;
+        }
 	}
 
 	&.selected .button {
@@ -292,5 +327,17 @@
 
 		@media @tablet {
 		}
+
+		.style--light & {
+            background: @color--accent;
+        }
+
+        .style--accent & {
+            background: @contrast--accent;
+        }
+
+        .style--dark & {
+            background: @contrast--dark;
+        }
 	}
 }

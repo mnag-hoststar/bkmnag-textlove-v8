@@ -57,6 +57,18 @@
 	margin-bottom: 1em;
 	color: @color__form-legend--text;
 	//background-color: transparent;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 // ------------------------------
@@ -118,6 +130,17 @@ textarea {
 	&:hover {
 		background-color: transparent;
     	border: 1px solid @color-highlight;
+
+        .style--light &,
+        .style--dark & {
+            background-color: @color--light;
+            border-color: @color--accent;
+        }
+
+        .style--accent & {
+            background-color: @color--light;
+            border-color: @contrast--accent;
+        }
 	}
 	
 	// Focus style for easier keyboard navigation
@@ -126,7 +149,40 @@ textarea {
 		background-color: @color__form--background;
 		border: 1px solid @color-highlight;
 		.box-shadow(none);
+
+        .style--light & {
+            background-color: @color--light;
+            border-color: @color--accent;
+            color: @contrast--light;
+        }
+
+        .style--accent & {
+            background-color: @color--light;
+            border-color: @contrast-accent;
+            color: @contrast--light;
+        }
+
+        .style--dark & {
+            background-color: @color--light;
+            border-color: @color--accent;
+            color: @contrast--light;
+        }
 	}
+
+    .style--light & {
+        border-color: lighten(@color--accent, 30%);
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        border-color: fade(@contrast--accent, 65%);
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        border-color: fade(@contrast--dark, 65%);
+        color: @contrast--dark;
+    }
 }
 
 // Single Line Inputs
@@ -151,20 +207,69 @@ textarea {
 
 ::-webkit-input-placeholder {
    color: @color-text--light;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+   .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 :-moz-placeholder { /* Firefox 18- */
    color: @color-text--light;
+
+   .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+   .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
    color: @color-text--light;
+
+   .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+   .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 :-ms-input-placeholder {
    color: @color-text--light;
+
+   .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+   .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
+input:hover,
 input:focus {
     &::-webkit-input-placeholder {
         color: transparent;
@@ -198,6 +303,18 @@ input:focus {
 		label[for*="input--terms"] span a.form__link {
 			.paragraph;
 			line-height: 1.3em;
+
+            .style--light & {
+                color: @contrast--light;
+            }
+
+            .style--accent & {
+                color: @contrast--accent;
+            }
+
+            .style--dark & {
+                color: @contrast--dark;
+            }
 		}
 
 		input[type="radio"],
@@ -216,10 +333,37 @@ input:focus {
 			&:hover + label:before {
 				border: 1px solid transparent;
 				background-color: fade(@color__form--background, 75%);
+
+                .style--light & {
+                    background-color: transparent;
+                    border-color: fade(@color--accent, 65%);
+                }
+
+                .style--accent & {
+                    background-color: transparent;
+                    border-color: fade(@contrast--accent, 65%);
+                }
+
+                .style--dark & {
+                    background-color: transparent;
+                    border-color: fade(@contrast--accent, 65%);
+                }
 			}
 
 			&:checked + label:before {
 				border: 1px solid @color__button--background;
+
+                .style--light & {
+                    border-color: @color--accent;
+                }
+
+                .style--accent & {
+                    border-color: @contrast--accent;
+                }
+
+                .style--dark & {
+                    border-color: @contrast--dark;
+                }
 			}
 
 			&:checked + label:after {
@@ -229,8 +373,22 @@ input:focus {
 			&:focus + label:before,
 			&:focus:checked + label:before {
 				border: 1px solid @color-highlight--light;
+
+                .style--light & {
+                    border-color: @color--accent;
+                }
+
+                .style--accent & {
+                    border-color: @contrast--accent;
+                }
+
+                .style--dark & {
+                    border-color: @contrast--dark;
+                }
 			}
 		}
+
+
 
 		.option-item--radio,
 		.option-item--checkbox,
@@ -256,13 +414,26 @@ input:focus {
 				&:before {
 					content: " ";
 					position: absolute;
-					//top: 0.7em;
-					left: -40px;
-					width: 22px;
-					height: 22px;
-					//margin-top: -0.8em;
 					background-color: @color__form--background;
 					border: 1px solid transparent;
+                    left: -40px;
+                    width: 22px;
+                    height: 22px;
+
+                    .style--light & {
+                        background-color: transparent;
+                        border-color: fade(@color--accent, 65%);
+                    }
+
+                    .style--accent & {
+                        background-color: transparent;
+                        border-color: fade(@contrast--accent, 65%);
+                    }
+
+                    .style--dark & {
+                        background-color: transparent;
+                        border-color: fade(@contrast--accent, 65%);
+                    }
 				}
 
 				&:after {
@@ -288,22 +459,73 @@ input:focus {
 					height: 20px;
 					//margin-top: -0.8em;
 					.transform-scale(0.5);
+
+                    .style--light & {
+                        background-color: @color--accent;
+                    }
+
+                    .style--accent & {
+                        background-color: @contrast--accent;
+                    }
+
+                    .style--dark & {
+                        background-color: @contrast--dark;
+                    }
 				}
 			}
 		}
 
-		.option-item--checkbox,
-		&[class*="form-group"] {
+        &[class*="form-group"],
+		.option-item--checkbox {
 			label {
 				&:after {
-					content: "\f00c";
-					font-family: 'FontAwesome', sans-serif;
 					color: @color__button--background;
+                    content: "\f00c";
+                    font-family: 'FontAwesome', sans-serif;
 					left: -36px;
 					top: 1px;
+
+                    .style--light & {
+                        color: @color--accent;
+                    }
+
+                    .style--accent & {
+                        color: @contrast--accent;
+                    }
+
+                    .style--dark & {
+                        color: @contrast--dark;
+                    }
 				}
 			}
 		}
+
+        &[class*="form-group"] label {
+            @media only screen and (max-width: 1024px) {
+                &:after {
+                    content: "";
+                    left: -32px;
+                    top: -1px;
+
+                    .style--light & {
+                        border-color: @contrast--light;
+                    }
+
+                    .style--accent & {
+                        border-color: @contrast--accent;
+                    }
+
+                    .style--dark & {
+                        border-color: @contrast--dark;
+                    }
+                }
+
+                &:before {
+                    height: 35px;
+                    width: 35px
+                }
+            }
+        }
 	}
 	
 	[class*="form-group--terms"] {
@@ -342,6 +564,18 @@ input:focus {
         margin-top: -0.5em;
         z-index: 1;
 
+        .style--light & {
+            color: @contrast--light;
+        }
+
+        .style--accent & {
+            color: @contrast--accent;
+        }
+
+        .style--dark & {
+            color: @contrast--dark;
+        }
+
 		@media @mobile {
 			font-size: 2em;
 		}
@@ -368,17 +602,55 @@ input:focus {
     &:hover {
 		background-color: transparent;
     	border: 1px solid @color-highlight;
+
+        .style--light & {
+            border-color: @color--accent;
+        }
+
+        .style--accent & {
+            border-color: @contrast--accent;
+        }
+
+        .style--dark & {
+            border-color: @contrast--dark;
+        }
     }
 
-    &:focus {
-		background-color: @color__form--background;
-		border: 1px solid @color-highlight;
-	}
-	
+    &:focus,
 	&:hover:focus {
 		background-color: @color__form--background;
 		border: 1px solid @color-highlight;
+
+        .style--light & {
+            background-color: @color--light;
+            border-color: @color--accent;
+        }
+
+        .style--accent & {
+            background-color: @color--light;
+            border-color: @contrast--accent;
+        }
+
+        .style--dark & {
+            background-color: @color--light;
+            border-color: @contrast--dark;
+        }
 	}
+
+    .style--light & {
+        border-color: lighten(@color--accent, 30%);
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        border-color: fade(@contrast--accent, 65%);
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        border-color: fade(@contrast--dark, 65%);
+        color: @contrast--dark;
+    }
 }
 
 .select::-ms-expand {
