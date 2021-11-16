@@ -1,8 +1,4 @@
-// ----------------------------------------
 // Text Love: LESS > Widgets > Feature
-// ----------------------------------------
-//
-// ----------------------------------------
 
 // Hero
 
@@ -57,10 +53,6 @@
     @media @tablet-horizontal {
         min-height: 400px;
     }
-    @media @tablet {
-    }
-    @media @mobile {
-    }
 
 }
 
@@ -88,10 +80,12 @@
     margin: 15px 0;
     padding: 0;
     color: @color__feature-headline--text;
+
     @media @tablet {
         font-size: @font__feature-headline--font-size * 0.8;
         line-height: @font__feature-headline--line-height * 0.8;
     }
+
     @media @mobile {
         font-size: @font__feature-headline--font-size * 0.5;
         line-height: @font__feature-headline--line-height * 0.5;
@@ -104,10 +98,12 @@
     margin: 15px 0;
     padding: 0;
     color: @color__feature-strapline--text;
+
     @media @tablet {
         font-size: @font__feature-strapline--font-size * 0.9;
         line-height: @font__feature-strapline--line-height * 0.9;
     }
+
     @media @mobile {
         font-size: @font__feature-strapline--font-size * 0.8;
         line-height: @font__feature-strapline--line-height * 0.8;
@@ -148,9 +144,11 @@
     @media @tablet-horizontal {
         top: 700px;
     }
+
     @media @tablet {
         top: 600px;
     }
+
     @media @mobile {
         display: none;
     }
@@ -172,14 +170,19 @@
 .arrow-bounce {
     -webkit-animation-name: bounce;
     -moz-animation-name: bounce;
+    animation-name: bounce;
     -webkit-animation-duration: .7s;
     -moz-animation-duration: .7s;
+    animation-duration: .7s;
     -webkit-animation-iteration-count: infinite;
     -moz-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
     -webkit-animation-direction: alternate;
     -moz-animation-direction: alternate;
+    animation-direction: alternate;
     -webkit-animation-timing-function: eaze-in-out;
     -moz-animation-timing-function: eaze-in-out;
+    animation-timing-function: eaze-in-out;
 }
 
 // Bounce Keyframes

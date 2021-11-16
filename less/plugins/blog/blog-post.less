@@ -1,20 +1,6 @@
-// ----------------------------------------
 // Text Love: LESS > Plugins > Blog > Blog Post
-// ----------------------------------------
-//
-// #Article
-// #Image
-// #Post Content
-// #Post Footer
-// #Post Timestamp
-// #Post Attributes
-// #Sharing Links
-//
-// ----------------------------------------
 
-// ------------------------------
-// #Article
-// ------------------------------
+// Article
 
 .widget[data-name="blogpost"] {
 	padding: 0;
@@ -30,9 +16,7 @@
 	margin-bottom: 2em;
 }
 
-// ------------------------------
-// #Image
-// ------------------------------
+// Image
 
 .blogpost {
 	.image-link {
@@ -54,22 +38,17 @@
 	}
 }
 
-// ------------------------------
-// #Post Content
-// ------------------------------
+// Post Content
 
 .blogpost {
-	&__post-content,
-	&__post-footer {
-    }
 	&__post-content {
 		margin-bottom: 2em;
 	}
+
     &__post-header {
         padding: 2em 0 1em;
     }
-	&__post-body {
-	}
+
     &__post-title {
         margin: 0;
         padding: 0;
@@ -77,25 +56,14 @@
     }
 }
 
-// ------------------------------
-// #Post Footer
-// ------------------------------
-
-.blogpost__post-footer {
-}
-
-// ------------------------------
-// #Post Timestamp
-// ------------------------------
+// Post Timestamp
 
 .blogpost__post-footer .timestamp {
 	padding-bottom: .5em;
 	margin-bottom: 0;
 }
 
-// ------------------------------
-// #Post Attributes
-// ------------------------------
+// Post Attributes
 
 .blogpost__post-attributes {
 	//display: table;
@@ -107,9 +75,7 @@
 	}
 }
 
-// ------------------------------
-// #Post Category and Tags
-// ------------------------------
+// Post Category and Tags
 
 .post-category, .post-tags {
 	padding: .5em 0;
@@ -149,9 +115,7 @@ a.blogpost__tag-link {
     hyphens: none;
 }
 
-// ------------------------------
-// #Sharing Links
-// ------------------------------
+// Sharing Links
 
 .blogpost__sharing-links {
 	margin-top: 1em;
@@ -174,7 +138,5 @@ a.blogpost__tag-link {
 		display: inline-block;
 		vertical-align: middle;
 		font-size: 22px;
-	}
-	&:hover:before {
 	}
 }

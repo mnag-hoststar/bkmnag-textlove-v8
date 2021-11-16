@@ -1,22 +1,8 @@
-// ----------------------------------------
 // Text Love: LESS > Widgets > Language Selector
-// ----------------------------------------
-//
-// #General styles
-// #Inner
-// #List
-// #Item
-// #Link
-// #Icon
-// #Name
-//
-// ----------------------------------------
 
 @language-padding: 0.5em;
 
-// ------------------------------
-// #General styles
-// ------------------------------
+// General styles
 
 .language-selector {
 	&.language-selector--horizontal,
@@ -60,9 +46,7 @@
 	}
 }
 	
-// ------------------------------
-// #Inner
-// ------------------------------
+// Inner
 
 .language-selector__inner {
     .language-selector.language-selector--horizontal &,
@@ -90,6 +74,7 @@
             display: block;
     	    height: @font__navigation--line-height+2;
     	}
+
     	&:after {
     	    content: "";
             display: block;
@@ -98,9 +83,7 @@
 	}
 }
 
-// ------------------------------
 // List
-// ------------------------------
 
 .language-selector__list {
     .language-selector & {
@@ -131,9 +114,7 @@
 	}
 }
 
-// ------------------------------
 // Item
-// ------------------------------
 
 .language-selector__item {
 	.language-selector.language-selector--light &,
@@ -212,9 +193,7 @@
 	}
 }
 
-// ------------------------------
 // Link
-// ------------------------------
 
 .language-selector__link {
 	.language-selector & {
@@ -253,9 +232,7 @@
 	}
 }
 
-// ------------------------------
 // Icon
-// ------------------------------
 
 .language-selector__icon {
 	.language-selector & {
@@ -265,9 +242,11 @@
 		box-sizing: content-box;
 		line-height: @font__navigation--line-height;
 	}
+
 	.language-selector.language-selector--flag-text & {
 		margin: 0;
 	}
+
 	.language-selector.language-selector--dropdown.language-selector--flag-text & {
 		float: left;
 		box-sizing: border-box;
@@ -275,9 +254,7 @@
 	}
 }
 
-// ------------------------------
 // Name
-// ------------------------------
 
 .language-selector__name,
 .language-selector__localised-name {
@@ -293,6 +270,7 @@
 	.language-selector.language-selector--flag & {
 		padding: @language-padding 0;
 	}
+	
 	.language-selector.language-selector--text & {
 		display: block;
 		padding: @language-padding 0 @language-padding 0;

@@ -1,32 +1,17 @@
-// ----------------------------------------
 // Text Love: LESS > Plugins > Ecommerce > Basket Summary
-// ----------------------------------------
-// 
-// #Variables
-// #Title
-// #Table
-// #Button
-// 
-// ----------------------------------------
 
-// ------------------------------
-// #Variables
-// ------------------------------
+// Variables
 
 @basketsummary-medium: ~"only screen and (max-width: 680px)";
 
-// ------------------------------
-// #Title
-// ------------------------------
+// Title
 
 .summary-title {
     padding-bottom: .5em;
     border-bottom: 5px solid fade(@color__p--text, 20%);
 }
 
-// ------------------------------
-// #Table
-// ------------------------------
+// Table
 
 .summary-table {
     border-collapse: separate;
@@ -151,10 +136,6 @@
             padding: 1em;
             border: none;
             text-align: center;
-            // Pseudo Label - LESS Framework
-
-            &:before {
-            }
         }
     }
 	
@@ -193,6 +174,7 @@
 
 	.cell--price, .cell--total {
         text-align: right;
+
 		@media @basketsummary-medium, @mobile {
             float: left;
             width: 50%;
@@ -206,7 +188,6 @@
 
     }
     .cell--price {
-		
         @media @basketsummary-medium, @mobile {
             text-align: left;
             clear: left;
@@ -257,17 +238,12 @@
 	}
 }
 
-// ------------------------------
-// #Button
-// ------------------------------
+// Button
 
 .summary-form {
     text-align: right;
 
     @media @basketsummary-medium, @mobile {
         text-align: center;
-    }
-
-    .button--submit {
     }
 }

@@ -1,18 +1,6 @@
-// ----------------------------------------
 // Text Love: LESS > Main > Messages
-// ----------------------------------------
-// 
-// #Variables
-// #General Messages
-// #Form Messages
-// #Basekit Messages
-// #Cookie Message
-// 
-// ----------------------------------------
 
-// ------------------------------
-// #Variables
-// ------------------------------
+// Variables
 
 @message-color--standard: #64676e;
 @message-color--error: #f6533d;
@@ -21,11 +9,7 @@
 @message-color--success: #8ec048;
 @message-color--not-found: #64676e;
 
-// ------------------------------
-// #General Messages
-// ------------------------------
-
-// Overall message styling
+// General Messages
 
 .message {
     position: relative;
@@ -34,8 +18,6 @@
     margin: 1em auto;
 	min-height: 3em;
     .clearfix();
-
-    // Message Heading, Paragraph
 
     h3, p {
         margin: 0;
@@ -62,19 +44,13 @@
 		.make-font-a-lot-smaller(@font__p--font-size);
 	}
 
-    // Consequetive Paragraphs
-
     p + p {
         margin-top: 0.35em;
     }
 
-    // Strong text
-
     strong {
         font-weight: bold;
     }
-
-    // Icon
 
     &:before {
         font-family: 'FontAwesome', sans-serif;
@@ -97,9 +73,7 @@
 .message--error {
 	background-color: @message-color--error;
 
-	// Icon
 	&:before {
-		// Exclamation circle
 		content: "\f12a";
 	}
 }
@@ -109,9 +83,7 @@
 .message--warning {
 	background-color: @message-color--warning;
 
-	// Icon
 	&:before {
-		// Exclamation triangle
 		content: "\f071";
 	}
 }
@@ -121,9 +93,7 @@
 .message--information {
 	background-color: @message-color--information;
 
-	// Icon
 	&:before {
-		// Circled i
 		content: "\f129";
 	}
 }
@@ -133,9 +103,7 @@
 .message--success {
 	background-color: @message-color--success;
 
-	// Icon
 	&:before {
-		// Check mark
 		content: "\f00c";
 	}
 }
@@ -145,9 +113,7 @@
 .message--not-found {
 	background-color: @message-color--not-found;
 
-	// Icon
 	&:before {
-		// Magnifying glass
 		content: "\f002";
 	}
 }
@@ -158,9 +124,7 @@
     margin: 0;
 }
 
-// ------------------------------
-// #Form Messages
-// ------------------------------
+// Form Messages
 
 .overlay.success .message-box {
     .message;
@@ -173,13 +137,9 @@
     .message--warning;
 }
 
-// ------------------------------
-// #Basekit Messages
-// ------------------------------
+// Basekit Messages
 
-// ------------------------------
-// #Cookie Message
-// ------------------------------
+// Cookie Message
 
 .bk-cookie-container {
 	display: table;

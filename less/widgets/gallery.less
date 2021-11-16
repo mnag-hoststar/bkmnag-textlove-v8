@@ -1,32 +1,14 @@
-// ----------------------------------------
 // Text Love: LESS > Widgets > Gallery
-// ----------------------------------------
-//
-// #Conditional Mixins
-// #Whole Gallery
-// #Single Gallery Item
-// #Image
-// #Caption
-//
-// ----------------------------------------
 
-// ------------------------------
-// #Conditional Mixins
-// ------------------------------
-
-// Conditional if the gallery background 
-// is not the same as the page background.
+// Conditional Mixins
 
 .gallery-widget-background--spacing() when not (@color__gallery--background = @color__body--background) {
 	padding: 2em 0;
 }
 
-// ------------------------------
-// #Whole Gallery
-// ------------------------------
+// Whole Gallery
 
 .widget[data-name="gallery"] {
-	//.gallery-widget-background--spacing();
 	background: @color__gallery--background;
 }
 
@@ -35,9 +17,7 @@
 	.inline-block-font-hack();
 }
 
-// ------------------------------
-// #Single Gallery Item
-// ------------------------------
+// Single Gallery Item
 
 .gallery__gallery-item {
 	position: relative;
@@ -57,9 +37,7 @@
 	}
 }
 
-// ------------------------------
-// #Image
-// ------------------------------
+// Image
 
 .gallery__figure {
     position: absolute;
@@ -69,7 +47,6 @@
     right: 10px;
 	
 	&:hover {
-		
 		& > .gallery__caption {
 			opacity: 1;
 			background-color: fade(@color__gallery-caption--background, 80%);
@@ -97,9 +74,7 @@ a.gallery__image-link {
 	display: none;
 }
 
-// ------------------------------
-// #Caption
-// ------------------------------
+// Caption
 
 .gallery__caption {
 	display: table;

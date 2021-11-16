@@ -1,19 +1,6 @@
-// ----------------------------------------
 // Text Love: LESS > Widgets > Navigation
-// ----------------------------------------
-//
-// #Logo & Company Name
-// #Navigation
-// #Navigation Toggle Button
-// #Navigation Body
-// #Navigation List
-// #Navigation Items
-//
-// ----------------------------------------
 
-// ------------------------------
-// #Logo & Company Name
-// ------------------------------
+// Logo & Company Name
 
 .template__company {
 	-webkit-flex: 1;
@@ -86,9 +73,7 @@
 	}
 }
 
-// ------------------------------
-// #Navigation
-// ------------------------------
+// Navigation
 
 
 html.nav-open {
@@ -99,6 +84,7 @@ html.nav-open {
 	-webkit-flex: 1;
 	-ms-flex: 1; 
     flex: 1;
+	
     @media @tablet {
 		-webkit-flex: 1;
 		-ms-flex: 1;   
@@ -107,11 +93,6 @@ html.nav-open {
 }
 
 .widget[data-widget-type="extendednavigation"] {
-	//padding: 0;
-	//position: static;
-	&.open {
-		
-	}
 	@media @tablet {
 		position: absolute;
 		top: 0;
@@ -122,19 +103,12 @@ html.nav-open {
 	}
 }
 
-// ------------------------------
-// #Navigation Toggle Button
-// ------------------------------
-
 // Navigation Toggle Button
-// It only appears on tablet and mobile sizes.
 
 .navigation-toggle {
 	display: none;
 	
 	@media @tablet {
-		
-		// Displays as Icon's Middle Bar
 		z-index: 100;
 		cursor: pointer;
 		background: @color__navigation--text;
@@ -232,16 +206,10 @@ html.nav-open {
 	}
 }
 
-// ------------------------------
-// #Navigation Body
-// ------------------------------
-
-// Dark overlay on tablet and mobile.
+// Navigation Body
 
 .navigation-body {
 	.transition(opacity, 0s);
-	
-	// This is only shown in Tablet and Mobile
 	
 	@media @tablet {
 		outline: 0;
@@ -249,8 +217,6 @@ html.nav-open {
 		width: 0;
 		opacity: 0;
 		display: none;
-		
-		// When Navigation is open
 
 		.open & {
 			display: block;
@@ -266,10 +232,7 @@ html.nav-open {
 	}
 }
 
-
-// ------------------------------
-// #Navigation List
-// ------------------------------
+// Navigation List
 
 .navigation-list {
 	padding: 1.5em 0;
@@ -288,11 +251,7 @@ html.nav-open {
 	}
 }
 
-// ------------------------------
-// #Navigation Items
-// ------------------------------
-
-// Navigation Normal Item
+// Navigation Items
 
 .navigation-item {
 	margin-bottom: 0;
@@ -320,10 +279,6 @@ html.nav-open {
 			font-size: @font__navigation--font-size * 1.2;
 			line-height: @font__navigation--line-height * 1.2;
 		}
-	
-		//.make-font-a-little-smaller(@font__navigation--font-size);
-		//.make-font-smaller(@font__navigation--font-size);
-		//.make-font-a-lot-smaller(@font__navigation--font-size);
 		
 		&:hover {
 			color: @color__navigation--text--hover;

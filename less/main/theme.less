@@ -1,21 +1,6 @@
-// ----------------------------------------
 // Text Love: LESS > Main > Theme
-// ----------------------------------------
-// This contains all styles that are not
-// widgets.
-//
-// #Header
-// #Site Styles
-// #Header
-// #Page Styles
-// #Content
-// #Footer
-//
-// ----------------------------------------
 
-// ------------------------------
-// #Header
-// ------------------------------
+// Header
 
 .template__header {
 	position: fixed;
@@ -58,9 +43,7 @@
 }
 
 
-// ------------------------------
-// #Site Styles
-// ------------------------------
+// Site Styles
 
 * {
 	.box-sizing(border-box);
@@ -80,18 +63,12 @@ body {
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
     background-color: @color__body--background;
-
-    // First Layer Background / fixed image in Text Love / Test it!!!
-
 	background-image: image('/images/main-bg.jpg');
 	background-size: cover;
 	background-position: center center;
-	
 	.make-font-a-little-smaller(@font__p--font-size);
 	.make-font-smaller(@font__p--font-size);
 	.make-font-a-lot-smaller(@font__p--font-size);
-	
-	// iOS fix of VH unit
     width: -webkit-calc(100% - 0px);
 
     @media @mobile {
@@ -101,14 +78,6 @@ body {
 
 body:not(.edit) {
     overflow-x: hidden;
-}
-
-
-// Site Container
-
-.site-container {
-    @media @bp-global-above-fullwidth {
-    }
 }
 
 // Green overlay
@@ -122,11 +91,6 @@ body:not(.edit) {
 article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
 	display: block;
 }
-
-
-// ------------------------------
-// #Content
-// ------------------------------
 
 // Main
 
@@ -173,9 +137,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 	}
 }
 
-// ------------------------------
-// #Footer
-// ------------------------------
+// Footer
 
 .template__footer {
     width: 100%;
@@ -184,7 +146,9 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
     padding: @header-height*0.5 0;
     bottom: 0;
     z-index: 1;
+
 	// Widget
+
 	.profile, .content {
 		opacity: .6;
 	}
@@ -206,6 +170,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 	display: inline-block;
 	vertical-align: middle;
 	width: 49.5%;
+
 	@media @mobile {
 		width: 100%;
 		text-align: center;

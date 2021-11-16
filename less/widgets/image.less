@@ -1,27 +1,12 @@
-// ----------------------------------------
 // Text Love: LESS > Widgets > Image
-// ----------------------------------------
-//
-// #Conditional Mixins
-// #Image
-// #Caption
-//
-// ----------------------------------------
 
-// ------------------------------
-// #Conditional Mixins
-// ------------------------------
-
-// Conditional if the image background 
-// is not the same as the page background.
+// Conditional Mixins
 
 .image-widget-background--spacing() when not (@color__image--background = @color__body--background) {
 	padding: 0;
 }
 
-// ------------------------------
-// #Image
-// ------------------------------
+// Image
 
 .widget[data-name="image"] {
 	.image-widget-background--spacing();
@@ -34,12 +19,7 @@
     }
 }
 
-// ------------------------------
-// #Caption
-// ------------------------------
-
-// Conditional if the container background 
-// is not the same as the page background.
+// Caption
 
 .image-caption--spacing() when not (@color__image--background = @color__body--background) {
 	margin-bottom: 0;

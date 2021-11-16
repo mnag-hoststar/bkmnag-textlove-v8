@@ -1,31 +1,6 @@
-// ----------------------------------------
 // Text Love: LESS > Main > Typography
-// ----------------------------------------
-//
-// #Content Widget
-// #General Typography
-// #Bold, Italic, Underlined
-// #Label
-// #Span
-// #Link
-// #Small
-// #Pre
-// #Code
-// #Unordered and Ordered List
-// #Block Quote
-// #Highlighted Text
-//
-// ----------------------------------------
 
-// ------------------------------
-// #Content Widget
-// ------------------------------
-
-.content {}
-
-// ------------------------------
-// #General Typography
-// ------------------------------
+// General Typography
 
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
@@ -48,9 +23,8 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
-// Break long words.
 h1, h2, h3, h4, h5, h6, p {
-	word-wrap: break-word;
+	word-break: break-word;
 }
 
 p, a {
@@ -138,8 +112,6 @@ h6, .heading--6, .contentgroup__h6 {
 }
 
 p, .paragraph, ul, ol, li, .contentgroup__body {
-	// This is already defined in the html tag.
-	
 	.make-font-a-little-smaller(@font__p--font-size);
 	.make-font-smaller(@font__p--font-size);
 	.make-font-a-lot-smaller(@font__p--font-size);
@@ -157,9 +129,7 @@ p, .paragraph, ul, ol, li, .contentgroup__body {
 	}
 }
 
-// ------------------------------
-// #Bold, Italic, Underlined
-// ------------------------------
+// Bold, Italic, Underlined
 
 b, strong {
 	font-weight: 900;
@@ -170,9 +140,7 @@ u {
 	border-bottom: 1px solid lighten(@color__p--text, 20%);
 }
 
-// ------------------------------
-// #Label
-// ------------------------------
+// Label
 
 label:not(.clicktocall__label), .label-text {
 	font-family: @font__h4--font-family;
@@ -194,17 +162,13 @@ label:not(.clicktocall__label), .label-text {
 	}
 }
 
-// ------------------------------
-// #Span
-// ------------------------------
+// Span
 
 span {
 	background-color: transparent;
 }
 
-// ------------------------------
-// #Link
-// ------------------------------
+// Link
 
 a {
 	display: inline;
@@ -238,9 +202,7 @@ a[class] {
     }
 }
 
-// ------------------------------
-// #Small
-// ------------------------------
+// Small
 
 small {
 	color: @color__p--text;
@@ -258,9 +220,7 @@ small {
 	}
 }
 
-// ------------------------------
-// #Preformatted Text and Code
-// ------------------------------
+// Preformatted Text and Code
 
 pre, code {
 	display: block;
@@ -279,9 +239,7 @@ code {
 	border-left: 5px solid @color-highlight;
 }
 
-// ------------------------------
-// #Unordered and Ordered List
-// ------------------------------
+// Unordered and Ordered List
 
 ul {
 	margin: 1em 0 1em 1.2em;
@@ -329,9 +287,7 @@ ul {
 	}
 }
 
-// ------------------------------
-// #Block Quote
-// ------------------------------
+// Block Quote
 
 blockquote {
 	border: 1px solid @color-highlight--light;
@@ -376,9 +332,7 @@ blockquote {
 	}
 }
 
-// ------------------------------
-// #Highlighted Text
-// ------------------------------
+// Highlighted Text
 
 ::-moz-selection {
     background: @color-highlight--lighter;

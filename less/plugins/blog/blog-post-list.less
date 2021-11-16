@@ -1,38 +1,16 @@
-// ----------------------------------------
 // Text Love: LESS > Plugins > Blog > Blog Posts List
-// ----------------------------------------
-//
-// #Conditional Mixins
-// #All posts
-// #Single Article
-// #Image
-// #Content
-// #Footer
-// #Paginatinon
-//
-// ----------------------------------------
 
-// ------------------------------
-// #Conditional Mixins
-// ------------------------------
-
-// Conditional if the Blog Post List background 
-// is not the same as the Blog Article background.
+// Conditional Mixins
 
 .blogpostlist-article-background--spacing() when not (@color__blogpostlist--background = @color__blogpostlist-article--background) {
 	padding: 2em 0;
 }
 
-// Conditional if the Blog Post List background 
-// is the same as the page background.
-
 .blogpostlist-widget-background--spacing() when (@color__blogpostlist--background = @color__body--background) {
 	padding: 1em 0;
 }
 
-// ------------------------------
-// #All posts
-// ------------------------------
+// All posts
 
 .widget[data-name="blogpostlist"] {
 	background-color: @color__blogpostlist--background;
@@ -46,24 +24,14 @@
     }
 }
 
-// ------------------------------
-// #Single Article
-// ------------------------------
+// Single Article
 
 .blogpostlist__post-article {
 	position: relative;
 	padding-bottom: 80px;
-	//.clearfix();
-	
-	@media @mobile {
-		//.display-flex(flex);
-		//.flex-direction(inherit);
-	}
 }
 
-// ------------------------------
-// #Image
-// ------------------------------
+// Image
 
 .blogpostlist {
     &__post-image {
@@ -83,16 +51,12 @@
 		.transition(all, 0.3s);
     }
 
-    // Using the background image instead.
-
     &__image {
         display: none;
     }
 }
 
-// ------------------------------
-// #Content
-// ------------------------------
+// Content
 
 .blogpostlist__post-content {
 	width: 100%;
@@ -179,9 +143,7 @@ a.blogpostlist__read-more {
 	margin-top: 1em;
 }
 
-// ------------------------------
-// #Footer
-// ------------------------------
+// Footer
 
 .blogpostlist__post-footer {
 	float: right;
@@ -208,8 +170,6 @@ a.blogpostlist__read-more {
 	}
 }
 
-// ------------------------------
-// #Paginatinon
-// ------------------------------
+// Paginatinon
 
 // For pagination, see less/plugins/plugins.less.

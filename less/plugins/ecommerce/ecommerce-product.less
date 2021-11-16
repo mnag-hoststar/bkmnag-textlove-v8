@@ -1,30 +1,6 @@
-// ----------------------------------------
-// Text Love: LESS > Plugins > Ecommerce > Product
-// ----------------------------------------
-//
-// #Product
-// #Images
-// #Product Image
-// #Product Gallery
-// #Product Content
-// #Product Actions
-// #Product Attributes
-// 
-// ----------------------------------------
+// Text Love: LESS > Plugins > Ecommerce > Product 
 
-// ------------------------------
-// #Product
-// ------------------------------
-
-.ecomproduct {
-
-}
-
-.ecomproduct__button {
-    
-}
-
-// Product Article
+// Product
 
 .product-article {
     display: -webkit-box;
@@ -38,9 +14,7 @@
     }
 }
 
-// ------------------------------
-// #Images
-// ------------------------------
+// Images
 
 .product-images {
     -webkit-flex: 0 1 50%;
@@ -52,17 +26,6 @@
 // Product Image
 
 .product-image {
-	.image-link {
-		
-	}
-}
-
-// ------------------------------
-// #Product Image
-// ------------------------------
-
-.product-image {
-
     &.no-image {
         display: none;
     }
@@ -97,6 +60,7 @@
 			padding: 20px;
 			height: 350px;
 		}
+
 		@media @tablet {
 			padding: 10px;
 			height: 300px;
@@ -122,9 +86,7 @@
 	}
 }
 
-// ------------------------------
-// #Product Gallery
-// ------------------------------
+// Product Gallery
 
 .product-gallery {
     border-top: 1px solid fade(@color__p--text, 20%);
@@ -132,9 +94,6 @@
 
     @media @tablet-horizontal {
         overflow: hidden;
-    }
-
-    @media @tablet, @mobile {
     }
 
     .style--light & {
@@ -166,9 +125,11 @@
             line-height: 76px;
             display: inline-block;
             vertical-align: middle;
+
             @media @tablet-horizontal {
                 line-height: 56px;
             }
+
             @media @tablet {
                 line-height: 36px;
             }
@@ -176,9 +137,7 @@
     }
 }
 
-// ------------------------------
-// #Product Content
-// ------------------------------
+// Product Content
 
 .product-content {
     -webkit-flex: 0 1 50%;
@@ -188,8 +147,6 @@
     margin: 0 0 0 auto;
     max-width: 45%;
 
-    @media @tablet-horizontal {
-    }
     @media @tablet {
         max-width: none;
     }
@@ -226,9 +183,7 @@
     margin: 16px 0 24px;
 }
 
-// ------------------------------
-// #Product Actions
-// ------------------------------
+// Product Actions
 
 .product-actions {
     margin-bottom: 2em;
@@ -241,8 +196,6 @@
         &:after {
             padding-right: 14px;
         }
-    }
-    .select {
     }
 	
     // Legend
@@ -260,7 +213,6 @@
     // Form Group
 
     .form-group {
-        display: inline-block;
         min-width: 100px;
         margin: 0 0.6em 0 0;
         float: left;
@@ -318,9 +270,7 @@
     }
 }
 
-// ------------------------------
-// #Product Attributes
-// ------------------------------
+// Product Attributes
 
 .product-attributes {
     .clearfix();
@@ -353,7 +303,6 @@
     .product-category,
 	.product-tags {
         display: block;
-        vertical-align: top;
         line-height: 1;
         margin: 0 0 1em 0;
 

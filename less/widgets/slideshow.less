@@ -1,19 +1,6 @@
-// ----------------------------------------
 // Text Love: LESS > Widgets > Slideshow
-// ----------------------------------------
-//
-// #Slideshow Mixins
-// #Slideshow
-// #Slideshow Item
-// #Slide Caption
-// #Slide Navigation Buttons
-// #Slide Pagination
-//
-// ----------------------------------------
 
-// ------------------------------
-// #Slideshow Mixins
-// ------------------------------
+// Slideshow Mixins
 
 .controls-font-size() {
 	font-size: 25px;
@@ -23,20 +10,7 @@
 	}
 }
 
-// ------------------------------
-// #Slideshow
-// ------------------------------
-
-.widget[data-name="responsiveslideshow"] .responsiveslideshow {
-	
-	@media @tablet-horizontal {
-	}
-}
-
 .responsiveslideshow__figure, .responsiveslideshow__slides-list {
-	//min-height: 100px;
-    //max-height: 700px;
-    //padding-bottom: 50%;
     margin-bottom: 4em;
     height: 700px;
 
@@ -51,9 +25,7 @@
     }
 }
 
-// ------------------------------
-// #Slideshow Item
-// ------------------------------
+// Slideshow Item
 
 .responsiveslideshow__slide-item {
 	position: absolute;
@@ -69,9 +41,6 @@
 		position: relative;
 	}
 	
-	// Prevents two slides from displaying at the same time
-	// because of slow JS state changes
-	
 	&.current + .slide-item {
 		display: none;
 	}
@@ -81,8 +50,6 @@
 	background-color: transparent;
 	background-size: cover;
 	background-position: center;
-	//height: 100%;
-    //width: 100%;
 	min-height: 200px;
 }
 
@@ -90,9 +57,7 @@
 	display: none;
 }
 
-// ------------------------------
-// #Slide Caption
-// ------------------------------
+// Slide Caption
 
 .responsiveslideshow .caption {
 	display: block;
@@ -155,9 +120,7 @@
     }
 }
 
-// ------------------------------
-// #Slide Navigation Buttons
-// ------------------------------
+// Slide Navigation Buttons
 
 .slide-navigation {
 	display: block;
@@ -219,10 +182,6 @@
 		-ms-transform: translate(0,-50%);
 		-o-transform: translate(0,-50%);
 		transform: translate(0,-50%);
-
-		// Icon
-		&:before {
-		}
 	}
 
 	.next-button {
@@ -232,10 +191,6 @@
 		-ms-transform: translate(0,-50%);
 		-o-transform: translate(0,-50%);
 		transform: translate(0,-50%);
-
-		// Icon
-		&:after {
-		}
 	}
 
 	.pause-toggle {
@@ -246,10 +201,6 @@
 		-o-transform: translate(-50%,-50%);
 		transform: translate(-50%,-50%);
 
-		// Icon
-		&:before {
-		}
-
 		// Play Icon
 
 		&.pause:before {
@@ -258,9 +209,7 @@
 	}
 }
 
-// ------------------------------
-// #Slide Pagination
-// ------------------------------
+// Slide Pagination
 
 .responsiveslideshow__slide-pagination {
 	position: absolute;
