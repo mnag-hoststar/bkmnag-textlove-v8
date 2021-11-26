@@ -66,6 +66,8 @@
 	
 	.responsivecolumns & {
 		float: none;
+		width: 100%;
+		padding: 14px 20px;
 	}
 	
 	// Label
@@ -104,6 +106,10 @@
         margin-bottom: 0;
 
         @media @mobile, @tablet-horizontal {
+            display: block;
+        }
+	
+        .responsivecolumns & {
             display: block;
         }
     }
@@ -194,6 +200,11 @@
         padding: 10px 20px;
     }
 	
+    .responsivecolumns & {
+        width: 100%;
+        padding: 10px 20px;
+    }
+	
 	// Form Body
 	
 	.form-body {
@@ -220,6 +231,11 @@
 			width: 100px;
 			min-width: 100%;
 		}
+	
+        .responsivecolumns & {
+			width: 100px;
+			min-width: 100%;
+        }
 	}
 	
 	// Form Group
@@ -242,7 +258,12 @@
 			margin-bottom: 8px;
 			margin-right: 0;
 		}
-
+	
+        .responsivecolumns & {
+			width: 100%;
+			margin-bottom: 8px;
+			margin-right: 0;
+        }
 
 		// Label
 
@@ -410,6 +431,12 @@
 		width: 98%/2;
 		margin-right: 1%;
 		margin-bottom: 1%;
+	
+        @media @mobile {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 5%;
+        }
 	}
 	
 	.columns-three-left &,
