@@ -446,29 +446,37 @@ input:focus {
 			}
 		}
 
-        &[class*="form-group"] label {
-            @media only screen and (max-width: 1024px) {
+        &[class*="form-group"] {
+            label {
                 &:after {
-                    content: "";
-                    left: -32px;
-                    top: -1px;
+                    @media @tablet-horizontal {
+                        content: "";
+                        left: -32px;
+                        top: -1px;
+                    }
 
                     .style--light & {
-                        border-color: @contrast--light;
+                        @media @tablet-horizontal {
+                            border-color: @contrast--light;
+                        }
                     }
 
                     .style--accent & {
-                        border-color: @contrast--accent;
+                        @media @tablet-horizontal {
+                            border-color: @contrast--accent;
+                        }
                     }
 
                     .style--dark & {
-                        border-color: @contrast--dark;
+                        @media @tablet-horizontal {
+                            border-color: @contrast--dark;
+                        }
                     }
                 }
 
                 &:before {
                     height: 35px;
-                    width: 35px
+                    width: 35px;
                 }
             }
         }
