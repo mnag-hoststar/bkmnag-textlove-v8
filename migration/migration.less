@@ -1,8 +1,12 @@
 //  Migration Styles
 
+//  These changes allow rows to work with
+//  existing templates in BK10
+
 // Template styling resets
 
 #migrated {
+    
     // Makes sure the header fits inside the editor canvas
     &.edit .template__header {
         @media only screen and (min-width: 900px) {
@@ -32,11 +36,9 @@
     [data-name="row"] .widget:only-child {
         margin-bottom: 0;
     }
-}
+    
+    // Re-add the reset styles
 
-// Re-add the reset styles
-
-#migrated {
     // Applies the container value to widgets
     .empty-zone,
     #page-zones__main:empty,
@@ -45,15 +47,15 @@
     [data-widget-type="pagetitle"],
     [data-widget-type="ecombasket"] {
         margin-left: auto;
-        margin-right: auto;         // Centers the contained widgets
+        margin-right: auto; // Centers the contained widgets
         max-width: 1200px;
-        width: 90%;                 // Container padding
+        width: 90%; // Container padding
     }
 
     // Replaces main padding by moving this to the first widget in the zone
     &.edit #page-zones__main-overlay + .widget:not([data-name="row"]),
     #page-zones__main > .widget:not([data-name="row"]):first-child {
-        margin-top: 2em;           // Main padding top
+        margin-top: 2em; // Main padding top
 
         @media @mobile {
             margin-top: 1em;
@@ -62,7 +64,7 @@
 
     // Replaces main padding by moving this to the last widget in the zone
     #page-zones__main > .widget:not([data-name="row"]):last-child {
-        padding-bottom: 4em;        // Main padding bottom
+        padding-bottom: 4em; // Main padding bottom
 
         @media @tablet {
             padding-bottom: 2.4em;
@@ -75,7 +77,7 @@
 
     // Add spacing to the top of a widget when it follows a row
     #page-zones__main > [data-name="row"] + .widget:not([data-name="row"]) {
-        margin-top: 20px;           // Widget margin bottom
+        margin-top: 20px; // Widget margin bottom
     }
 
     // Re-add widget spacing inside of rows
