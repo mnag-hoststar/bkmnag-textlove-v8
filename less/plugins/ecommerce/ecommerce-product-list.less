@@ -51,7 +51,6 @@
 // Product Search
 
 .product-filters .fieldset--search {
-
 	@media @tablet-horizontal {
 		width: 100%;
 		padding: 20px 40px 10px;
@@ -109,35 +108,35 @@
         .responsivecolumns & {
             display: block;
         }
-    }
 
-    // First Form Group
-
-    .form-group:first-of-type {
-        -webkit-flex: 1 1 auto;
-        -ms-flex: 1 1 auto;
-        flex: 1 1 auto;
-        padding-right: 0.5em;
-    }
-
-    // Last Form Group
-
-    .form-group:last-of-type {
-        margin: 0;
-
-    }
-
-    // Clear Search Group Selector :) Ugly, I know
-
-    .form-group + .form-group + .form-group {
-        width: 100%;
-        margin-right: 10px;
-        margin-top: 10px;
-
-        .button {
+        // First Form Group
+    
+        &:first-of-type {
+            -webkit-flex: 1 1 auto;
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+            padding-right: 0.5em;
+        }
+    
+        // Last Form Group
+    
+        &:last-of-type {
+            margin: 0;
+    
+        }
+    
+        // Clear Search Group Selector :) Ugly, I know
+    
+        & + .form-group + .form-group {
             width: 100%;
-            text-align: center;
-            display: block;
+            margin-right: 10px;
+            margin-top: 10px;
+    
+            .button {
+                width: 100%;
+                text-align: center;
+                display: block;
+            }
         }
     }
 
