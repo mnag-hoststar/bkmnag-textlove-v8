@@ -27,11 +27,6 @@ h1, h2, h3, h4, h5, h6, p {
 	word-break: break-word;
 }
 
-p, a {
-	padding: 0.5em 0;
-    hyphens: auto;
-}
-
 h1, .heading--1, .contentgroup__h1 {
 	font-family: @font__h1--font-family;
 	font-weight: @font__h1--font-weight;
@@ -109,6 +104,33 @@ h6, .heading--6, .contentgroup__h6 {
 	.make-font-a-little-smaller(@font__h4--font-size, 0.7);
 	.make-font-smaller(@font__h4--font-size, 0.7);
 	.make-font-a-lot-smaller(@font__h4--font-size, 0.7, 0.6);
+}
+
+// Normal Text
+
+.widget {
+	p, span, small, pre, code,
+	table, th, td,
+	&.content {
+		color: @color__p--text;
+	
+		.style--light & {
+			color: @contrast--light;
+		}
+	
+		.style--accent & {
+			color: @contrast--accent;
+		}
+	
+		.style--dark & {
+			color: @contrast--dark;
+		}
+	}
+}
+
+p, a {
+	padding: 0.5em 0;
+    hyphens: auto;
 }
 
 p, .paragraph, ul, ol, li, .contentgroup__body {
@@ -202,25 +224,7 @@ a[class] {
     }
 }
 
-// Small
-
-small {
-	color: @color__p--text;
-
-	.style--light & {
-	    color: fade(@contrast--light, 80%);
-	}
-
-	.style--accent & {
-	    color: fade(@contrast--accent, 80%);
-	}
-
-	.style--dark & {
-	    color: fade(@contrast--dark, 80%);
-	}
-}
-
-// Preformatted Text and Code
+// Preformatted and Code Text
 
 pre, code {
 	display: block;
@@ -230,13 +234,36 @@ pre, code {
 	.border-radius(0);
 	background-color: @color-text--lightest;
 	overflow: auto;
-	
 	.paragraph;
 	font-family: monospace;
+
+	.style--light & {
+		background-color: darken(@color--light, 10%);
+	}
+
+	.style--accent & {
+		background-color: lighten(@color--accent, 10%);
+	}
+
+	.style--dark & {
+		background-color: lighten(@color--dark, 10%);
+	}
 }
 
 code {
 	border-left: 5px solid @color-highlight;
+
+	.style--light & {
+		border-color: @color--accent;
+	}
+
+	.style--accent & {
+		border-color: @contrast--accent;
+	}
+
+	.style--dark & {
+		border-color: @color--accent;
+	}
 }
 
 // Unordered and Ordered List
@@ -287,7 +314,7 @@ ul {
 	}
 }
 
-// Block Quote
+// Blockquote
 
 blockquote {
 	border: 1px solid @color-highlight--light;
