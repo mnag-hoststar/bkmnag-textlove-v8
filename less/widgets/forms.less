@@ -536,7 +536,7 @@ input:focus {
 
 // Select
 
-.select {
+select {
     position: relative;
     display: block;
 	padding: 0 2em 0 1em;
@@ -603,10 +603,15 @@ input:focus {
         border-color: fade(@contrast--dark, 65%);
         color: @contrast--dark;
     }
-}
 
-.select::-ms-expand {
-    display: none;
+    &::-ms-expand {
+        display: none;
+    }
+    
+    option {
+		background-color: @color__container--background;
+		color: @color__p--text;
+	}
 }
 
 // Error Messages
