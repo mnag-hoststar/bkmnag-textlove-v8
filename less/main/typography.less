@@ -191,7 +191,7 @@ span {
 
 // Link
 
-a {
+a, .link {
 	display: inline;
 	color: @color-highlight;
 	line-height: 1.3em;
@@ -203,6 +203,21 @@ a {
 	height: auto;
 	.transition();
 
+	.style--light & {
+		color: @color--accent;
+		border-color: @color--accent;
+	}
+
+	.style--accent & {
+		color: @color--dark;
+		border-color: @color--dark;
+	}
+
+	.style--dark & {
+		color: @color--accent;
+		border-color: @color--accent;
+	}
+
     &, &:hover {
         text-decoration: none;
     }
@@ -210,6 +225,21 @@ a {
 	&:hover {
 		color: darken(@color-highlight, 10%);
 		border-bottom: 1px solid @color-highlight--light;
+
+		.style--light & {
+			color: darken(@color--accent, 10%);
+			border-color: darken(@color--accent, 20%);
+		}
+	
+		.style--accent & {
+			color: darken(@color--dark, 10%);
+			border-color: darken(@color--dark, 20%);
+		}
+	
+		.style--dark & {
+			color: darken(@color--accent, 10%);
+			border-color: darken(@color--accent, 20%);
+		}
 	}
 }
 
