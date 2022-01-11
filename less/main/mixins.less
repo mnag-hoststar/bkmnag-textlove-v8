@@ -252,8 +252,50 @@
 }
 
 .timestamp-styles {
-    padding: 0.4em 0.5em;
-	height: 2em;
+	display: inline-block;
+	margin: 0;
+	padding: 0.4em 0.5em;
+	background-color: @color-text--lightest;
+	font-size: @font__p--font-size;
+	line-height: 1.2em;
+	color: @font__p--text;
+
+	.make-font-a-little-smaller(@font__p--font-size);
+	.make-font-smaller(@font__p--font-size);
+	.make-font-a-lot-smaller(@font__p--font-size);
+
+	.style--light & {
+		background-color: darken(@color--light, 10%);
+		color: @contrast--light;
+	}
+
+	.style--accent & {
+		background-color: lighten(@color--accent, 10%);
+		color: @contrast--accent;
+	}
+
+	.style--dark & {
+		background-color: lighten(@color--dark, 10%);
+		color: @contrast--dark;
+	}
+
+	&:hover,
+	&:active {
+		text-decoration: none;
+		background-color: @color-text--lighter;
+
+		.style--light & {
+			background-color: darken(@color--light, 20%);
+		}
+	
+		.style--accent & {
+			background-color: lighten(@color--accent, 20%);
+		}
+	
+		.style--dark & {
+			background-color: lighten(@color--dark, 20%);
+		}
+	}
 }
 
 // Flexbox LESS mixins
