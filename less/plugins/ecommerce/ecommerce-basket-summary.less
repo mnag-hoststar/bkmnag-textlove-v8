@@ -100,7 +100,7 @@
     // Item Title
 
     .summary-item-title {
-		heading--4;
+		.heading--4;
     }
 
 	// Item Link
@@ -238,7 +238,7 @@
 	}
 }
 
-// Button
+// Buttons
 
 .summary-form {
     text-align: right;
@@ -246,4 +246,12 @@
     @media @basketsummary-medium, @mobile {
         text-align: center;
     }
+}
+
+.ecombasketsummary__continue-shopping,
+.ecombasketsummary__button {
+	@media @mobile {
+		width: 100%;
+		text-align: center;
+	}
 }
