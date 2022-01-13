@@ -262,9 +262,17 @@
         
         // Button
         
-        button {
-            width: 100%;
-            margin-bottom: 1em;
+        .ecomproduct__button {
+			margin-bottom: 1em;
+			text-align: center;
+        
+			@media @mobile {
+				width: 100%;
+			}
+
+			&:before {
+				float: none;
+			}
         }
     }
 }
