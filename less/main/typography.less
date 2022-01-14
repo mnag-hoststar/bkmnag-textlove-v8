@@ -38,6 +38,10 @@ h1, .heading--1, .contentgroup__h1 {
 	.make-font-a-little-smaller(@font__h1--font-size);
 	.make-font-smaller(@font__h1--font-size);
 	.make-font-a-lot-smaller(@font__h1--font-size);
+	
+	.make-line-height-a-little-smaller(@font__h1--line-height);
+	.make-line-height-smaller(@font__h1--line-height);
+	.make-line-height-a-lot-smaller(@font__h1--line-height);
 }
 
 h2, .heading--2, .contentgroup__h2 {
@@ -51,6 +55,10 @@ h2, .heading--2, .contentgroup__h2 {
 	.make-font-a-little-smaller(@font__h2--font-size);
 	.make-font-smaller(@font__h2--font-size);
 	.make-font-a-lot-smaller(@font__h2--font-size);
+	
+	.make-line-height-a-little-smaller(@font__h2--line-height);
+	.make-line-height-smaller(@font__h2--line-height);
+	.make-line-height-a-lot-smaller(@font__h2--line-height);
 }
 
 h3, .heading--3, .contentgroup__h3 {
@@ -64,6 +72,10 @@ h3, .heading--3, .contentgroup__h3 {
 	.make-font-a-little-smaller(@font__h3--font-size);
 	.make-font-smaller(@font__h3--font-size);
 	.make-font-a-lot-smaller(@font__h3--font-size);
+	
+	.make-line-height-a-little-smaller(@font__h3--line-height);
+	.make-line-height-smaller(@font__h3--line-height);
+	.make-line-height-a-lot-smaller(@font__h3--line-height);
 }
 
 h4, .heading--4, .contentgroup__h4 {
@@ -77,6 +89,10 @@ h4, .heading--4, .contentgroup__h4 {
 	.make-font-a-little-smaller(@font__h4--font-size);
 	.make-font-smaller(@font__h4--font-size);
 	.make-font-a-lot-smaller(@font__h4--font-size);
+	
+	.make-line-height-a-little-smaller(@font__h4--line-height);
+	.make-line-height-smaller(@font__h4--line-height);
+	.make-line-height-a-lot-smaller(@font__h4--line-height);
 }
 
 h5, .heading--5, .contentgroup__h5 {
@@ -90,6 +106,10 @@ h5, .heading--5, .contentgroup__h5 {
 	.make-font-a-little-smaller(@font__h4--font-size, 0.9);
 	.make-font-smaller(@font__h4--font-size);
 	.make-font-a-lot-smaller(@font__h4--font-size);
+	
+	.make-line-height-a-little-smaller(@font__h4--line-height, 0.9);
+	.make-line-height-smaller(@font__h4--line-height);
+	.make-line-height-a-lot-smaller(@font__h4--line-height);
 }
 
 h6, .heading--6, .contentgroup__h6 {
@@ -104,14 +124,17 @@ h6, .heading--6, .contentgroup__h6 {
 	.make-font-a-little-smaller(@font__h4--font-size, 0.7);
 	.make-font-smaller(@font__h4--font-size, 0.7);
 	.make-font-a-lot-smaller(@font__h4--font-size, 0.7, 0.6);
+	
+	.make-line-height-a-little-smaller(@font__h4--line-height, 0.7);
+	.make-line-height-smaller(@font__h4--line-height, 0.7);
+	.make-line-height-a-lot-smaller(@font__h4--line-height, 0.7, 0.6);
 }
 
 // Normal Text
 
-.widget {
+.widget, .widget.in-editing {
 	p, span, small, pre, code,
-	table, th, td,
-	&.content {
+	table, th, td, .content {
 		color: @color__p--text;
 	
 		.style--light & {
@@ -128,6 +151,20 @@ h6, .heading--6, .contentgroup__h6 {
 	}
 }
 
+.widget .content,
+.widget.in-editing .content {
+	font-size: @font__p--font-size !important;
+	line-height: @font__p--line-height !important;
+
+	.make-font-a-little-smaller(@font__p--font-size, ~"!important");
+	.make-font-smaller(@font__p--font-size, ~"!important");
+	.make-font-a-lot-smaller(@font__p--font-size, ~"!important");
+	
+	.make-line-height-a-little-smaller(@font__p--line-height, ~"!important");
+	.make-line-height-smaller(@font__p--line-height, ~"!important");
+	.make-line-height-a-lot-smaller(@font__p--line-height, ~"!important");
+}
+
 p, a {
 	padding: 0.5em 0;
     hyphens: auto;
@@ -137,6 +174,10 @@ p, .paragraph, ul, ol, li, .contentgroup__body {
 	.make-font-a-little-smaller(@font__p--font-size);
 	.make-font-smaller(@font__p--font-size);
 	.make-font-a-lot-smaller(@font__p--font-size);
+	
+	.make-line-height-a-little-smaller(@font__p--line-height);
+	.make-line-height-smaller(@font__p--line-height);
+	.make-line-height-a-lot-smaller(@font__p--line-height);
 
 	.style--light & {
 	    color: fade(@contrast--light, 80%);
