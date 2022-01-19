@@ -305,19 +305,18 @@ pre, code {
 	.border-radius(0);
 	background-color: @color-text--lightest;
 	overflow: auto;
-	.paragraph;
 	font-family: monospace;
 
 	.style--light & {
-		background-color: darken(@color--light, 10%);
+		background-color: fade(@contrast--light, 10%);
 	}
 
 	.style--accent & {
-		background-color: lighten(@color--accent, 10%);
+		background-color: fade(@contrast--accent, 10%);
 	}
 
 	.style--dark & {
-		background-color: lighten(@color--dark, 10%);
+		background-color: fade(@contrast--dark, 10%);
 	}
 }
 
@@ -325,7 +324,7 @@ code {
 	border-left: 5px solid @color-highlight;
 
 	.style--light & {
-		border-color: @color--accent;
+		border-color: @contrast--light;
 	}
 
 	.style--accent & {
@@ -333,7 +332,7 @@ code {
 	}
 
 	.style--dark & {
-		border-color: @color--accent;
+		border-color: @contrast--dark;
 	}
 }
 
