@@ -398,17 +398,17 @@ blockquote {
 	word-break: break-word;
 
 	.style--light & {
-		border-color: @color--accent;
+		border-color: fade(@color--accent, 50%);
 	    color: @contrast--light;
 	}
 
 	.style--accent & {
-		border-color: @contrast--accent;
+		border-color: fade(@contrast--accent, 50%);
 	    color: @contrast--accent;
 	}
 
 	.style--dark & {
-		border-color: @color--accent;
+		border-color: fade(@color--accent, 50%);
 	    color: @contrast--dark;
 	}
 	
