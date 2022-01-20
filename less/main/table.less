@@ -6,19 +6,24 @@ table {
 	border: none;
 	border-collapse: separate;
 	border-spacing: 0;
+	border-top: 1px solid @color__p--text;
 	margin: 1.5em 0;
-	.paragraph;
+	hyphens: auto;
+	color: @color__p--text;
 
 	.style--light & {
 		border-top-color: @contrast--light;
+		color: @contrast--light;
 	}
 
 	.style--accent & {
 		border-top-color: @contrast--accent;
+		color: @contrast--accent;
 	}
 
 	.style--dark & {
 		border-top-color: @contrast--dark;
+		color: @contrast--dark;
 	}
 }
 
