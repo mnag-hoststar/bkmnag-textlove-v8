@@ -1,8 +1,8 @@
 {
 	"name":"Text Love 2.0",
     "widgetVersion": 2,
-	"thumbnail":"textlove.png",
-	"screenshot":"textlove-screenshot.jpg",
+	"thumbnail":"images/thumbnail.png",
+	"screenshot":"images/screenshot.jpg",
 	"templateType":"standard",
     "pageTypes": ["home"],
     "versionTenCompatible": 1,
