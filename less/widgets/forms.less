@@ -60,7 +60,8 @@
 
 label, .label {
 	font-family: @font__p--font-family;
-	font-size: @font__p--font-size * 0.8;
+	font-size: @font__p--font-size;
+    word-break: break-word;
 }
 
 input,
@@ -494,10 +495,6 @@ input:focus {
 .select-wrap {
     position: relative;
 	margin-top: 1em;
-
-    @media @mobile {
-        max-width: 100%;
-    }
 	
     // Icon
 
@@ -538,15 +535,18 @@ input:focus {
 
 .select-wrap {
 	position: relative;
-	max-width: 50%;
 
-	@media @mobile {
-		max-width: 100%;
-	}
+    .advancedcontactform & {
+        max-width: 50%;
 
-	.responsivecolumns & {
-		max-width: 100%;
-	}
+        @media @tablet {
+            max-width: 100%;
+        }
+    
+        .responsivecolumns & {
+            max-width: 100%;
+        }
+    }
 }
 
 select {
