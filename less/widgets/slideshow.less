@@ -91,7 +91,7 @@
 	.make-font-a-lot-smaller(@font__h4--font-size);
 
     .style--light & {
-        color: @contrast--light;
+		color: @color__slideshow-title--text;
     }
 
     .style--accent & {
@@ -108,7 +108,7 @@
 	line-height: 1.3em;
 
     .style--light & {
-        color: fade(@contrast--light, 80%);
+		color: @color__slideshow-description--text;
     }
 
     .style--accent & {
@@ -244,6 +244,18 @@
 		padding: 0;
 		border: 1px solid @color__slideshow-pagination-item--text;
 
+		.style--light & {
+            border-color: @color__slideshow-pagination-item--text;
+        }
+
+        .style--accent & {
+            border-color: @contrast--accent;
+        }
+
+        .style--dark & {
+            border-color: @contrast--dark;
+        }
+
 		@media @tablet {
 			width: 16px;
 			height: 16px;
@@ -254,31 +266,13 @@
 			padding: 0;
 			.box-shadow(none);
 		}
-
-		.style--light & {
-            background-color: @color--light;
-            border-color: @color--accent;
-        }
-
-        .style--accent & {
-            background-color: @color--accent;
-            border-color: @contrast--accent;
-        }
-
-        .style--dark & {
-            background-color: @color--dark;
-            border-color: @contrast--dark;
-        }
 	}
 
 	&.selected .button {
 		background: @color__slideshow-pagination-item--text--selected;
 
-		@media @tablet {
-		}
-
 		.style--light & {
-            background: @color--accent;
+            background: @color__slideshow-pagination-item--text--selected;
         }
 
         .style--accent & {

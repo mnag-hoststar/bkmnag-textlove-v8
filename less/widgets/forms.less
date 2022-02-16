@@ -29,7 +29,7 @@
 	color: @color__form-legend--text;
 
     .style--light & {
-        color: @contrast--light;
+        color: @color__form-legend--text;
     }
 
     .style--accent & {
@@ -91,19 +91,35 @@ textarea {
     color: @color__p--text;
 	.transition();
     .appearance(none);
+
+    .style--light & {
+        border-color: @color__form--border;
+        color: @color__p--text;
+    }
+
+    .style--accent & {
+        border-color: fade(@contrast--accent, 65%);
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        border-color: fade(@contrast--dark, 65%);
+        color: @contrast--dark;
+    }
 	
 	&:hover {
 		background-color: transparent;
     	border: 1px solid @color-highlight;
 
-        .style--light &,
+        .style--light & {
+            border-color: @color-highlight;
+        }
+
         .style--dark & {
-            background-color: @color--light;
             border-color: @color--accent;
         }
 
         .style--accent & {
-            background-color: @color--light;
             border-color: @contrast--accent;
         }
 	}
@@ -116,38 +132,20 @@ textarea {
 		.box-shadow(none);
 
         .style--light & {
-            background-color: @color--light;
-            border-color: @color--accent;
-            color: @contrast--light;
+            background-color: @color__form--background;
+            border-color: @color-highlight;
         }
 
         .style--accent & {
             background-color: @color--light;
             border-color: @contrast-accent;
-            color: @contrast--light;
         }
 
         .style--dark & {
             background-color: @color--light;
             border-color: @color--accent;
-            color: @contrast--light;
         }
 	}
-
-    .style--light & {
-        border-color: lighten(@color--accent, 30%);
-        color: @contrast--light;
-    }
-
-    .style--accent & {
-        border-color: fade(@contrast--accent, 65%);
-        color: @contrast--accent;
-    }
-
-    .style--dark & {
-        border-color: fade(@contrast--dark, 65%);
-        color: @contrast--dark;
-    }
 }
 
 // Multiple Lines Inputs
@@ -162,7 +160,7 @@ textarea {
    color: @color-text--light;
 
     .style--light & {
-        color: @contrast--light;
+        color: @color-text--light;
     }
 
     .style--accent & {
@@ -178,7 +176,7 @@ textarea {
    color: @color-text--light;
 
    .style--light & {
-        color: @contrast--light;
+        color: @color-text--light;
     }
 
     .style--accent & {
@@ -194,7 +192,7 @@ textarea {
    color: @color-text--light;
 
    .style--light & {
-        color: @contrast--light;
+        color: @color-text--light;
     }
 
     .style--accent & {
@@ -210,7 +208,7 @@ textarea {
    color: @color-text--light;
 
    .style--light & {
-        color: @contrast--light;
+        color: @color-text--light;
     }
 
     .style--accent & {
@@ -256,7 +254,7 @@ input:focus {
 			line-height: 1.3em;
 
             .style--light & {
-                color: @contrast--light;
+                color: @color__p--text;
             }
 
             .style--accent & {
@@ -286,18 +284,15 @@ input:focus {
 				background-color: fade(@color__form--background, 75%);
 
                 .style--light & {
-                    background-color: transparent;
-                    border-color: fade(@color--accent, 65%);
+                    background-color: fade(@color__form--background, 75%);
                 }
 
                 .style--accent & {
-                    background-color: transparent;
-                    border-color: fade(@contrast--accent, 65%);
+                    background-color: fade(@contrast--accent, 65%);
                 }
 
                 .style--dark & {
-                    background-color: transparent;
-                    border-color: fade(@contrast--accent, 65%);
+                    background-color: fade(@contrast--accent, 65%);
                 }
 			}
 
@@ -305,7 +300,7 @@ input:focus {
 				border: 1px solid @color__button--background;
 
                 .style--light & {
-                    border-color: @color--accent;
+                    border-color: @color__button--background;
                 }
 
                 .style--accent & {
@@ -326,7 +321,7 @@ input:focus {
 				border: 1px solid @color-highlight--light;
 
                 .style--light & {
-                    border-color: @color--accent;
+                    border-color: @color-highlight--light;
                 }
 
                 .style--accent & {
@@ -370,18 +365,15 @@ input:focus {
                     height: 22px;
 
                     .style--light & {
-                        background-color: transparent;
-                        border-color: fade(@color--accent, 65%);
+                        background-color: @color__form--background;
                     }
 
                     .style--accent & {
-                        background-color: transparent;
-                        border-color: fade(@contrast--accent, 65%);
+                        background-color: fade(@contrast--accent, 65%);
                     }
 
                     .style--dark & {
-                        background-color: transparent;
-                        border-color: fade(@contrast--accent, 65%);
+                        background-color: fade(@contrast--accent, 65%);
                     }
 				}
 
@@ -410,7 +402,7 @@ input:focus {
 					.transform-scale(0.5);
 
                     .style--light & {
-                        background-color: @color--accent;
+                        background-color: @color__button--background;
                     }
 
                     .style--accent & {
@@ -435,7 +427,7 @@ input:focus {
 					top: 1px;
 
                     .style--light & {
-                        color: @color--accent;
+                        color: @color__button--background;
                     }
 
                     .style--accent & {
@@ -456,24 +448,6 @@ input:focus {
                         content: "";
                         left: -32px;
                         top: -1px;
-                    }
-
-                    .style--light & {
-                        @media @tablet-horizontal {
-                            border-color: @contrast--light;
-                        }
-                    }
-
-                    .style--accent & {
-                        @media @tablet-horizontal {
-                            border-color: @contrast--accent;
-                        }
-                    }
-
-                    .style--dark & {
-                        @media @tablet-horizontal {
-                            border-color: @contrast--dark;
-                        }
                     }
                 }
 
@@ -514,7 +488,7 @@ input:focus {
         z-index: 1;
 
         .style--light & {
-            color: @contrast--light;
+            color: @color__p--text;
         }
 
         .style--accent & {
@@ -560,6 +534,21 @@ select {
     color: @color__p--text;
     .appearance(none);
 
+    .style--light & {
+        border-color: @color__form--border;
+        color: @color__p--text;
+    }
+
+    .style--accent & {
+        border-color: fade(@contrast--accent, 65%);
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        border-color: fade(@contrast--dark, 65%);
+        color: @contrast--dark;
+    }
+
     @media @mobile {
 		padding: 0 2.7em 0 1em;
     }
@@ -569,7 +558,7 @@ select {
     	border: 1px solid @color-highlight;
 
         .style--light & {
-            border-color: @color--accent;
+            border-color: @color-highlight;
         }
 
         .style--accent & {
@@ -587,8 +576,8 @@ select {
 		border: 1px solid @color-highlight;
 
         .style--light & {
-            background-color: @color--light;
-            border-color: @color--accent;
+            background-color: @color__form--background;
+            border-color: @color-highlight;
         }
 
         .style--accent & {
@@ -601,21 +590,6 @@ select {
             border-color: @contrast--dark;
         }
 	}
-
-    .style--light & {
-        border-color: lighten(@color--accent, 30%);
-        color: @contrast--light;
-    }
-
-    .style--accent & {
-        border-color: fade(@contrast--accent, 65%);
-        color: @contrast--accent;
-    }
-
-    .style--dark & {
-        border-color: fade(@contrast--dark, 65%);
-        color: @contrast--dark;
-    }
 
     &::-ms-expand {
         display: none;

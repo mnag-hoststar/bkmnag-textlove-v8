@@ -169,7 +169,7 @@
                 margin-left: 0;
 
                 .style--light & {
-                    color: @contrast--accent;
+                    color: @color__button--text;
                 }
 
                 .style--accent & {
@@ -275,7 +275,7 @@
 			text-transform: uppercase;
 
             .style--light & {
-                color: lighten(@contrast--light, 30%);
+                color: lighten(@color__p--text, 30%);
             }
 
             .style--accent & {
@@ -321,18 +321,18 @@
     }
 
     .style--light & {
-        border-color: lighten(@color--light, 20%);
-        color: fade(@contrast--light, 80%);
+        color: fade(@color__p--text, 80%);
+        border-color: fade(@color__p--text, 16%);
     }
 
     .style--accent & {
-        border-color: lighten(@color--accent, 20%);
         color: fade(@contrast--accent, 80%);
+        border-color: lighten(@color--accent, 20%);
     }
 
     .style--dark & {
-        border-color: lighten(@color--dark, 20%);
         color: fade(@contrast--dark, 80%);
+        border-color: lighten(@color--dark, 20%);
     }
 }
 
@@ -385,7 +385,7 @@
 	margin-bottom: 1em;
 
     .style--light & {
-        background: @color--light;
+        background: @color__ecomproductslist-product-item--background;
     }
 
     .style--accent & {
@@ -469,7 +469,7 @@
     line-height: 1;
 
     .style--light & {
-        background: @color--light;
+        background: @color__ecomproductslist-product-item--background;
     }
 
     .style--accent & {
@@ -503,7 +503,7 @@
     }
 
     .style--light & {
-        background: @color--light;
+        background: @color__ecomproductslist-product-item--background;
     }
 
     .style--accent & {
@@ -527,7 +527,7 @@
         color: @color__ecomproductslist-product-title--text;
 
         .style--light & {
-            color: @contrast--light;
+            color: @color__ecomproductslist-product-title--text;
         }
 
         .style--accent & {
@@ -549,8 +549,8 @@
 	color: @color__link--text;
 
     .style--light & {
-        border-color: lighten(@color--accent, 30%);
-        color: @contrast--light;
+        border-color: @color__form--border;
+        color: @color__link--text;
     }
 
     .style--accent & {

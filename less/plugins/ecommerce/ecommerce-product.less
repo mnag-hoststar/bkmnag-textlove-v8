@@ -37,20 +37,32 @@
 	    background-color: @color__ecomproductslist-product-item--background;
 		background-position: center;
 		height: 400px;
+
+        .style--light & {
+            background-color: @color__ecomproductslist-product-item--background;
+        }
+
+        .style--accent & {
+            background-color: @color--accent;
+        }
+
+        .style--dark & {
+            background-color: @color--dark;
+        }
 		
 		&:hover {
 	        background-color: @color__ecomproductslist-product-item--background;
 
             .style--light & {
-                background: @color--light;
+                background-color: @color__ecomproductslist-product-item--background;
             }
 
             .style--accent & {
-                background: @color--accent;
+                background-color: @color--accent;
             }
 
             .style--dark & {
-                background: @color--dark;
+                background-color: @color--dark;
             }
 		}
 
@@ -73,18 +85,6 @@
 			padding: 20px;
 			height: 150px;
 		}
-
-        .style--light & {
-            background: @color--light;
-        }
-
-        .style--accent & {
-            background: @color--accent;
-        }
-
-        .style--dark & {
-            background: @color--dark;
-        }
 	}
 	
 	// Image
@@ -105,7 +105,7 @@
     }
 
     .style--light & {
-        border-color: lighten(@color--light, 20%);
+        border-color: fade(@color__p--text, 20%);
     }
 
     .style--accent & {
@@ -160,7 +160,7 @@
     }
 
     .style--light & {
-        background: @color--light;
+        background: @color__container--background;
     }
 
     .style--accent & {
@@ -248,7 +248,7 @@
             }
 
             .style--light & {
-                color: @contrast--light;
+                color: lighten(@color__p--text, 20%);
             }
 
             .style--accent & {
@@ -302,7 +302,7 @@
         font-size: 13px;
 
         .style--light & {
-            color: fade(@contrast--light, 80%);
+            color: fade(@color__p--text, 80%);
         }
 
         .style--accent & {

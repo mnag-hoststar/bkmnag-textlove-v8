@@ -80,20 +80,20 @@ hr.line__rule {
 	background-color: @color-highlight--light;
 
     .style--light & {
-        color: fade(@color--accent, 50%);
+        background-color: @color-highlight--light;
     }
 
     .style--accent & {
-        color: fade(@contrast--accent, 50%);
+        background-color: fade(@contrast--accent, 50%);
     }
 
     .style--dark & {
-        color: fade(@contrast--dark, 50%);
+        background-color: fade(@contrast--dark, 50%);
     }
 }
 
 // Page Title Widget
 
 .pagetitle-text {
-    h1;
+    .heading--1;
 }

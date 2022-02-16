@@ -12,7 +12,10 @@
 	.image-widget-background--spacing();
 	background: @color__image--background;
 
-    .style--light &,
+    .style--light & {
+        background: @color__image--background;
+    }
+
     .style--accent &,
     .style--dark & {
         background-color: transparent;
@@ -40,7 +43,7 @@
 	color: @color__image-title--text;
 
     .style--light & {
-        color: @contrast--light;
+        color: @color__image-title--text;
     }
 
     .style--accent & {
@@ -58,7 +61,7 @@
 	color: @color__image-description--text;
 
     .style--light & {
-        color: @contrast--light;
+        color: @color__image-description--text;
     }
 
     .style--accent & {

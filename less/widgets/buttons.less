@@ -34,6 +34,21 @@ a.contentgroup__link {
 	.make-line-height-a-little-smaller(@font__button--line-height);
 	.make-line-height-smaller(@font__button--line-height);
 	.make-line-height-a-lot-smaller(@font__button--line-height);
+
+	.style--light & {
+        background-color: @color__button--background;
+        color: @color__button--text;
+    }
+
+    .style--accent & {
+        background-color: @color--dark;
+        color: @contrast--dark;
+    }
+
+    .style--dark & {
+        background-color: @color--accent;
+        color: @contrast--accent;
+    }
 	
     &:hover {
         background-color: @color__button--background--hover;
@@ -41,8 +56,8 @@ a.contentgroup__link {
     	.transition (all, 0.5s, ease);
 
     	.style--light & {
-	        background-color: @color--dark;
-	        color: @contrast--dark;
+			background-color: @color__button--background--hover;
+			color: @color__button--text--hover;
 	    }
 
 	    .style--accent & {
@@ -54,21 +69,6 @@ a.contentgroup__link {
 	        background-color: darken(@color--accent, 12%);
 	        color: @contrast--accent;
 	    }
-    }
-
-	.style--light & {
-        background-color: @color--accent;
-        color: @contrast--accent;
-    }
-
-    .style--accent & {
-        background-color: @color--dark;
-        color: @contrast--dark;
-    }
-
-    .style--dark & {
-        background-color: @color--accent;
-        color: @contrast--accent;
     }
 }
 
@@ -144,25 +144,40 @@ a.contentgroup__link {
 	.transition (all, 0.5s, ease);
 	.border-radius(50%);
 
+	.style--light & {
+		background: @color__button--background !important;
+		color: @color__button--text !important;
+    }
+
+    .style--accent & {
+        background-color: @color--dark !important;
+        color: @contrast--dark !important;
+    }
+
+    .style--dark & {
+        background-color: @color--accent !important;
+        color: @contrast--accent !important;
+    }
+
 	&:hover {
 		text-decoration: none;
-		background: @color__button--background--hover !important;
+		background-color: @color__button--background--hover !important;
 		color: @color__button--text--hover !important;
 		.transition (all, 0.5s, ease);
 
 		.style--light & {
-	        background-color: @color--dark!important;
-	        color: @contrast--dark!important;
+			background-color: @color__button--background--hover !important;
+			color: @color__button--text--hover !important;
 	    }
 
 	    .style--accent & {
-	        background-color: darken(@color--dark, 12%)!important;
-	        color: @contrast--dark!important;
+	        background-color: darken(@color--dark, 12%) !important;
+	        color: @contrast--dark !important;
 	    }
 
 	    .style--dark & {
-	        background-color: darken(@color--accent, 12%)!important;
-	        color: @contrast--accent!important;
+	        background-color: darken(@color--accent, 12%) !important;
+	        color: @contrast--accent !important;
 	    }
 	}
 
@@ -174,28 +189,13 @@ a.contentgroup__link {
 		font-size: 1.3em;
 		display: block;
 	}
-
-	.style--light & {
-        background-color: @color--accent!important;
-        color: @contrast--accent!important;
-    }
-
-    .style--accent & {
-        background-color: @color--dark!important;
-        color: @contrast--dark!important;
-    }
-
-    .style--dark & {
-        background-color: @color--accent!important;
-        color: @contrast--accent!important;
-    }
 }
 
 .widget button.btn span {
 	color: @font-swatch7-color;
 
 	.style--light & {
-		color: @contrast--accent;
+		color: @font-swatch7-color;
 	}
 
 	.style--accent & {

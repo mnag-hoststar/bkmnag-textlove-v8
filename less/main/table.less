@@ -12,8 +12,8 @@ table {
 	color: @color__p--text;
 
 	.style--light & {
-		border-top-color: @contrast--light;
-		color: @contrast--light;
+		border-top-color: @color__p--text;
+		color: @color__p--text;
 	}
 
 	.style--accent & {
@@ -56,8 +56,8 @@ th {
 	.make-line-height-a-lot-smaller(@font__h4--line-height);
 
 	.style--light & {
-		border-bottom-color: @contrast--light;
-		color: @contrast--light;
+		border-bottom-color: @color-text--light;
+		color: @color__h4--text;
 	}
 
 	.style--accent & {
@@ -98,15 +98,18 @@ td {
 	.make-line-height-a-lot-smaller(@font__p--line-height);
 
 	.style--light & {
-		border-bottom-color: fade(@contrast--light, 60%);
+		border-bottom-color: @color-text--light;
+		color: @color__p--text;
 	}
 
 	.style--accent & {
 		border-bottom-color: fade(@contrast--accent, 60%);
+		color: @contrast--accent;
 	}
 
 	.style--dark & {
 		border-bottom-color: fade(@contrast--dark, 60%);
+		color: @contrast--dark;
 	}
 	
 	@media @mobile {
@@ -137,7 +140,7 @@ td {
 			border-bottom: 1px solid fade(@color__p--text, 60%);
 
 			.style--light & {
-				border-bottom-color: fade(@contrast--light, 60%);
+				border-bottom-color: fade(@color__p--text, 60%);
 			}
 		
 			.style--accent & {
@@ -154,7 +157,7 @@ td {
 			border-bottom: 1px solid fade(@color__p--text, 60%);
 
 			.style--light & {
-				border-bottom-color: fade(@contrast--light, 60%);
+				border-bottom-color: fade(@color__p--text, 60%);
 			}
 		
 			.style--accent & {
@@ -172,7 +175,7 @@ tr:last-child td {
 	border-bottom: 1px solid @color__p--text;
 
 	.style--light & {
-		border-bottom-color: @contrast--light;
+		border-bottom-color: @color__p--text;
 	}
 
 	.style--accent & {
@@ -196,7 +199,7 @@ tr:last-child td {
 			border-bottom: 1px solid @color__p--text;
 
 			.style--light & {
-				border-bottom-color: @contrast--light;
+				border-bottom-color: @color__p--text;
 			}
 		
 			.style--accent & {
@@ -212,7 +215,7 @@ tr:last-child td {
 			border-bottom: 1px solid @color__p--text;
 
 			.style--light & {
-				border-bottom-color: @contrast--light;
+				border-bottom-color: @color__p--text;
 			}
 		
 			.style--accent & {

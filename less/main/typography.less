@@ -6,10 +6,6 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 	padding: 0.5em 0;
 
-	.style--light & {
-	    color: @contrast--light;
-	}
-
 	.style--accent & {
 	    color: @contrast--accent;
 	}
@@ -152,7 +148,7 @@ h6, .heading--6, .contentgroup__h6 {
 			color: @color__p--text;
 		
 			.style--light & {
-				color: @contrast--light;
+				color: @color__p--text;
 			}
 		
 			.style--accent & {
@@ -172,6 +168,8 @@ p, a {
 }
 
 p, .paragraph, ul, ol, li, .contentgroup__body {
+	color: @color__p--text;
+
 	.make-font-a-little-smaller(@font__p--font-size);
 	.make-font-smaller(@font__p--font-size);
 	.make-font-a-lot-smaller(@font__p--font-size);
@@ -213,15 +211,15 @@ label:not(.clicktocall__label), .label-text {
     hyphens: none;
 
     .style--light & {
-	    color: fade(@contrast--light, 60%)!important;
+		color: @color-text--faded;
 	}
 
 	.style--accent & {
-	    color: fade(@contrast--accent, 60%)!important;
+	    color: fade(@contrast--accent, 60%) !important;
 	}
 
 	.style--dark & {
-	    color: fade(@contrast--dark, 60%)!important;
+	    color: fade(@contrast--dark, 60%) !important;
 	}
 }
 
@@ -246,18 +244,15 @@ a, .link {
 	.transition();
 
 	.style--light & {
-		color: @color--accent;
-		border-color: @color--accent;
+		color: @color-highlight;
 	}
 
 	.style--accent & {
 		color: @color--dark;
-		border-color: @color--dark;
 	}
 
 	.style--dark & {
 		color: @color--accent;
-		border-color: @color--accent;
 	}
 
     &, &:hover {
@@ -269,8 +264,8 @@ a, .link {
 		border-bottom: 1px solid @color-highlight--light;
 
 		.style--light & {
-			color: darken(@color--accent, 10%);
-			border-color: darken(@color--accent, 20%);
+			color: darken(@color-highlight, 10%);
+			border-color: @color-highlight--light;
 		}
 	
 		.style--accent & {
@@ -308,7 +303,7 @@ pre, code {
 	font-family: monospace;
 
 	.style--light & {
-		background-color: fade(@contrast--light, 10%);
+		background-color: @color-text--lightest;
 	}
 
 	.style--accent & {
@@ -324,7 +319,7 @@ code {
 	border-left: 5px solid @color-highlight;
 
 	.style--light & {
-		border-color: @contrast--light;
+		border-color: @color-highlight;
 	}
 
 	.style--accent & {
@@ -398,8 +393,8 @@ blockquote {
 	word-break: break-word;
 
 	.style--light & {
-		border-color: fade(@color--accent, 50%);
-	    color: @contrast--light;
+		border-color: @color-highlight--light;
+	    color: @color__link--text;
 	}
 
 	.style--accent & {
