@@ -6,22 +6,6 @@
 	padding: 0;
 }
 
-// Image
-
-.widget[data-name="image"] {
-	.image-widget-background--spacing();
-	background: @color__image--background;
-
-    .style--light & {
-        background: @color__image--background;
-    }
-
-    .style--accent &,
-    .style--dark & {
-        background-color: transparent;
-    }
-}
-
 // Caption
 
 .image-caption--spacing() when not (@color__image--background = @color__body--background) {

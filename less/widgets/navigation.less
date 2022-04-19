@@ -3,16 +3,11 @@
 // Logo & Company Name
 
 .template__company {
-	-webkit-flex: 1;
-	-ms-flex: 1;   
-    flex: 1;
     z-index: 3;
     margin: 1em 0;
 	
 	@media @tablet {
-		-webkit-flex: 5;
-		-ms-flex: 5;  
-	    flex: 5;
+		flex-grow: 1;
 	    margin: 2em 0;
 	}
 	
@@ -85,25 +80,19 @@ html.nav-open {
 }
 
 .template__navigation {
-	-webkit-flex: 1;
-	-ms-flex: 1; 
-    flex: 1;
-	
-    @media @tablet {
-		-webkit-flex: 1;
-		-ms-flex: 1;   
-		flex: 1;
-    }
-}
+	flex-grow: 1;
 
-.widget[data-widget-type="extendednavigation"] {
 	@media @tablet {
-		position: absolute;
-		top: 0;
-		right: 0;
-		left: 0;
-		bottom: 0;
-		z-index: 2;
+		flex-grow: inherit;
+		z-index: 500;
+	}
+
+	.widget[data-widget-type="extendednavigation"] {
+		position: relative;
+		
+		@media @tablet {
+			position: static;
+		}
 	}
 }
 
@@ -115,19 +104,19 @@ html.nav-open {
 	@media @tablet {
 		z-index: 100;
 		cursor: pointer;
-		background: @color__navigation--text;
-		background-clip: content-box;
-		width: 28px;
-		height: 3px;
-		padding: 0;
 		display: block;
-		position: absolute;
-		top: 30px;
-		right: 5%;
-		margin: 18px 0 28px;
+		position: relative;
+		background: transparent;
+		margin: 0;
+		padding: 0;
+		height: 1em;
+		width: 28px;
 		font-size: 26px;
 		text-indent: 10000px;
-		.transition(background, 0s, ease-in, 0.05s);
+
+		&:hover {
+			background: transparent;
+		}
 
 		.make-font-a-little-smaller(@font__companyname--font-size);
 		.make-font-smaller(@font__companyname--font-size);
@@ -136,40 +125,52 @@ html.nav-open {
 		.make-line-height-a-little-smaller(@font__companyname--line-height);
 		.make-line-height-smaller(@font__companyname--line-height);
 		.make-line-height-a-lot-smaller(@font__companyname--line-height);
-
-		// Top and Bottom Navigation Item Bar
-
-		&:after,
-		&:before {
-			content: '';
-			height: 3px;
-			width: 28px;
-			position: absolute;
-			display: block;
-			background-color: @color__navigation--text;
-			margin-right: 0;
-			margin-left: 0;
-			.transition-duration(0.05s, 0.05s);
-			.transition-delay(0.05s, 0s);
-		}
-
-		// Top Bar
 		
-		&:before {
-			top: 0.4em;
-		  	.transition-property(top, transform);
-		}
+		span {
+			position: relative;
+            display: block;
+            height: 3px;
+            width: 28px;
+		    background-color: @color__navigation--text;
+			.transition(all, 0.25s, ease-in);
 
-		// Bottom Bar
-		
-		&:after {
-			bottom: 0.4em;
-			.transition-property(bottom, transform);
-		}
+			.open & {
+				background-color: transparent;
+			}
 
-		&:hover {
-			&, &:before, &:after {
+			// Top and Bottom Navigation Item Bar
+
+			&:after,
+			&:before {
+				content: '';
+				position: absolute;
+				display: block;
+				height: 3px;
+				width: 28px;
 				background-color: @color__navigation--text;
+				.transition(all, 0.25s, ease-in);
+			}
+
+			// Top Bar
+			
+			&:before {
+				top: 10px;
+
+				.open & {
+					top: 0;
+					transform: rotate(45deg);
+				}
+			}
+
+			// Bottom Bar
+			
+			&:after {
+				bottom: 10px;
+
+				.open & {
+					bottom: 0;
+					transform: rotate(-45deg);
+				}
 			}
 		}
 	}
@@ -228,6 +229,11 @@ html.nav-open {
 
 		.open & {
 			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
 			opacity: 1;
 			width: auto;
 			width: 100vw;
@@ -349,13 +355,16 @@ html.nav-open {
 		left: auto;
 		opacity: 0;
 		margin: 0.5em 0 0;
-		padding: 0.5em 0;
+		padding: 0;
+		min-width: 300px;
+		max-width: 500px;
 		height: 0;
 		width: auto;
 		background-color: @color__navigation-list--background;
-		overflow: visible;
+		overflow: hidden;
 		text-align: center;
-		.transition(opacity, 0s);
+		transform: translateY(10px);
+		transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
 		.box-shadow(0px 5px 20px 0px fade(#000000, 15%));
 
 		@media @tablet {
@@ -363,6 +372,7 @@ html.nav-open {
 			margin: 0;
 			padding: 0;
 			.box-shadow(none);
+			transform: none;
 		}
 	}
 	
@@ -371,12 +381,14 @@ html.nav-open {
 		display: block;
 		opacity: 1;
 		height: auto;
-		.transition(opacity);
+		transform: translateY(0);
+		transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
 
 		@media @tablet {
 			position: static;
 			margin: 0 0 0.5em;
 			padding: 0;
+			transform: none;
 		}
 	}
 }
@@ -384,11 +396,16 @@ html.nav-open {
 // Navigation Folder Submenu Single Item
 
 .navigation-item--child {
-    white-space: nowrap;
-    
+	&:first-child {
+		padding-top: 1em;
+	}
+
+	&:last-child {
+		padding-bottom: 1em;
+	}
+
 	@media @tablet {
 		display: block;
-        white-space: normal;
 	}
 
 	.item-name {

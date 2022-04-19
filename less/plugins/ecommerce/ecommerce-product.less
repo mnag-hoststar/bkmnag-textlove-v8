@@ -151,7 +151,7 @@
     -webkit-flex: 0 1 50%;
     -ms-flex: 0 1 50%;
     flex: 0 1 50%;
-    background: @color__container--background;
+    background: @color__body--background;
     margin: 0 0 0 auto;
     max-width: 45%;
 
@@ -160,7 +160,7 @@
     }
 
     .style--light & {
-        background: @color__container--background;
+        background: @color__body--background;
     }
 
     .style--accent & {
@@ -199,6 +199,7 @@
     // Select Wrap
 
     .select-wrap {
+        margin: 0;
         max-width: 100%;
 
         &:after {
@@ -221,58 +222,23 @@
     // Form Group
 
     .form-group {
-        min-width: 100px;
-        margin: 0 0.6em 0 0;
-        float: left;
+        width: 100%;
+    }
         
+    // Button
+    
+    .ecomproduct__button,
+    .ecom-product-go-to-checkout-btn {
+        margin-bottom: 1em;
+        min-width: 250px;
+        text-align: center;
+    
         @media @mobile {
             width: 100%;
+        }
+
+        &:before {
             float: none;
-        }
-		
-        // Label
-
-        .label {
-            padding: 5px 0;
-            font-family: @font__h4--font-family;
-            font-size: 12px;
-            letter-spacing: 2px;
-            line-height: 1;
-            color: lighten(@color__p--text, 20%);
-            display: block;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-        
-            @media @mobile {
-                margin-top: 2em;
-            }
-
-            .style--light & {
-                color: lighten(@color__p--text, 20%);
-            }
-
-            .style--accent & {
-                color: @contrast--accent;
-            }
-
-            .style--dark & {
-                color: @contrast--dark;
-            }
-        }
-        
-        // Button
-        
-        .ecomproduct__button {
-			margin-bottom: 1em;
-			text-align: center;
-        
-			@media @mobile {
-				width: 100%;
-			}
-
-			&:before {
-				float: none;
-			}
         }
     }
 }

@@ -19,18 +19,18 @@
 	&__author-label {
     	letter-spacing: 1px;
 		font-size: 0.7em;
-		color: fade(@color__p--text, 50%);
+		color: fade(@color__p--text, 40%);
 
 		.style--light & {
-			color: fade(@color__p--text, 50%);
+			color: fade(@color__p--text, 40%);
 	    }
 
 	    .style--accent & {
-	        color: darken(@color--accent, 20%);
+	        color: fade(@contrast--accent, 40%);
 	    }
 
 	    .style--dark & {
-	        color: darken(@color--accent, 20%);
+	        color: fade(@contrast--accent, 40%);
 	    }
 	}
 	
@@ -57,8 +57,9 @@
 			padding-bottom: 0;
 			line-height: 1.5em;
 		}
+		
 		.review-link {
-			.link;
+			margin: 0.5em 0 2em;
 		}
 	}
 
@@ -69,11 +70,23 @@
 	
 	&__timestamp {
 		.timestamp-styles;
-		background-color: @color-text--lightest;
+		background-color: @color__container--background;
 		font-size: @font__p--font-size;
 
 		.make-font-a-little-smaller(@font__p--font-size);
 		.make-font-smaller(@font__p--font-size);
 		.make-font-a-lot-smaller(@font__p--font-size);
+	
+		.style--light & {
+			background-color: @color__container--background;
+		}
+	
+		.style--accent & {
+			background-color: darken(@color--accent, 5%);
+		}
+	
+		.style--dark & {
+			background-color: darken(@color--dark, 5%);
+		}
 	}
 }

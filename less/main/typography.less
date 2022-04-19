@@ -299,22 +299,23 @@ pre, code {
 	background-color: @color-text--lightest;
 	overflow: auto;
 	font-family: monospace;
+	font-size: 1em;
 
 	.style--light & {
 		background-color: @color-text--lightest;
 	}
 
 	.style--accent & {
-		background-color: fade(@contrast--accent, 10%);
+		background-color: darken(@color--accent, 10%);
 	}
 
 	.style--dark & {
-		background-color: fade(@contrast--dark, 10%);
+		background-color: darken(@color--dark, 10%);
 	}
 }
 
 code {
-	border-left: 5px solid @color-highlight;
+	border-left: 1px solid @color-highlight;
 
 	.style--light & {
 		border-color: @color-highlight;
@@ -368,7 +369,7 @@ ul {
 			left: 0;
 			bottom: 0;
 			.box-sizing(border-box);
-			border-right: 1px solid @color-text--lighter;
+			border-right: 1px solid @color-text--light;
 			font-family: @font__h1--font-family;
 			content: counter(ordered-counter);
 			counter-increment: ordered-counter;
@@ -381,9 +382,10 @@ ul {
 
 blockquote {
 	border: 1px solid @color-highlight--light;
+	background-color: @color__container--background;
 	color: @color__link--text;
 	position: relative;
-	padding: 30px!important;
+	padding: 30px !important;
 	margin: 2em 0;
 	font-style: italic;
 	font-family: @font__p--font-family;
@@ -392,16 +394,19 @@ blockquote {
 
 	.style--light & {
 		border-color: @color-highlight--light;
+		background-color: @color__container--background;
 	    color: @color__link--text;
 	}
 
 	.style--accent & {
-		border-color: fade(@contrast--accent, 50%);
+		border-color: @contrast--accent;
+		background-color: darken(@color--accent, 10%);
 	    color: @contrast--accent;
 	}
 
 	.style--dark & {
-		border-color: fade(@color--accent, 50%);
+		border-color: @color--accent;
+		background-color: darken(@color--dark, 10%);
 	    color: @contrast--dark;
 	}
 	
@@ -452,24 +457,35 @@ blockquote {
 	
 		li {
 			position: relative;
-			padding-left: 2em;
+			padding-left: 0;
 			margin: 0 0 0.25em 0;
 			list-style-type: none;
 	
 			// Custom Numbers
 	
 			&:before {
-				min-width: 2em;
-				padding: 0 0.4em 0 0;
+				position: static;
 				display: inline-block;
-				position: absolute;
-				top: 0;
-				left: 0;
-				bottom: 0;
+				min-width: 2em;
+				margin-right: 1em;
+				padding: 0 0.5em 0 0;
 				.box-sizing(border-box);
 				content: counter(ordered-counter) ".";
 				counter-increment: ordered-counter;
+				border-right: 1px solid @color-text--light;
 				text-align: left;
+
+				.style--light & {
+					border-color: @color-text--light;
+				}
+			
+				.style--accent & {
+					border-color: fade(@contrast--accent, 60%);
+				}
+			
+				.style--dark & {
+					border-color: fade(@contrast--dark, 60%);
+				}
 			}
 		}
 	}

@@ -123,7 +123,7 @@
         },
         "site": {
             "color__body--background": "#f2f3f5",
-            "color__container--background": "#f2f3f5",
+            "color__container--background": "#fff",
             "color__link--text": "#52bc90",
             "color__companyname--text": "#39424e",
             "font__companyname--font-family": "@font-swatch10-font-family",
@@ -169,7 +169,7 @@
             "color__header--border": "transparent"
         },
         "footer": {
-            "color__footer--background": "#ffffff",
+            "color__footer--background": "#fff",
             "color__footer--border": "#f2f3f5"
         },
         "navigation": {
@@ -211,6 +211,7 @@
             "color__gallery-description--text": "#fff"
         },
         "slideshow": {
+            "color__slideshow--background": "#fff",
             "color__slideshow-caption--background": "#b1e1cd",
             "color__slideshow-title--text": "#39424e",
             "color__slideshow-description--text": "#5e626e",
@@ -252,8 +253,7 @@
         "ecommerce": {
             "color__ecomproductslist-product-title--text": "@color__p--text",
             "color__ecomproduct-title--text": "@color__h2--text",
-            "color__ecomproduct-price--text": "@color__p--text",
-            "color__ecomproductslist-product-item--background": "#fff"
+            "color__ecomproduct-price--text": "@color__p--text"
         }
     }
 }

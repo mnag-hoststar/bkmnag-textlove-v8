@@ -25,7 +25,6 @@
     }
 
     .widget[data-name="content"] {
-
         @media @mobile {
             margin-bottom: 20px;
         }
@@ -76,19 +75,19 @@
 }
 
 hr.line__rule {
-	height: 2px;
-	background-color: @color-highlight--light;
+	height: 1px;
+	background-color: @color-highlight;
 
     .style--light & {
-        background-color: @color-highlight--light;
+        background-color: @color-highlight;
     }
 
     .style--accent & {
-        background-color: fade(@contrast--accent, 50%);
+        background-color: @contrast--accent;
     }
 
     .style--dark & {
-        background-color: fade(@contrast--dark, 50%);
+        background-color: @contrast--dark;
     }
 }
 

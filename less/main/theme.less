@@ -36,7 +36,7 @@
 	padding: 0 30px;
 
 	@media @mobile {
-		padding: 0 8%;
+		padding: 0 5%;
 	}
 
     .row-add-mode & {
@@ -44,7 +44,7 @@
     }
 	
 	&--small {
-	    background-color: @color__container--background; 
+	    background-color: @color__body--background; 
 	}
 }
 
@@ -79,7 +79,6 @@
 body {
 	position: relative;
 	font-smooth: always;
-	font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
@@ -129,11 +128,8 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 	z-index: 2;
 	padding: 5% 0;
 
-	@media @tablet {
-		padding: 2.5% 0;
-	}
-	@media @mobile {
-		padding: 0;
+	.hero + & {
+		padding-top: 2em !important;
 	}
 }
 
@@ -143,12 +139,11 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 #migrated #page-zones__main > .widget:not([data-name="row"]),
 #migrated .row:not(.row--width-no-padding) .row__container, #migrated [data-widget-type="pagetitle"],
 .container {
+	float: none;
 	width: 90%;
 	max-width: 1200px;
     margin: 0 auto;
-	padding: 20px;
     box-sizing: border-box;
-	background-color: @color__container--background; 
 
 	header &,
 	footer & {
@@ -156,11 +151,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 	}
 
 	@media @tablet {
-		width: 95%;
-	}
-
-	@media @mobile {
-		width: 100%;
+		width: 90%;
 	}
 }
 
@@ -170,15 +161,12 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
     width: 100%;
     background-color: @color__footer--background;
     border-top: 10px solid @color__footer--border;
-    padding: @header-height*0.5 0;
+    padding: 4em 0;
     bottom: 0;
     z-index: 1;
 
 	// Widget
-
-	.profile, .content {
-		opacity: .6;
-	}
+	
 	.texteditor-toolbar-wrapper {
 	    position: static;
 	    
@@ -195,7 +183,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 .footerright, .footerleft {
 	display: inline-block;
-	vertical-align: middle;
+	vertical-align: top;
 	width: 49.5%;
 
 	@media @mobile {
@@ -205,10 +193,6 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 }
 
 .gdpr-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
     background-color: @color__footer--background;
 	padding: 10px 5%;
 		

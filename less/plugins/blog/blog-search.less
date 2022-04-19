@@ -1,13 +1,6 @@
 // Blog Search
 
-// Conditional Mixins
-
-.blogsearch-widget-background--spacing() when not (@color__blogsearch--background = @color__body--background) {
-	padding: 2em 0;
-}
-
 .widget[data-name="blogsearch"] {
-	.blogsearch-widget-background--spacing();
 	background-color: @color__blogsearch--background;
 
     .style--light & {

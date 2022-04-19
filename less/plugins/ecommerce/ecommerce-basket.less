@@ -10,13 +10,11 @@
 	.ecombasket {
 		.basket-body {
 			display: table;
-			padding-top: 2em;
 			width: 100%;
-        	border-top: 5px solid fade(@color__p--text, 20%);
+        	border-top: 1px solid @color__p--text;
 		}
 		
 		.basket-list {
-			border-top: 1px solid fade(@color__p--text, 20%);
 			border-bottom: 1px solid fade(@color__p--text, 20%);
 		}
 
@@ -30,7 +28,7 @@
 				vertical-align: middle;
 				padding-top: 0.5em;
 				padding-bottom: 0.5em;
-				border-bottom: 1px solid fade(@color__p--text, 20%);
+				border-top: 1px solid fade(@color__p--text, 20%);
 			}
 				
 			&:last-child > * {
@@ -40,7 +38,6 @@
 		
 		.basket-item-image {
 			padding-right: 1.5em;
-			border-right: 1px solid fade(@color__p--text, 20%);
 		}
 		
 		.basket-item-details {
@@ -117,10 +114,10 @@
 		
 		.basket-total {
     		margin-bottom: 1em;
-			padding: 1.6em 0;
+			padding: 1em 0;
 			border-bottom: none;
         	text-align: right;
-        	border-bottom: 5px solid fade(@color__p--text, 20%);
+        	border-bottom: 1px solid @color__p--text;
 			
 			@media @basketsummary-medium {
 				text-align: right;

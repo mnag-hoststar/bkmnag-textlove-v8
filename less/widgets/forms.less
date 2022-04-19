@@ -1,11 +1,5 @@
 // Forms
 
-// Conditional Mixins
-
-.form-widget-background--spacing() when not (@color__form--background = @color__body--background) {
-	padding: 2em 0;
-}
-
 // Global Form Styles
 
 .widget[data-name="signupform"],
@@ -86,7 +80,7 @@ input[type="password"],
 .input--search,
 textarea {
     padding: 0.6em 1em;
-    background-color: transparent;
+    background-color: @color__form--background;
     border: 1px solid @color__form--border;
     color: @color__p--text;
 	.transition();
@@ -94,56 +88,31 @@ textarea {
 
     .style--light & {
         border-color: @color__form--border;
-        color: @color__p--text;
     }
 
     .style--accent & {
-        border-color: fade(@contrast--accent, 65%);
-        color: @contrast--accent;
+        border-color: @color--dark;
     }
 
     .style--dark & {
-        border-color: fade(@contrast--dark, 65%);
-        color: @contrast--dark;
+        border-color: @color--accent;
     }
 	
-	&:hover {
-		background-color: transparent;
-    	border: 1px solid @color-highlight;
-
-        .style--light & {
-            border-color: @color-highlight;
-        }
-
-        .style--dark & {
-            border-color: @color--accent;
-        }
-
-        .style--accent & {
-            border-color: @contrast--accent;
-        }
-	}
-	
-	// Focus style for easier keyboard navigation
-	
-	&:focus {
-		background-color: @color__form--background;
+	&:hover,
+    &:focus {
 		border: 1px solid @color-highlight;
 		.box-shadow(none);
 
         .style--light & {
-            background-color: @color__form--background;
             border-color: @color-highlight;
         }
 
         .style--accent & {
-            background-color: @color--light;
-            border-color: @contrast-accent;
+            border-color: darken(@color--dark, 5%);
         }
 
         .style--dark & {
-            background-color: @color--light;
-            border-color: @color--accent;
+            border-color: darken(@color--accent, 5%);
         }
 	}
 }
@@ -244,8 +213,6 @@ input:focus {
 .widget .form {
 	.option-list,
 	[class*="form-group--terms"] {
-		margin-top: 1em;
-
 		.label--radio,
 		.label--checkbox,
 		label[for*="input--terms"],
@@ -280,57 +247,42 @@ input:focus {
 			height: 100% !important;
 
 			&:hover + label:before {
-				border: 1px solid transparent;
-				background-color: fade(@color__form--background, 75%);
+				background-color: @color__form--background;
+				border: 1px solid @color__form--border;
 
                 .style--light & {
-                    background-color: fade(@color__form--background, 75%);
+                    border-color: @color__form--border;
                 }
 
                 .style--accent & {
-                    background-color: fade(@contrast--accent, 65%);
+                    border-color: fade(@color--dark, 60%);
                 }
-
+            
                 .style--dark & {
-                    background-color: fade(@contrast--accent, 65%);
+                    border-color: fade(@color--accent, 60%);
                 }
 			}
 
-			&:checked + label:before {
-				border: 1px solid @color__button--background;
+			&:checked + label:before,
+			&:focus + label:before,
+			&:focus:checked + label:before {
+				border: 1px solid @color-highlight;
 
                 .style--light & {
-                    border-color: @color__button--background;
+                    border-color: @color-highlight;
                 }
 
                 .style--accent & {
-                    border-color: @contrast--accent;
+                    border-color: @color--dark;
                 }
 
                 .style--dark & {
-                    border-color: @contrast--dark;
+                    border-color: @color--accent;
                 }
 			}
 
 			&:checked + label:after {
 				opacity: 1;
-			}
-
-			&:focus + label:before,
-			&:focus:checked + label:before {
-				border: 1px solid @color-highlight--light;
-
-                .style--light & {
-                    border-color: @color-highlight--light;
-                }
-
-                .style--accent & {
-                    border-color: @contrast--accent;
-                }
-
-                .style--dark & {
-                    border-color: @contrast--dark;
-                }
 			}
 		}
 
@@ -349,6 +301,22 @@ input:focus {
 				margin-left: 40px;
 				.transform-scale(1);
 				word-break: break-word;
+                min-height: 22px;
+                line-height: 22px;
+                color: @color__p--text !important;
+                text-align: left;
+
+                .style--light & {
+                    color: @color__p--text !important;
+                }
+    
+                .style--accent & {
+                    color: @contrast--accent !important;
+                }
+    
+                .style--dark & {
+                    color: @contrast--dark !important;
+                }
 				
 				&:before,
 				&:after {
@@ -359,21 +327,23 @@ input:focus {
 					content: ' ';
 					position: absolute;
 					background-color: @color__form--background;
-					border: 1px solid transparent;
+					border: 1px solid @color-highlight;
                     left: -40px;
-                    width: 22px;
-                    height: 22px;
+                    width: 22px !important;
+                    height: 22px !important;
+                    min-width: 22px;
+                    border-radius: 0;
 
                     .style--light & {
-                        background-color: @color__form--background;
+                        border-color: @color-highlight;
                     }
-
+    
                     .style--accent & {
-                        background-color: fade(@contrast--accent, 65%);
+                        border-color: @color--dark;
                     }
-
+    
                     .style--dark & {
-                        background-color: fade(@contrast--accent, 65%);
+                        border-color: @color--accent;
                     }
 				}
 
@@ -406,11 +376,11 @@ input:focus {
                     }
 
                     .style--accent & {
-                        background-color: @contrast--accent;
+                        background-color: @color--dark;
                     }
 
                     .style--dark & {
-                        background-color: @contrast--dark;
+                        background-color: @color--accent;
                     }
 				}
 			}
@@ -420,22 +390,22 @@ input:focus {
 		.option-item--checkbox {
 			label {
 				&:after {
-					color: @color__button--background;
                     content: '\f00c';
                     font-family: 'FontAwesome', sans-serif;
 					left: -36px;
 					top: 1px;
+					color: @color__button--background;
 
                     .style--light & {
                         color: @color__button--background;
                     }
 
                     .style--accent & {
-                        color: @contrast--accent;
+                        color: @color--dark;
                     }
 
                     .style--dark & {
-                        color: @contrast--dark;
+                        color: @color--accent;
                     }
 				}
 			}
@@ -460,15 +430,84 @@ input:focus {
 	}
 	
 	[class*="form-group--terms"] {
-		margin-top: 2em;
+		margin-top: 0;
+
+        label {
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
 	}
 }
 
 // Select Wrap
 
 .select-wrap {
-    position: relative;
+	position: relative;
 	margin-top: 1em;
+
+    .advancedcontactform & {
+        max-width: 50%;
+
+        @media @tablet {
+            max-width: 100%;
+        }
+    
+        .responsivecolumns & {
+            max-width: 100%;
+        }
+    }
+
+    select,
+    .advancedcontactform__select {
+        position: relative;
+        display: block;
+        padding: 0 2.5em 0 1em;
+        width: 100%;
+        background-color: @color__form--background;
+        border: 1px solid @color__form--border;
+        color: @color__p--text;
+        .appearance(none);
+    
+        .style--light & {
+            border-color: @color__form--border;
+        }
+    
+        .style--accent & {
+            border-color: fade(@color--dark, 60%);
+        }
+    
+        .style--dark & {
+            border-color: fade(@color--accent, 60%);
+        }
+    
+        &:hover,
+        &:focus,
+        &:hover:focus {
+            border: 1px solid @color-highlight;
+            background-color: @color__form--background;
+    
+            .style--light & {
+                border-color: @color-highlight;
+            }
+    
+            .style--accent & {
+                border-color: @color--dark;
+            }
+    
+            .style--dark & {
+                border-color: @color--accent;
+            }
+        }
+    
+        &::-ms-expand {
+            display: none;
+        }
+        
+        option {
+            background-color: @color__body--background;
+            color: @color__p--text;
+        }
+    }
 	
     // Icon
 
@@ -487,118 +526,10 @@ input:focus {
         margin-top: -0.5em;
         z-index: 1;
 
-        .style--light & {
-            color: @color__p--text;
-        }
-
-        .style--accent & {
-            color: @contrast--accent;
-        }
-
-        .style--dark & {
-            color: @contrast--dark;
-        }
-
 		@media @mobile {
 			font-size: 2em;
 		}
     }
-}
-
-// Dropdown
-
-.select-wrap {
-	position: relative;
-
-    .advancedcontactform & {
-        max-width: 50%;
-
-        @media @tablet {
-            max-width: 100%;
-        }
-    
-        .responsivecolumns & {
-            max-width: 100%;
-        }
-    }
-}
-
-select {
-    position: relative;
-    display: block;
-	padding: 0 2em 0 1em;
-    width: 100%;
-	background-color: transparent;
-    border: 1px solid @color__form--border;
-    font-size: 1em;
-    color: @color__p--text;
-    .appearance(none);
-
-    .style--light & {
-        border-color: @color__form--border;
-        color: @color__p--text;
-    }
-
-    .style--accent & {
-        border-color: fade(@contrast--accent, 65%);
-        color: @contrast--accent;
-    }
-
-    .style--dark & {
-        border-color: fade(@contrast--dark, 65%);
-        color: @contrast--dark;
-    }
-
-    @media @mobile {
-		padding: 0 2.7em 0 1em;
-    }
-
-    &:hover {
-		background-color: transparent;
-    	border: 1px solid @color-highlight;
-
-        .style--light & {
-            border-color: @color-highlight;
-        }
-
-        .style--accent & {
-            border-color: @contrast--accent;
-        }
-
-        .style--dark & {
-            border-color: @contrast--dark;
-        }
-    }
-
-    &:focus,
-	&:hover:focus {
-		background-color: @color__form--background;
-		border: 1px solid @color-highlight;
-
-        .style--light & {
-            background-color: @color__form--background;
-            border-color: @color-highlight;
-        }
-
-        .style--accent & {
-            background-color: @color--light;
-            border-color: @contrast--accent;
-        }
-
-        .style--dark & {
-            background-color: @color--light;
-            border-color: @contrast--dark;
-        }
-	}
-
-    &::-ms-expand {
-        display: none;
-    }
-    
-    option {
-		background-color: @color__container--background;
-		color: @color__p--text;
-	}
 }
 
 // Error Messages
@@ -627,21 +558,30 @@ select {
 
 .signupform {
 	.form-body {
-		display: table;
+		display: flex;
+        flex-wrap: wrap;
 		width: 100%;
 	}
 
 	.form-group {
-		display: table-cell;
-		vertical-align: middle;
-		height: 3em;
-		
 		&:first-child {
-			width: 100%;
-		}
+            margin-right: 1em;
+			flex-grow: 1;
 		
-		.button {
-			white-space: nowrap;
+            @media @mobile {
+                width: 100%;
+                margin-right: 0;
+            }
+    
+            .responsivecolumns & {
+                width: 100%;
+                margin-right: 0;
+            }
+    
+            .profile & {
+                width: 100%;
+                margin-right: 0;
+            }
 		}
 	}
 

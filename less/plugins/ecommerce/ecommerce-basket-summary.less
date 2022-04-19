@@ -8,7 +8,6 @@
 
 .summary-title {
     padding-bottom: .5em;
-    border-bottom: 5px solid fade(@color__p--text, 20%);
 }
 
 // Table
@@ -17,7 +16,7 @@
     border-collapse: separate;
     width: 100%;
     margin: 0;
-    border-bottom: 5px solid fade(@color__p--text, 20%);
+    border-bottom: 1px solid @color__p--text;
     margin-bottom: 2em;
 	
     // Table and Cells Reset
@@ -31,7 +30,11 @@
         padding-top: 10px;
         padding-bottom: 10px;
         border-bottom: 1px solid fade(@color__p--text, 20%);
-		
+
+		@media @basketsummary-medium, @mobile {
+            padding-bottom: 0;
+            border-bottom: none;
+		}
     }
 	
 	&, .table-row, .cell, .summary-body {
@@ -52,10 +55,6 @@
             font-family: @font__h1--font-family;
             text-transform: uppercase;
             color: @color__p--text;
-
-            &:nth-last-of-type(-n+2) {
-                text-align: right;
-            }
         }
     }
 	
@@ -128,7 +127,6 @@
         padding: 0 16px 0 0;
         width: 10%;
         min-width: 100px;
-        border-right: 1px solid fade(@color__p--text, 20%);
 		
 		@media @basketsummary-medium, @mobile {
             width: auto;
@@ -172,35 +170,30 @@
 
     // Cell Total, Cell Price
 
-	.cell--price, .cell--total {
-        text-align: right;
-
+	.cell--price,
+    .cell--total {
 		@media @basketsummary-medium, @mobile {
             float: left;
             width: 50%;
             padding: 1em;
-            background-color: darken(@color__container--background, 8%) !important;
         }
 	}
-	
-    .cell--total {
-        text-align: right;
 
-    }
-    .cell--price {
-        @media @basketsummary-medium, @mobile {
-            text-align: left;
-            clear: left;
-        }
+    .cell.cell--total.ecombasketsummary__cell {
+        border-bottom: 1px solid fade(@color__p--text, 20%);
     }
 
     // Order Total
 
     .cell--order-total {
         text-align: right;
-        background-color: @color__container--background;
-        border-bottom: 0;
+        background-color: @color__body--background;
+        border-bottom: none;
         padding: 1.6em 0;
+
+		@media @basketsummary-medium, @mobile {
+            border-bottom: none !important;
+        }
     }
 
     // Cell Image Item Link

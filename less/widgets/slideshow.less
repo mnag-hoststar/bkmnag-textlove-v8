@@ -10,18 +10,27 @@
 	}
 }
 
-.responsiveslideshow__figure, .responsiveslideshow__slides-list {
-    margin-bottom: 4em;
+.responsiveslideshow {
+	margin-bottom: 60px;
+}
+
+.slides-list,
+.pagination-list,
+.responsiveslideshow .figure {
+	height: 18px;
+	min-height: 100%;
+}
+
+.responsiveslideshow__figure,
+.responsiveslideshow__slides-list {
     height: 700px;
 
     @media @tablet-horizontal {
     	height: 500px;
     }
+
     @media @tablet {
     	height: 400px;
-    }
-    @media @mobile {
-    	height: 300px;
     }
 }
 
@@ -46,11 +55,20 @@
 	}
 }
 
-.responsiveslideshow .figure {
-	background-color: transparent;
-	background-size: cover;
-	background-position: center;
-	min-height: 200px;
+.responsiveslideshow .contain .figure {
+	background-color: fade(@color__container--background, 20%);
+
+	.style--light & {
+		border-color: fade(@color__container--background, 20%);
+	}
+
+	.style--accent & {
+		border-color: fade(@contrast--accent, 20%);
+	}
+
+	.style--dark & {
+		border-color: fade(@contrast--dark, 20%);
+	}
 }
 
 .responsiveslideshow__image {
@@ -72,16 +90,6 @@
 	.controls-font-size();
 }
 
-.responsiveslideshow__image-title,
-.responsiveslideshow__image-description {
-	margin: 0 auto;
-    width: @layout-width-desktop;
-
-	@media @tablet {
-		width: @layout-width-tablet;
-	}
-}
-
 .responsiveslideshow__image-title {
 	color: @color__slideshow-title--text;
 	font-size: @font__h4--font-size;
@@ -90,34 +98,22 @@
 	.make-font-smaller(@font__h4--font-size);
 	.make-font-a-lot-smaller(@font__h4--font-size);
 
-    .style--light & {
+	.style--light &,
+	.style--accent &,
+	.style--dark & {
 		color: @color__slideshow-title--text;
-    }
-
-    .style--accent & {
-        color: @contrast--accent;
-    }
-
-    .style--dark & {
-        color: @contrast--dark;
-    }
+	}
 }
 
 .responsiveslideshow__image-description {
 	color: @color__slideshow-description--text;
 	line-height: 1.3em;
 
-    .style--light & {
+	.style--light &,
+	.style--accent &,
+	.style--dark & {
 		color: @color__slideshow-description--text;
-    }
-
-    .style--accent & {
-        color: fade(@contrast--accent, 80%);
-    }
-
-    .style--dark & {
-        color: fade(@contrast--dark, 80%);
-    }
+	}
 }
 
 // Slide Navigation Buttons
@@ -129,16 +125,6 @@
     left: 0;
     right: 0;
 	margin: 0;
-	opacity: 0;
-	.transition(opacity);
-	
-	// Controls are only show when the
-	// slideshow is hovered over.
-
-	.widget[data-name="responsiveslideshow"]:hover &,
-	.widget[data-name="responsiveslideshow"]:focus & {
-		opacity: 1;
-	}
 	
 	// Button
 
@@ -147,15 +133,16 @@
 		top: 0;
 		margin: 0;
 		padding: 0;
-		height: 40px;
-		width: 40px;
+		height: 50px;
+		width: 50px;
 	    border: none;
 		background-color: transparent;
 		border: 1px solid @color__slideshow-pagination-item--background;
+		background-color: fade(@color__slideshow--background, 60%);
 		color: @color__slideshow-pagination-item--background;
 		.box-shadow(none);
 		.transition(border);
-		.border-radius(20px);
+		.border-radius(50%);
 		z-index: 2;
 		.controls-font-size(16px);
 		
@@ -165,9 +152,9 @@
 			margin-right: 0;
     		margin-left: 0;
 			font-size: 14px;
-			line-height: 39px;
-			height: 39px;
-			width: 39px;
+			line-height: 49px;
+			height: 49px;
+			width: 49px;
 		}
 	}
 
@@ -203,8 +190,8 @@
 
 		// Play Icon
 
-		&.pause:before {
-			content: '\f04b';
+		&.icon--pause:before {
+			margin-left: 1px !important;
 		}
 	}
 }
@@ -213,9 +200,17 @@
 
 .responsiveslideshow__slide-pagination {
 	position: absolute;
-	bottom: -20px;
+	bottom: 0;
 	width: 100%;
 	z-index: 1;
+
+	@media @mobile {
+		bottom: -30px;
+	}
+    
+	.responsivecolumns & {
+		bottom: -30px;
+	}
 
 	.pagination-list {
 		text-align: center;

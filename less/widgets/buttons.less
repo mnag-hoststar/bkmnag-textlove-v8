@@ -1,75 +1,77 @@
 // Buttons
 
-// Button
-
 .button,
 .link-button,
 .tweet .button,
 .clicktocall .phone-number-link,
-.clicktocall .clicktocall__label,
 .userregistration fieldset .userregistrationbtn,
+.yelpreview__review-excerpt .review-link,
 a.ecomproduct__button,
 a.blogpostlist__read-more,
-a.contentgroup__link {
+a.contentgroup__link,
+a.ecombasketsummary__continue-shopping {
     cursor: pointer;
     position: relative;
     display: inline-block;
     padding: 10px 30px 7px;
-    text-transform: uppercase;
+	background-color: @color__button--background;
     .appearance(none);
 	.transition (all, 0.5s, ease);
-    background-color: @color__button--background;
-	font-family: @font__button--font-family;
-	font-size: @font__button--font-size;
-	font-weight: @font__button--font-weight;
-	line-height: @font__button--line-height;
-	letter-spacing: @font__button--letter-spacing;
-    color: @color__button--text;
-	word-break: break-word;
+
+	&, span {
+		font-family: @font__button--font-family;
+		font-size: @font__button--font-size;
+		font-weight: @font__button--font-weight;
+		line-height: @font__button--line-height;
+		letter-spacing: @font__button--letter-spacing;
+		color: @color__button--text;
+		word-break: break-word;
+		text-transform: uppercase;
+		
+		.make-font-a-little-smaller(@font__button--font-size);
+		.make-font-smaller(@font__button--font-size);
+		.make-font-a-lot-smaller(@font__button--font-size);
+		
+		.make-line-height-a-little-smaller(@font__button--line-height);
+		.make-line-height-smaller(@font__button--line-height);
+		.make-line-height-a-lot-smaller(@font__button--line-height);
 	
-	.make-font-a-little-smaller(@font__button--font-size);
-	.make-font-smaller(@font__button--font-size);
-	.make-font-a-lot-smaller(@font__button--font-size);
+		.style--light & {
+			background-color: @color__button--background;
+			color: @color__button--text;
+		}
 	
-	.make-line-height-a-little-smaller(@font__button--line-height);
-	.make-line-height-smaller(@font__button--line-height);
-	.make-line-height-a-lot-smaller(@font__button--line-height);
-
-	.style--light & {
-        background-color: @color__button--background;
-        color: @color__button--text;
-    }
-
-    .style--accent & {
-        background-color: @color--dark;
-        color: @contrast--dark;
-    }
-
-    .style--dark & {
-        background-color: @color--accent;
-        color: @contrast--accent;
-    }
+		.style--accent & {
+			background-color: @color--dark;
+			color: @contrast--dark;
+		}
 	
-    &:hover {
-        background-color: @color__button--background--hover;
-    	color: @color__button--text--hover;
-    	.transition (all, 0.5s, ease);
-
-    	.style--light & {
+		.style--dark & {
+			background-color: @color--accent;
+			color: @contrast--accent;
+		}
+		
+		&:hover {
 			background-color: @color__button--background--hover;
 			color: @color__button--text--hover;
-	    }
-
-	    .style--accent & {
-	        background-color: darken(@color--dark, 12%);
-	        color: @contrast--dark;
-	    }
-
-	    .style--dark & {
-	        background-color: darken(@color--accent, 12%);
-	        color: @contrast--accent;
-	    }
-    }
+			.transition (all, 0.5s, ease);
+	
+			.style--light & {
+				background-color: @color__button--background--hover;
+				color: @color__button--text--hover;
+			}
+	
+			.style--accent & {
+				background-color: darken(@color--dark, 12%);
+				color: @contrast--dark;
+			}
+	
+			.style--dark & {
+				background-color: darken(@color--accent, 12%);
+				color: @contrast--accent;
+			}
+		}
+	}
 }
 
 .button,
