@@ -409,21 +409,15 @@ blockquote {
 		background-color: darken(@color--dark, 10%);
 	    color: @contrast--dark;
 	}
+
+	&:after {
+		display: none;
+	}
 	
 	.responsivecolumns & {
 		width: auto;
 		max-width: none;
-	}
-	
-	.columns-four-first &,
-	.columns-four-second &,
-	.columns-four-third &,
-	.columns-four-fourth & {
 		padding-right: 0;
-		
-		&:after {
-			display: none;
-		}
 	}
 }
 
