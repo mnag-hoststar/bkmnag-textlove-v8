@@ -50,6 +50,19 @@
 .form label {
 	margin: 0 0 0.3em;
 	line-height: 1.5em;
+	color: @color__form-legend--text;
+
+    .style--light & {
+        color: @color__form-legend--text;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 label, .label {
