@@ -17,7 +17,6 @@
 .slides-list,
 .pagination-list,
 .responsiveslideshow .figure {
-	height: 18px;
 	min-height: 100%;
 }
 
@@ -200,16 +199,16 @@
 
 .responsiveslideshow__slide-pagination {
 	position: absolute;
-	bottom: 0;
+	bottom: 10px;
 	width: 100%;
 	z-index: 1;
 
 	@media @mobile {
-		bottom: -30px;
+		bottom: 0;
 	}
     
 	.responsivecolumns & {
-		bottom: -30px;
+		bottom: 0;
 	}
 
 	.pagination-list {
@@ -231,7 +230,7 @@
 	.button {
 		background-color: transparent;
 		width: 10px;
-		height: 10px;
+		height: 10px !important;
 		display: block;
 		overflow: hidden;
 		text-indent: -10000px;
@@ -256,13 +255,26 @@
 
 		@media @tablet {
 			width: 16px;
-			height: 16px;
+			height: 16px !important;
 		}
 		
 		&:hover {
 			margin: 0;
 			padding: 0;
 			.box-shadow(none);
+			background: @color__slideshow-pagination-item--text--selected;
+
+			.style--light & {
+				background: @color__slideshow-pagination-item--text--selected;
+			}
+	
+			.style--accent & {
+				background: @contrast--accent;
+			}
+	
+			.style--dark & {
+				background: @contrast--dark;
+			}
 		}
 	}
 
