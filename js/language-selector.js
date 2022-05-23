@@ -24,7 +24,7 @@ $(document).ready(function() {
 			
 			$('.widget[data-widget-type="feature"] .widget-overlay').css('margin-top', languageSelectorHeight+'px');
 			
-			$('.template__content').css('padding-top', languageAndNavigationHeight+'px');
+			$('.template__content').css('padding-top', languageAndNavigationHeight+20+'px');
     	}
     
         $(window).on('scroll', function () {
