@@ -15,6 +15,14 @@
 .gallery-list {
 	margin: -5px;
 	.inline-block-font-hack();
+	
+	@media @mobile {
+		margin: 0;
+	}
+	
+	.responsivecolumns & {
+		margin: 0;
+	}
 }
 
 // Single Gallery Item
