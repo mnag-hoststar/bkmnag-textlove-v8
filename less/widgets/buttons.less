@@ -18,6 +18,42 @@ a.ecombasketsummary__continue-shopping {
 	background-color: @color__button--background;
     .appearance(none);
 	.transition (all, 0.5s, ease);
+	
+	.style--light & {
+		background-color: @color__button--background;
+		color: @color__button--text;
+	}
+
+	.style--accent & {
+		background-color: @color--dark;
+		color: @contrast--dark;
+	}
+
+	.style--dark & {
+		background-color: @color--accent;
+		color: @contrast--accent;
+	}
+	
+	&:hover {
+		background-color: @color__button--background--hover;
+		color: @color__button--text--hover;
+		.transition (all, 0.5s, ease);
+
+		.style--light & {
+			background-color: @color__button--background--hover;
+			color: @color__button--text--hover;
+		}
+
+		.style--accent & {
+			background-color: darken(@color--dark, 12%);
+			color: @contrast--dark;
+		}
+
+		.style--dark & {
+			background-color: darken(@color--accent, 12%);
+			color: @contrast--accent;
+		}
+	}
 
 	&, span {
 		font-family: @font__button--font-family;
@@ -36,42 +72,6 @@ a.ecombasketsummary__continue-shopping {
 		.make-line-height-a-little-smaller(@font__button--line-height);
 		.make-line-height-smaller(@font__button--line-height);
 		.make-line-height-a-lot-smaller(@font__button--line-height);
-	
-		.style--light & {
-			background-color: @color__button--background;
-			color: @color__button--text;
-		}
-	
-		.style--accent & {
-			background-color: @color--dark;
-			color: @contrast--dark;
-		}
-	
-		.style--dark & {
-			background-color: @color--accent;
-			color: @contrast--accent;
-		}
-		
-		&:hover {
-			background-color: @color__button--background--hover;
-			color: @color__button--text--hover;
-			.transition (all, 0.5s, ease);
-	
-			.style--light & {
-				background-color: @color__button--background--hover;
-				color: @color__button--text--hover;
-			}
-	
-			.style--accent & {
-				background-color: darken(@color--dark, 12%);
-				color: @contrast--dark;
-			}
-	
-			.style--dark & {
-				background-color: darken(@color--accent, 12%);
-				color: @contrast--accent;
-			}
-		}
 	}
 }
 
