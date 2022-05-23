@@ -244,12 +244,6 @@
             "color__menu-section-header--background": "@color__secondary",
             "color__menu-section-featured--background": "@color__secondary"
         },
-        "blog": {
-            "color__blogsearch-legend--background": "@color__form-legend--background",
-            "color__blogsearch-legend--text": "@color__form-legend--text",
-            "color__blogpost-title--background": "@color__secondary",
-            "color__blogpost-title--text": "@color__h1--text"
-        },
         "ecommerce": {
             "color__ecomproductslist-product-title--text": "@color__p--text",
             "color__ecomproduct-title--text": "@color__h2--text",
