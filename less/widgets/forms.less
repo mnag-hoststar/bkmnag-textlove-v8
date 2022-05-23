@@ -443,9 +443,44 @@ input:focus {
 
 // Select Wrap
 
+// Select Wrap
+
 .select-wrap {
 	position: relative;
 	margin-top: 1em;
+    background-color: @color__form--background;
+    border: 1px solid @color__form--border;
+    
+    .style--light & {
+        border-color: @color__form--border;
+    }
+
+    .style--accent & {
+        border-color: fade(@color--dark, 60%);
+    }
+
+    .style--dark & {
+        border-color: fade(@color--accent, 60%);
+    }
+    
+    &:hover,
+    &:focus,
+    &:hover:focus {
+        border: 1px solid @color-highlight;
+        background-color: @color__form--background;
+
+        .style--light & {
+            border-color: @color-highlight;
+        }
+
+        .style--accent & {
+            border-color: @color--dark;
+        }
+
+        .style--dark & {
+            border-color: @color--accent;
+        }
+    }
 
     .advancedcontactform & {
         max-width: 50%;
@@ -461,76 +496,25 @@ input:focus {
 
     select,
     .advancedcontactform__select {
-        position: relative;
-        display: block;
-        padding: 0 2.5em 0 1em;
         width: 100%;
-        background-color: @color__form--background;
-        border: 1px solid @color__form--border;
-        color: @color__p--text;
-        .appearance(none);
-    
-        .style--light & {
-            border-color: @color__form--border;
-        }
-    
-        .style--accent & {
-            border-color: fade(@color--dark, 60%);
-        }
-    
-        .style--dark & {
-            border-color: fade(@color--accent, 60%);
-        }
-    
-        &:hover,
-        &:focus,
-        &:hover:focus {
-            border: 1px solid @color-highlight;
-            background-color: @color__form--background;
-    
-            .style--light & {
-                border-color: @color-highlight;
-            }
-    
-            .style--accent & {
-                border-color: @color--dark;
-            }
-    
-            .style--dark & {
-                border-color: @color--accent;
-            }
-        }
+        padding: 0.4em 2.75em 0.4em 1em;
+        .appearance(none) !important;
+        background-image: url("data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI0IDI0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNCAyNCI+Cgk8cG9seWxpbmUgc3Ryb2tlPSIjNzY3ODgwIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjMiIHBvaW50cz0iMjAuMSw4LjYgMTIsMTYuNyAzLjksOC42IiAvPgo8L3N2Zz4=");
+        background-repeat: no-repeat;
+        background-position: right 0.75em center;
+        background-size: 1.2em;
+        text-overflow: ellipsis;
+        background-color: transparent;
+        border: none;
     
         &::-ms-expand {
             display: none;
         }
-        
+    
         option {
             background-color: @color__body--background;
             color: @color__p--text;
         }
-    }
-	
-    // Icon
-
-    &:before {
-        content: '\f107';
-        font-family: 'FontAwesome', sans-serif;
-        display: inline-block;
-        height: 1em;
-        line-height: 1em;
-        text-align: center;
-		font-size: 1.5em;
-        color: @color__p--text;
-        position: absolute;
-        right: 0.5em;
-        top: 50%;
-        margin-top: -0.5em;
-        z-index: 1;
-
-		@media @mobile {
-			font-size: 2em;
-		}
     }
 }
 
