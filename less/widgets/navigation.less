@@ -85,8 +85,10 @@ html.nav-open {
 	min-width: 50%;
 
 	@media @tablet {
+		position: static;
 		flex-grow: inherit;
 		z-index: 500;
+		min-height: 26px;
 		min-width: 60px;
 	}
 
@@ -108,7 +110,9 @@ html.nav-open {
 		z-index: 100;
 		cursor: pointer;
 		display: block;
-		position: relative;
+		position: absolute;
+		left: auto;
+		right: 38px;
 		background: transparent;
 		margin: 0;
 		padding: 0;

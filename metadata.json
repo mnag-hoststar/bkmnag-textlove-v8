@@ -165,12 +165,12 @@
             "color__p--text": "#5e626e"
         },
         "header": {
-            "color__header--background": "#f2f3f5",
+            "color__header--background": "@color__body--background",
             "color__header--border": "transparent"
         },
         "footer": {
             "color__footer--background": "#fff",
-            "color__footer--border": "#f2f3f5"
+            "color__footer--border": "@color__body--background"
         },
         "navigation": {
             "font__navigation--font-family": "@font-swatch6-font-family",
