@@ -438,7 +438,7 @@ blockquote {
 	
 			&:before {
 				position: absolute;
-				content: '\2013';
+				content: '\2022';
 				left: -2em;
 			}
 		}
@@ -480,6 +480,22 @@ blockquote {
 				.style--dark & {
 					border-color: fade(@contrast--dark, 60%);
 				}
+			}
+		}
+	}
+}
+
+.content .widget-overlay {
+	ul.list--options {
+		margin: 0;
+		padding: 0;
+	
+		li.item--option {
+			margin: 0;
+			padding: 0;
+	
+			&:before {
+				content: none;
 			}
 		}
 	}
