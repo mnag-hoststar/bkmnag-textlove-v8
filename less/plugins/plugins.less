@@ -9,20 +9,21 @@
 
 .category-title,
 .tags-title {
-	padding: 0;
+	padding: 0.5em 0;
 }
 
 .tag-list {
 	li {
+		margin: 0 0.1em 0.5em;
 		padding: 0;
-		margin: 0;
+		display: inline-block;
 	}
 }
 
 a.category-link,
-a.tag-link,
-.dietary-item {
+a.tag-link {
 	display: inline-block;
+	line-height: 1.4em;
 	border: 1px solid @color__form--border;
 	margin: 0;
 	padding: 3px 10px;
@@ -56,6 +57,9 @@ a.tag-link,
 a.category-link,
 a.tag-link {
 	cursor: pointer;
+	display: inline-block;
+	word-break: break-word;
+	line-height: 1.4em;
 
 	&:hover {
 		color: darken(@color-highlight, 10%);
@@ -64,13 +68,20 @@ a.tag-link {
 
 }
 
+
+
 // Paginatinon
+
+// Styles for both the Blog Post List
+// and the Ecommerce Product List.
 
 .ecomproductslist,
 .blogpostlist {
 	.pagination-list {
 		.display-flex(flex);
 		margin: 2em auto;
+		gap: 0.5em;
+		justify-content: center;
 	}
 
 	.pagination-item {
@@ -80,14 +91,6 @@ a.tag-link {
 
 	a.button--pagination {
 		.link-button;
-		
-		&:before {
-			margin-left: -0.3em;
-		}
-		
-		&:after {
-			margin-right: -0.3em;
-		}
 	}
 }
 
@@ -109,6 +112,7 @@ a.tag-link {
 		
 		&:before {
 			font-size: 1em;
+
 			@media @mobile {
 				margin: 0.1em -0.2em 0 -0.2em;
 			}
@@ -116,9 +120,31 @@ a.tag-link {
 		
 		&:after {
 			font-size: 1em;
+			
 			@media @mobile {
 				margin: 0.1em -0.3em 0 -0.1em;
 			}
+		}
+	}
+}
+
+// Styles only for the Shop
+
+.ecomproductslist {
+	a.button--pagination {
+		padding: 0;
+		min-width: 32px;
+		height: 32px;
+		min-height: 32px;
+		text-align: center;
+		display: block;
+		line-height: 32px;
+
+		@media @mobile {
+			min-width: 26px;
+			height: 26px;
+			min-height: 26px;
+			line-height: 26px;
 		}
 	}
 }
